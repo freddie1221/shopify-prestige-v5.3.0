@@ -179,6 +179,19 @@
                 <span class="ProductItem__Price Price Text--subdued">{{ product.price | money }}</span>
               {%- endif -%}
             {%- endif -%}
+            {%- comment -%}
+            Here I (Freddie) set the number of colours available (if numnber > 1)
+            {%- endcomment -%}
+            {%- for option in product.options_with_values -%}
+              {% assign number_of_colours = 0 %}
+              {%- assign downcased_option = option.name | downcase -%}
+              {% if downcased_option == 'colour' %}
+                {% assign number_of_colours = option.values.size %}  
+                {% if number_of_colours > 1 %}
+                  <span class="Colour--number Text--subdued"> - {{ number_of_colours }} colours</span>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
           </div>
 
           {%- if product.selected_or_first_available_variant.unit_price_measurement -%}

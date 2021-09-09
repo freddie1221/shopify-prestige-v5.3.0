@@ -2,6 +2,7 @@
 {%- assign twitter_text = article.title -%}
 {%- assign pinterest_description = article.description | strip_html | truncatewords: 15 | url_param_escape -%}
 {%- assign pinterest_image = article.image | img_url: '750x' | prepend: 'https:' -%}
+{% assign portrait_image = section.settings.portrait_image %}
 
 <article class="Article" data-section-id="{{ section.id }}" data-section-type="article">
   <aside class="ArticleToolbar hidden-phone">
@@ -41,7 +42,6 @@
     </div>
   </aside>
 
-  {% assign portrait_image = section.settings.portrait_image %}
 
   {%- if article.image and section.settings.show_article_image and portrait_image == false -%}
       <div class="Article__ImageWrapper" style="background-image: url({{ article.image | img_url: '1x1' }})">
