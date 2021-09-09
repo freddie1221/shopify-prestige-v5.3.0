@@ -468,10 +468,16 @@ This is the root container for the zoom functionality. Must not be removed, as o
   </div>
 {%- endif -%}
 
+
+
+{% render 'pdp-stamped-rich-snippets' %}
+{% render 'pdp-klaviyo-web-tracking' %}
+
 <script>
   window.ShopifyXR=window.ShopifyXR||function(){(ShopifyXR.q=ShopifyXR.q||[]).push(arguments)};
   ShopifyXR('addModels', {{ product.media | where: 'media_type', 'model' | json }});
 </script>
+
 
 {% schema %}
 {
