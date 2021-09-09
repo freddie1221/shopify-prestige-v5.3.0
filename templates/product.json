@@ -62,6 +62,16 @@
         "enable_video_looping": false
       }
     },
+    "163118415894f626a8": {
+      "type": "article-features",
+      "settings": {
+      }
+    },
+    "16311842196785c46c": {
+      "type": "stamped-main-widget",
+      "settings": {
+      }
+    },
     "product-recommendations": {
       "type": "product-recommendations",
       "disabled": true,
@@ -84,6 +94,8 @@
   },
   "order": [
     "main",
+    "163118415894f626a8",
+    "16311842196785c46c",
     "product-recommendations",
     "recently-viewed-products"
   ]
