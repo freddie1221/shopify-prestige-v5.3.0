@@ -3,7 +3,7 @@
     "main": {
       "type": "main-collection",
       "settings": {
-        "show_variants": false,
+        "unroll_variants": false,
         "show_collection_info": true,
         "show_collection_image": true,
         "apply_overlay": true,
@@ -23,6 +23,11 @@
         "grid_desktop_items_per_row": 4
       }
     },
+    "1631213807fc03a4fc": {
+      "type": "article-features",
+      "settings": {
+      }
+    },
     "recently-viewed-products": {
       "type": "recently-viewed-products",
       "settings": {
@@ -35,6 +40,7 @@
   },
   "order": [
     "main",
+    "1631213807fc03a4fc",
     "recently-viewed-products"
   ]
 }
