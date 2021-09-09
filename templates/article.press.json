@@ -5,7 +5,7 @@
       "settings": {
         "show_article_image": true,
         "portrait_image": true,
-        "show_date": true,
+        "show_date": false,
         "show_category": false,
         "show_author": false,
         "show_share_buttons": true,
