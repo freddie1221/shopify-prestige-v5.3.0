@@ -176,9 +176,9 @@
         "section_size": "large",
         "image": "shopify:\/\/shop_images\/Cornelia_James_0312_1_1500x_d90587c6-8edb-446f-aed3-ca364e234ba1.jpg",
         "text_color": "#ffffff",
-        "overlay_color": "#000000",
-        "overlay_opacity": 30,
-        "subheading": "glovemaking",
+        "overlay_color": "#292929",
+        "overlay_opacity": 73,
+        "subheading": "Our",
         "title": "Glovemaking",
         "content": "<p>Some of the machinery that we use is quite old. Our gloves are die cut using a manually operated lever press made by WH Hallett & Sons of Yeovil, Somerset over 100 years ago. We’re not sentimental about it – we use it because it does the job very effectively and, when it’s not actually cutting gloves, it’s completely silent; a large and brooding presence in the cutting room.<br\/><br\/>Our Singer sewing machines are of the epoch when such machines were still made in the USA and our button hole machine is a Pfaff – made in Germany and the best you could get in 1957 when it was purchased. It’s a mechanical marvel and now – 60 years on – just a little temperamental, as is its operator, who is Italian and passionate about perfect button holes.<\/p>"
       }
@@ -197,8 +197,8 @@
         "1631195707147fa6af-0"
       ],
       "settings": {
-        "subheading": "",
-        "title": "Our Stories",
+        "subheading": "Stories",
+        "title": "From the journal",
         "show_category": false,
         "button_link": "shopify:\/\/blogs\/journal",
         "button_text": "All Stories"
