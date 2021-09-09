@@ -3,7 +3,7 @@
     "main": {
       "type": "main-collection",
       "settings": {
-        "show_variants": false,
+        "unroll_variants": false,
         "show_collection_info": true,
         "show_collection_image": true,
         "apply_overlay": true,
@@ -31,10 +31,16 @@
         "show_vendor": false,
         "show_color_swatch": false
       }
+    },
+    "1631213807fc03a4fc": {
+      "type": "article-features",
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
-    "recently-viewed-products"
+    "recently-viewed-products",
+    "1631213807fc03a4fc"
   ]
 }
