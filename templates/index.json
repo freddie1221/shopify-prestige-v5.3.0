@@ -117,6 +117,28 @@
         "grid_desktop_items_per_row": 4
       }
     },
+    "16311956878ccd64ec": {
+      "type": "timeline",
+      "blocks": {
+        "16311956878ccd64ec-0": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Cornelia_1000x_67137514-b027-42a3-b1f6-a56b477d2a40.jpg",
+            "apply_overlay": true,
+            "title": "1946",
+            "subheading": "1946",
+            "heading": "Company is born",
+            "content": "<p>“Design student flees Nazi scourge, arrives in England with suitcase full of fabrics, finds fame and fortune as glove maker to the Queen”.<\/p><p>Cornelia had studied art and design in Vienna and arrived in England as a refugee in 1939. After the war, in a world made drab by rationing, the leather gloves that she made in a huge range of colours became fashion essentials. Vogue magazine profiled her as “the colour Queen of England” and Cornelia quickly established a thriving business supplying gloves to couturiers and leading stores.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "16311956878ccd64ec-0"
+      ],
+      "settings": {
+        "text_color": "#ffffff"
+      }
+    },
     "1631192323b7fc90f2": {
       "type": "slideshow",
       "blocks": {
@@ -167,6 +189,7 @@
     "163119175238d76c29",
     "163119180946bed970",
     "featured-collections",
+    "16311956878ccd64ec",
     "1631192323b7fc90f2",
     "16311942737cf1bceb"
   ]
