@@ -133,24 +133,10 @@
             "button_2_text": "",
             "button_2_link": ""
           }
-        },
-        "1631192323b7fc90f2-1": {
-          "type": "image",
-          "settings": {
-            "apply_overlay": true,
-            "content_position": "bottomLeft",
-            "subheading": "Slide title",
-            "title": "Tell your story",
-            "button_1_text": "",
-            "button_1_link": "",
-            "button_2_text": "",
-            "button_2_link": ""
-          }
         }
       },
       "block_order": [
-        "1631192323b7fc90f2-0",
-        "1631192323b7fc90f2-1"
+        "1631192323b7fc90f2-0"
       ],
       "settings": {
         "show_fullscreen": true,
@@ -162,216 +148,17 @@
         "button_background": "#ffffff"
       }
     },
-    "collection-list": {
-      "type": "collection-list",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image_alignment": "center center",
-            "content_position": "bottomLeft",
-            "subheading": "Sub-heading",
-            "title": "Collection name",
-            "button_text": "View products",
-            "button_link": "",
-            "apply_overlay": true
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image_alignment": "center center",
-            "content_position": "bottomLeft",
-            "subheading": "Sub-heading",
-            "title": "Collection name",
-            "button_text": "View products",
-            "button_link": "",
-            "apply_overlay": true
-          }
-        },
-        "collection-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image_alignment": "center center",
-            "content_position": "bottomLeft",
-            "subheading": "Sub-heading",
-            "title": "Collection name",
-            "button_text": "View products",
-            "button_link": "",
-            "apply_overlay": true
-          }
-        }
-      },
-      "block_order": [
-        "collection-0",
-        "collection-1",
-        "collection-2"
-      ],
+    "16311942737cf1bceb": {
+      "type": "image-with-text-overlay",
       "settings": {
-        "image_size": "normal",
-        "add_spacing": true,
-        "expand_collection": false,
-        "stack_on_mobile": true,
+        "section_size": "large",
+        "image": "shopify:\/\/shop_images\/Cornelia_James_0312_1_1500x_d90587c6-8edb-446f-aed3-ca364e234ba1.jpg",
         "text_color": "#ffffff",
-        "button_color": "#363636"
-      }
-    },
-    "featured-product": {
-      "type": "featured-product",
-      "blocks": {
-        "product-meta": {
-          "type": "product_meta",
-          "settings": {
-            "show_vendor": true,
-            "show_sku": false,
-            "show_product_rating": false,
-            "show_taxes_included": false
-          }
-        },
-        "share-buttons": {
-          "type": "share_buttons",
-          "settings": {
-          }
-        },
-        "variant-selector": {
-          "type": "variant_selector",
-          "settings": {
-            "selector_mode": "dropdown",
-            "show_color_swatch": false,
-            "show_color_carousel": false,
-            "size_chart": ""
-          }
-        },
-        "buy-buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_price_in_button": false,
-            "show_payment_button": true
-          }
-        }
-      },
-      "block_order": [
-        "product-meta",
-        "share-buttons",
-        "variant-selector",
-        "buy-buttons"
-      ],
-      "settings": {
-        "subheading": "",
-        "title": "Featured product",
-        "show_headings_on_mobile": true,
-        "product": ""
-      }
-    },
-    "timeline": {
-      "type": "timeline",
-      "blocks": {
-        "item-0": {
-          "type": "item",
-          "settings": {
-            "apply_overlay": true,
-            "title": "2000",
-            "subheading": "Sub-heading",
-            "heading": "Heading",
-            "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
-          }
-        },
-        "item-1": {
-          "type": "item",
-          "settings": {
-            "apply_overlay": true,
-            "title": "2001",
-            "subheading": "Sub-heading",
-            "heading": "Heading",
-            "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
-          }
-        },
-        "item-2": {
-          "type": "item",
-          "settings": {
-            "apply_overlay": true,
-            "title": "2002",
-            "subheading": "Sub-heading",
-            "heading": "Heading",
-            "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "item-0",
-        "item-1",
-        "item-2"
-      ],
-      "settings": {
-        "text_color": "#ffffff"
-      }
-    },
-    "blog-posts": {
-      "type": "blog-posts",
-      "blocks": {
-        "blog-0": {
-          "type": "blog",
-          "settings": {
-            "blog": "news"
-          }
-        }
-      },
-      "block_order": [
-        "blog-0"
-      ],
-      "settings": {
-        "subheading": "",
-        "title": "Featured article",
-        "show_category": false,
-        "button_link": "",
-        "button_text": "View all articles"
-      }
-    },
-    "shop-the-look": {
-      "type": "shop-the-look",
-      "blocks": {
-        "look-0": {
-          "type": "look",
-          "settings": {
-            "dot_style": "light",
-            "product_1": "",
-            "product_1_horizontal_position": 30,
-            "product_1_vertical_position": 40,
-            "product_2": "",
-            "product_2_horizontal_position": 45,
-            "product_2_vertical_position": 65,
-            "product_3": "",
-            "product_3_horizontal_position": 70,
-            "product_3_vertical_position": 50
-          }
-        },
-        "look-1": {
-          "type": "look",
-          "settings": {
-            "dot_style": "light",
-            "product_1": "",
-            "product_1_horizontal_position": 25,
-            "product_1_vertical_position": 45,
-            "product_2": "",
-            "product_2_horizontal_position": 55,
-            "product_2_vertical_position": 30,
-            "product_3": "",
-            "product_3_horizontal_position": 65,
-            "product_3_vertical_position": 60
-          }
-        }
-      },
-      "block_order": [
-        "look-0",
-        "look-1"
-      ],
-      "settings": {
-        "subheading": "Shop",
-        "title": "Our looks",
-        "show_mobile_product_info": false
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "subheading": "glovemaking",
+        "title": "Glovemaking",
+        "content": "<p>Some of the machinery that we use is quite old. Our gloves are die cut using a manually operated lever press made by WH Hallett & Sons of Yeovil, Somerset over 100 years ago. We’re not sentimental about it – we use it because it does the job very effectively and, when it’s not actually cutting gloves, it’s completely silent; a large and brooding presence in the cutting room.<br\/><br\/>Our Singer sewing machines are of the epoch when such machines were still made in the USA and our button hole machine is a Pfaff – made in Germany and the best you could get in 1957 when it was purchased. It’s a mechanical marvel and now – 60 years on – just a little temperamental, as is its operator, who is Italian and passionate about perfect button holes.<\/p>"
       }
     }
   },
@@ -381,10 +168,6 @@
     "163119180946bed970",
     "featured-collections",
     "1631192323b7fc90f2",
-    "collection-list",
-    "featured-product",
-    "timeline",
-    "blog-posts",
-    "shop-the-look"
+    "16311942737cf1bceb"
   ]
 }
