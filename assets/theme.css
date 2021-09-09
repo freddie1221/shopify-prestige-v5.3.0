@@ -4369,7 +4369,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
   padding: 120px 40px;
   background: var(--secondary-elements-background);
   color: var(--secondary-elements-text-color);
-  font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 18px));
+  font-size: 14px;
 }
 
 .FeaturedQuote__Author {
