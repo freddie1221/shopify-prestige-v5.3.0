@@ -27,6 +27,13 @@
             "show_label": true
           }
         },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_price_in_button": false,
+            "show_payment_button": false
+          }
+        },
         "share_buttons": {
           "type": "share_buttons",
           "disabled": true,
@@ -37,22 +44,15 @@
           "type": "description",
           "settings": {
           }
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_price_in_button": false,
-            "show_payment_button": true
-          }
         }
       },
       "block_order": [
         "product_meta",
         "variant_selector",
         "quantity_selector",
+        "buy_buttons",
         "share_buttons",
-        "description",
-        "buy_buttons"
+        "description"
       ],
       "settings": {
         "image_size": "large",
