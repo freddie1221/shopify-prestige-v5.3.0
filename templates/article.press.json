@@ -4,7 +4,7 @@
       "type": "main-article",
       "settings": {
         "show_article_image": true,
-        "portrait_image": false,
+        "portrait_image": true,
         "show_date": false,
         "show_category": false,
         "show_author": false,

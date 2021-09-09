@@ -3,11 +3,17 @@
     "main": {
       "type": "main-cart",
       "settings": {
+        "show_shipping_estimator": false,
+        "shipping_estimator_default_country": "United States"
       }
     },
     "recently-viewed-products": {
       "type": "recently-viewed-products",
       "settings": {
+        "title": "Recently viewed",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false
       }
     }
   },
