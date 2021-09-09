@@ -2,6 +2,27 @@
 
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
+
+      <!-- Global site tag (gtag.js) - Google Ads: 975218407 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-975218407"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-975218407');
+    </script>
+
+      <!-- Google Ads Dynamic Remarketing -->
+    {% render "google-ads-dynamic-remarketing" %}
+      
+    <!-- Facebook domain verification -->
+    <meta name="facebook-domain-verification" content="wz3a12gftz6le4mjk19u1aapko4t8f" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+      $m = $.noConflict();
+    </script>
+
+
     <meta charset="utf-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=1.0">
@@ -186,5 +207,71 @@
 
       {% section 'footer' %}
     </div>
+
+    {%- comment -%} Facebook Lead signup tracking {%- endcomment -%}
+    <script>
+      window.addEventListener("klaviyoForms", function(e) {
+        if (e.detail.type == 'submit') {
+          fbq('track', 'Lead');
+        }});
+    </script>
+
+
+    {%- comment -%} Klaviyo sign up {%- endcomment -%}
+    <script async type="text/javascript" src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=NeDaQ3"></script>
+    <script>
+     var _learnq = _learnq || [];
+     if ('{{ customer.email }}') {
+       _learnq.push(['identify', {
+           '$email' : '{{ customer.email }}'
+         }]);
+      }
+    </script>
+    
+    {%- comment -%}Klaviyo back in stock{%- endcomment -%}
+
+    <script src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
+    <script>
+        var klaviyo = klaviyo || [];
+        klaviyo.init({
+          account: "NeDaQ3",
+          platform: "shopify"
+        });
+        klaviyo.enable("backinstock",{ 
+        trigger: {
+          product_page_text: "Notify Me When Available",
+          product_page_class: "ProductForm__AddToCart Button Button--full Button--primary",
+          product_page_text_align: "center",
+          product_page_margin: "0px",
+          replace_anchor: false
+        },
+        modal: {
+         headline: "{product_name}",
+         body_content: "Register to receive a notification when this item comes back in stock.",
+         email_field_label: "Email",
+         button_label: "Notify me when available",
+         subscription_success_label: "You're in! We'll let you know when it's back.",
+         footer_content: '',
+         additional_styles: "@import url('https://fonts.googleapis.com/css?family=Montserrat');",
+         drop_background_color: "#000",
+         background_color: "#fff",
+         text_color: "#222",
+         button_text_color: "#fff",
+         button_background_color: "#000000",
+         close_button_color: "#ccc",
+         error_background_color: "#fcd6d7",
+         error_text_color: "#C72E2F",
+         success_background_color: "#000000",
+         success_text_color: "#fff"
+        }
+      });
+    </script>
+
+    
+    
+  <!-- CRITEO START -->
+    {% include 'criteo-tracking' %}
+    <!-- CRITEO END -->
+
   </body>
 </html>
