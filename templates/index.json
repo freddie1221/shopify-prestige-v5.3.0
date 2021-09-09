@@ -46,6 +46,29 @@
         "button_background": "#ffffff"
       }
     },
+    "1631211867e9e31b66": {
+      "type": "shop-now",
+      "blocks": {
+        "1631211867e9e31b66-0": {
+          "type": "quote",
+          "settings": {
+            "content": "<p><em>English Sueded Cotton is for the absolutely quintessential autumn day glove<\/em><\/p>",
+            "author": "Genevieve James, Design Director"
+          }
+        }
+      },
+      "block_order": [
+        "1631211867e9e31b66-0"
+      ],
+      "settings": {
+        "title": "Autumn '21",
+        "collection": "sueded-cotton-gloves",
+        "grid_items_count": 6,
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false
+      }
+    },
     "163119180946bed970": {
       "type": "text-with-image",
       "settings": {
@@ -180,39 +203,16 @@
         "button_link": "shopify:\/\/blogs\/journal",
         "button_text": "All Stories"
       }
-    },
-    "1631211867e9e31b66": {
-      "type": "shop-now",
-      "blocks": {
-        "1631211867e9e31b66-0": {
-          "type": "quote",
-          "settings": {
-            "content": "<p><em>English Sueded Cotton is for the absolutely quintessential autumn day glove<\/em><\/p>",
-            "author": "Genevieve James, Design Director"
-          }
-        }
-      },
-      "block_order": [
-        "1631211867e9e31b66-0"
-      ],
-      "settings": {
-        "title": "Autumn '21",
-        "collection": "sueded-cotton-gloves",
-        "grid_items_count": 6,
-        "show_product_info": true,
-        "show_vendor": false,
-        "show_color_swatch": false
-      }
     }
   },
   "order": [
     "slideshow",
+    "1631211867e9e31b66",
     "163119180946bed970",
     "featured-collections",
     "1631192323b7fc90f2",
     "16311956878ccd64ec",
     "16311942737cf1bceb",
-    "1631195707147fa6af",
-    "1631211867e9e31b66"
+    "1631195707147fa6af"
   ]
 }
