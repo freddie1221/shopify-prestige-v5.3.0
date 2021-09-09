@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-customers-account",
+      "blocks": {
+        "header": {
+          "type": "header",
+          "settings": {
+          }
+        },
+        "order_list": {
+          "type": "order_list",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "header",
+        "order_list"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

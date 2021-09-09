@@ -1,0 +1,21 @@
+{%- comment -%} For showing the Stamped ratings count on the PDP{%- endcomment -%}
+              
+{% assign ratings_count = product.metafields.stamped.reviews_count | plus:0 %}
+{% if ratings_count > 0 %}
+  <div class="Collapsible__Reviews">
+    <a href="#stamped-main-widget">
+      <button class="Collapsible__Button">
+        <span 
+        class="stamped-product-reviews-badge stamped-main-badge" 
+        data-id="{{ product.id }}" 
+        data-product-sku="{{ product.handle }}" 
+        data-product-type="{{product.type}}" 
+        data-product-title="{{product.title}}" 
+        style="display: inline-block;">
+          {{ product.metafields.stamped.badge }}
+        </span>
+        <span class="Collapsible__Plus"></span>
+      </button>
+    </a>
+  </div> 
+{% endif %} 

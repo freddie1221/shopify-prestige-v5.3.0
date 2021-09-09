@@ -1,0 +1,57 @@
+{%- capture product_tabs -%}
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'content' -%}
+        {%- if block.settings.page != blank -%}
+          {%- assign title = block.settings.page.title -%}
+          {%- assign content = block.settings.page.content -%}
+        {%- else -%}
+          {%- assign title = block.settings.title -%}
+          {%- assign content = block.settings.content -%}
+        {%- endif -%}
+
+        {%- if title != blank and content != blank -%}
+          <div class="Collapsible Collapsible--large" {{ block.shopify_attributes }}>
+            <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+              {{- title -}} <span class="Collapsible__Plus"></span>
+            </button>
+
+            <div class="Collapsible__Inner">
+              <div class="Collapsible__Content">
+                <div class="Rte">
+                  {{- content -}}
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+
+      {%- when 'reviews' -%}
+        <div class="Collapsible Collapsible--large" {{ block.shopify_attributes }}>
+          {%- comment -%}We parse from metafields the number of reviews. First we try to use the old way, and then the updated way{%- endcomment -%}
+          {%- if product.metafields.spr.reviews contains 'itemprop="reviewCount"' -%}
+            {%- assign reviews_count = product.metafields.spr.reviews | split: '<meta itemprop="reviewCount" content="' | last | split: '">' | first | times: 1 -%}
+          {%- else -%}
+            {%- assign reviews_count = product.metafields.spr.reviews | split: '"reviewCount": "' | last | split: '"' | first | plus: 0 -%}
+          {%- endif -%}
+
+          <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+            <span>{{ 'product.tabs.reviews' | t }} {% if product.metafields.spr.reviews %}<span class="text--light">({{ reviews_count | default: 0 }})</span>{% endif %}</span>
+            <span class="Collapsible__Plus"></span>
+          </button>
+
+          <div class="Collapsible__Inner">
+            <div class="Collapsible__Content">
+              <div id="shopify-product-reviews" data-id="{{ product.id }}">{{ product.metafields.spr.reviews }}</div>
+            </div>
+          </div>
+        </div>
+    {%- endcase -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+{%- if product_tabs != blank -%}
+  <div class="Product__Tabs">
+    {{- product_tabs -}}
+  </div>
+{%- endif -%}

@@ -1,0 +1,26 @@
+<div class="ProductItem">
+  <div class="ProductItem__Wrapper">
+
+    <a href="#" class="ProductItem__ImageWrapper">
+      {{ 'product-' | append: placeholder_index | placeholder_svg_tag: 'ProductItem__Image PlaceholderSvg PlaceholderSvg--dark' }}
+    </a>
+
+    {%- if section.settings.show_product_info -%}
+      <div class="ProductItem__Info ProductItem__Info--{{ settings.product_info_alignment }}">
+        {%- if section.settings.show_vendor -%}
+          <p class="ProductItem__Vendor Heading">{{ 'home_page.onboarding.vendor_title' | t }}</p>
+        {%- endif -%}
+
+        <h2 class="ProductItem__Title Heading">{{ 'home_page.onboarding.product_title' | t }}</h2>
+
+        <div class="ProductItem__PriceList Heading">
+          {%- if settings.currency_code_enabled -%}
+            <span class="ProductItem__Price Price Text--subdued">{{ 3000 | money_with_currency }}</span>
+          {%- else -%}
+            <span class="ProductItem__Price Price Text--subdued">{{ 3000 | money }}</span>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</div>

@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "settings": {
+      }
+    },
+    "shop-now": {
+      "type": "shop-now",
+      "blocks": {
+        "quote": {
+          "type": "quote",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "quote"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "shop-now"
+  ]
+}

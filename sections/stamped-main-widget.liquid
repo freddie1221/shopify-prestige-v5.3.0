@@ -1,0 +1,58 @@
+
+<link rel="stylesheet" href="{{ 'stamped.css' | asset_url }}">
+
+
+{% assign object_tags = product.tags %}
+{% assign product_sliced = product.title | split: " "  %}
+{% assign product_name = product_sliced[0] %}
+
+
+{% assign ratings_count = product.metafields.stamped.reviews_count | plus:0 %}
+{% if ratings_count > 0 %}
+  <header class="Reviews_Header">
+    <h3 class="SectionHeader__SubHeading Heading u-h6">{{product_name}}</h3>
+    <h2 class="SectionHeader__Heading Heading u-h1">Reviews</h2>
+  </header>
+{% endif %} 
+
+<!--Start Stamped.io Auto Installation-->
+<div 
+  id="stamped-main-widget" 
+  class="stamped-main-widget" 
+  data-widget-style="standard" 
+  data-product-id="{{ product.id }}" 
+  data-name="{{ product.title | escape }}" 
+  data-url="{{ shop.url }}{{ product.url }}" 
+  data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26' }}" 
+  data-description="{{ product.description | escape }}" 
+  data-product-sku="{{ product.handle }}" 
+  data-product-type="{{ product.type }}" 
+  data-widget-language="{{ shop.locale }}">
+  {{ product.metafields.stamped.reviews }}
+</div>
+
+{%- comment -%} to override the email placeholder {%- endcomment -%}
+<script>
+  function addEventListenerStamped(el, eventName, handler) { 
+    if (el.addEventListener) { el.addEventListener(eventName, handler); }
+    else { el.attachEvent('on' + eventName, function () { handler.call(el); }); } 
+  }
+  addEventListenerStamped(document, 'stamped:reviews:loaded', function(e) {
+    document.querySelector('input.stamped-form-input-email').setAttribute('placeholder', 'jane.smith@example.com');
+  });
+  document.querySelector('input.stamped-form-input-email').setAttribute('placeholder', 'jane.smith@example.com');
+</script>
+
+{% schema %}
+{
+  "name": "Stamped reviews",
+  "settings": [],
+  "presets": [
+    {
+      "category": "Advanced",
+      "name": "Stamped reviews",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,105 @@
+{% assign list_length = 0 %}
+
+
+{% unless template == 'collection.alternate-features' %}
+  {% if template.name == 'product' %}
+    {% assign object_tags = product.tags %}
+    {% assign product_sliced = product.title | split: " "  %}
+    {% assign features_subheader = product_sliced[0] %}
+  {% elsif template.name == 'collection' %}
+    {% assign object_tags = collection.all_tags %}
+    {% assign features_subheader = collection.title %}
+  {% endif %}
+
+  {% assign delimiter = ',' %}
+  {% assign handles = '' %}
+
+  {% assign article_array = null | sort %}
+  {% for tag in object_tags %}
+    {% if tag contains 'press-features' %}
+      {% assign size = tag.size %}
+      {% assign article_handle = tag | slice: 2, size %}
+      {% assign feature = articles[article_handle] | sort %}
+      {% if feature[0].title != '' %}
+        {% assign article_array = article_array | concat: feature %}
+        {% assign show_features = true %}
+        {% assign list_length = list_length | plus: 1 %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  {% assign sorted_article_array = article_array | sort:"published_at" | reverse %}
+{% endunless %}
+
+{% if show_features %}
+
+  <section class="Section Section--spacingNormal" id="section-{{ section.id }}" data-section-type="article-list" data-section-id="{{ section.id }}">
+    <div class="Container">
+        <header class="SectionHeader SectionHeader--center">
+          <h3 class="SectionHeader__SubHeading Heading u-h6">{{features_subheader}}</h3>
+          <h2 class="SectionHeader__Heading Heading u-h1">In the wild</h2>
+        </header>
+        <div class="ArticleListWrapper">
+          <div class="ArticleList  Grid Grid--m">
+          
+          {% for article in sorted_article_array %}
+            
+            <div class="wrapper-flex" style="{% if list_length > 2 %} display:none !important;{% endif %}">
+                <div class="column-flex-1">
+               {%- if article.image != blank -%}
+                    {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,400,600,700,800,900,1000,1200', image: article.image -%}{%- endcapture -%}
+                    {%- assign image_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+                    <a class="ArticleItem__ImageWrapper AspectRatio AspectRatio--withFallback" style="background: url({{ article.image | img_url: '1x1', format: 'jpg' }}); padding-bottom: 58%; --aspect-ratio: 1" href="{{ article.url }}">
+                        <img class="ArticleItem__Image Image--lazyLoad Image--fadeIn"
+                            data-src="{{ image_url }}"
+                            data-widths="[{{ supported_sizes }}]"
+                            data-sizes="auto"
+                            alt="{{ article.image.alt | escape }}">
+                        <noscript>
+                            <img class="ArticleItem__Image" src="{{ article.image | img_url: '600x' }}" alt="{{ article.image.alt | escape }}">
+                        </noscript>
+                    </a>
+                {%- endif -%}
+                </div>
+                <div class="column-flex-2">
+                    <div class="ArticleItem__Content" id="flex-column-content">
+                    {%- if section.settings.show_category -%}
+                      <span class="ArticleItem__Category Heading u-h6 Text--subdued">{{ article.tags.first }}</span>
+                    {%- endif -%}
+                    <h2 class="ArticleItem__Title Heading u-h2">
+                      <a href="{{ article.url }}">{{ article.title }}</a>
+                    </h2>
+                    {%- unless template.name == 'article' -%}
+                      <div id="excerpt_readmore">
+                        <p class="ArticleItem__Excerpt">{{ article.excerpt_or_content | strip_html | truncate: 150 }}</p>
+                        <a href="{{ article.url }}" class="ArticleItem__Link Link Link--underline">{{ 'blog.article.read_more' | t }}</a>
+                      </div>
+                    {%- endunless -%}
+                  </div>
+                </div>
+            </div>   
+            <div class="Grid__Cell 1/2--tablet 1/3--lap-and-up" style="{% if list_length < 3 %}display:none !important;{% endif %}">
+                {%- include 'article-item', article: article -%}
+            </div>         
+            
+          {% endfor %}
+            
+          </div>
+        </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Article features",
+  "settings": [],
+  "presets": [
+    {
+      "category": "Advanced",
+      "name": "Article features",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}
