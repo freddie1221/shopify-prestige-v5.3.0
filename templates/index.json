@@ -87,18 +87,28 @@
         "featured-collection-0": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "title": "",
-            "grid_items_count": 8,
-            "button_text": "View all products"
+            "collection": "swiss-cotton-gloves",
+            "title": "Swiss Cotton",
+            "grid_items_count": 4,
+            "button_text": "Collection"
+          }
+        },
+        "9984a67a-a7d8-41d5-b8dc-15fa131ba693": {
+          "type": "collection",
+          "settings": {
+            "collection": "sueded-cotton-gloves",
+            "title": "Sueded cotton",
+            "grid_items_count": 4,
+            "button_text": "Collection"
           }
         }
       },
       "block_order": [
-        "featured-collection-0"
+        "featured-collection-0",
+        "9984a67a-a7d8-41d5-b8dc-15fa131ba693"
       ],
       "settings": {
-        "title": "Featured collection",
+        "title": "Autumn '21",
         "layout_mode": "grid",
         "show_product_info": true,
         "show_vendor": false,
