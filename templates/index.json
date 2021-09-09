@@ -117,28 +117,6 @@
         "grid_desktop_items_per_row": 4
       }
     },
-    "16311956878ccd64ec": {
-      "type": "timeline",
-      "blocks": {
-        "16311956878ccd64ec-0": {
-          "type": "item",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Cornelia_1000x_67137514-b027-42a3-b1f6-a56b477d2a40.jpg",
-            "apply_overlay": true,
-            "title": "1946",
-            "subheading": "1946",
-            "heading": "Company is born",
-            "content": "<p>“Design student flees Nazi scourge, arrives in England with suitcase full of fabrics, finds fame and fortune as glove maker to the Queen”.<\/p><p>Cornelia had studied art and design in Vienna and arrived in England as a refugee in 1939. After the war, in a world made drab by rationing, the leather gloves that she made in a huge range of colours became fashion essentials. Vogue magazine profiled her as “the colour Queen of England” and Cornelia quickly established a thriving business supplying gloves to couturiers and leading stores.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "16311956878ccd64ec-0"
-      ],
-      "settings": {
-        "text_color": "#ffffff"
-      }
-    },
     "1631192323b7fc90f2": {
       "type": "slideshow",
       "blocks": {
@@ -170,6 +148,28 @@
         "button_background": "#ffffff"
       }
     },
+    "16311956878ccd64ec": {
+      "type": "timeline",
+      "blocks": {
+        "16311956878ccd64ec-0": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Cornelia_1000x_67137514-b027-42a3-b1f6-a56b477d2a40.jpg",
+            "apply_overlay": true,
+            "title": "1946",
+            "subheading": "1946",
+            "heading": "Company is born",
+            "content": "<p>“Design student flees Nazi scourge, arrives in England with suitcase full of fabrics, finds fame and fortune as glove maker to the Queen”.<\/p><p>Cornelia had studied art and design in Vienna and arrived in England as a refugee in 1939. After the war, in a world made drab by rationing, the leather gloves that she made in a huge range of colours became fashion essentials. Vogue magazine profiled her as “the colour Queen of England” and Cornelia quickly established a thriving business supplying gloves to couturiers and leading stores.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "16311956878ccd64ec-0"
+      ],
+      "settings": {
+        "text_color": "#ffffff"
+      }
+    },
     "16311942737cf1bceb": {
       "type": "image-with-text-overlay",
       "settings": {
@@ -182,6 +182,27 @@
         "title": "Glovemaking",
         "content": "<p>Some of the machinery that we use is quite old. Our gloves are die cut using a manually operated lever press made by WH Hallett & Sons of Yeovil, Somerset over 100 years ago. We’re not sentimental about it – we use it because it does the job very effectively and, when it’s not actually cutting gloves, it’s completely silent; a large and brooding presence in the cutting room.<br\/><br\/>Our Singer sewing machines are of the epoch when such machines were still made in the USA and our button hole machine is a Pfaff – made in Germany and the best you could get in 1957 when it was purchased. It’s a mechanical marvel and now – 60 years on – just a little temperamental, as is its operator, who is Italian and passionate about perfect button holes.<\/p>"
       }
+    },
+    "1631195707147fa6af": {
+      "type": "blog-posts",
+      "blocks": {
+        "1631195707147fa6af-0": {
+          "type": "blog",
+          "settings": {
+            "blog": "journal"
+          }
+        }
+      },
+      "block_order": [
+        "1631195707147fa6af-0"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Our Stories",
+        "show_category": false,
+        "button_link": "shopify:\/\/blogs\/journal",
+        "button_text": "All Stories"
+      }
     }
   },
   "order": [
@@ -189,8 +210,9 @@
     "163119175238d76c29",
     "163119180946bed970",
     "featured-collections",
-    "16311956878ccd64ec",
     "1631192323b7fc90f2",
-    "16311942737cf1bceb"
+    "16311956878ccd64ec",
+    "16311942737cf1bceb",
+    "1631195707147fa6af"
   ]
 }
