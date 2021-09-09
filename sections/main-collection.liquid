@@ -20,7 +20,7 @@
 
 {%- capture collection_inner -%}
   {%- comment -%}This is the common part to both template{%- endcomment -%}
-  {% if section.settings.show_variants %}
+  {% if section.settings.unroll_variants %}
     {% assign enable_filters = false %}
     {%- if collection.products_count > 0 -%}
       {%- paginate collection.products by section.settings.grid_items_per_page -%}
@@ -98,32 +98,70 @@
 
   {%- if collection.all_products_count > 0 -%}
     {%- if section.settings.show_collection_image and collection.image and collection.template_suffix != 'no-image' -%}
-      <div class="FlexboxIeFix">
-        <header class="PageHeader PageHeader--withBackground {% if section.settings.collection_image_size != 'normal' %}PageHeader--{{ section.settings.collection_image_size }}{% endif %}" style="background: url({{ collection.image | img_url: '1x1', format: 'jpg' }})">
-          <div class="PageHeader__ImageWrapper Image--lazyLoad Image--fadeIn {% if section.settings.apply_overlay %}Image--contrast{% endif %}"
-               data-optimumx="1.2"
-               data-bgset="{{ collection.image | img_url: 'x600' }} 600w, {{ collection.image | img_url: '800x' }} 800w, {{ collection.image | img_url: '1200x' }} 1200w, {{ collection.image | img_url: '1400x' }} 1400w, {{ collection.image | img_url: '1600x' }} 1600w">
+
+      <section class="Section collection-info-component" >
+        {%- capture section_content -%}
+          <div class="FeatureText__ContentWrapper">
+            <div class="FeatureText__Content">
+              <header class="SectionHeader">                
+                  <h2 class="SectionHeader__Heading Heading u-h1">{{ collection.title }}</h2>
+                  <div class="SectionHeader__Description Rte">{{ collection.description }}</div>
+              </header>
+            </div>
           </div>
+        {%- endcapture -%}
 
-          <noscript>
-            <div class="PageHeader__ImageWrapper {% if section.settings.apply_overlay %}Image--contrast{% endif %}" style="background-image: url({{ collection.image | img_url: '800x' }})"></div>
-          </noscript>
-
-          {%- if section.settings.show_collection_info -%}
-            <div class="Container">
-              <div class="SectionHeader SectionHeader--center">
-                <h1 class="SectionHeader__Heading Heading u-h1">{{ collection.title }}</h1>
-
-                {%- if collection.description != blank -%}
-                  <div class="SectionHeader__Description Rte">
-                    {{- collection.description -}}
-                  </div>
-                {%- endif -%}
+        {%- capture section_image -%}
+            <div class="FeatureText__ImageWrapper">
+              {%- capture supported_sizes -%}{%- render 'image-size', sizes: '400,600,700,800,900,1000,1200', image: collection.image -%}{%- endcapture -%}
+              <div class="AspectRatio" style="max-width: {{ collection.image.width }}px; --aspect-ratio: 1">
+                {%- assign image_url = collection.image | img_url: '1000x1000', crop: 'center' -%}
+                <img class="Image--lazyLoad Image--slideLeft" data-src="{{ image_url }}" data-expand="-200" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ collection.image.alt | escape }}">
+                <noscript>
+                  <img src="{{ collection.image | img_url: '800x' }}" alt="{{ collection.image.alt | escape }}">
+                </noscript>
               </div>
             </div>
-          {%- endif -%}
-        </header>
+        {%- endcapture -%}
+
+        <div class="FeatureText {% if collection.image != blank %}FeatureText--withImage FeatureText--imageLeft{% endif %}">
+            {% if collection.image and template.suffix != 'no-image' %}
+              {{- section_image -}}
+            {% endif %}
+            {{- section_content -}}
+        </div>
+      </section>  
+
+{%- comment -%}
+  <div class="FlexboxIeFix">
+    <header class="PageHeader PageHeader--withBackground {% if section.settings.collection_image_size != 'normal' %}PageHeader--{{ section.settings.collection_image_size }}{% endif %}" style="background: url({{ collection.image | img_url: '1x1', format: 'jpg' }})">
+      <div class="PageHeader__ImageWrapper Image--lazyLoad Image--fadeIn {% if section.settings.apply_overlay %}Image--contrast{% endif %}"
+        data-optimumx="1.2"
+        data-bgset="{{ collection.image | img_url: 'x600' }} 600w, {{ collection.image | img_url: '800x' }} 800w, {{ collection.image | img_url: '1200x' }} 1200w, {{ collection.image | img_url: '1400x' }} 1400w, {{ collection.image | img_url: '1600x' }} 1600w">
       </div>
+      
+      <noscript>
+        <div class="PageHeader__ImageWrapper {% if section.settings.apply_overlay %}Image--contrast{% endif %}" style="background-image: url({{ collection.image | img_url: '800x' }})"></div>
+      </noscript>
+      
+      {%- if section.settings.show_collection_info -%}
+        <div class="Container">
+          <div class="SectionHeader SectionHeader--center">
+            <h1 class="SectionHeader__Heading Heading u-h1">{{ collection.title }}</h1>
+            
+            {%- if collection.description != blank -%}
+              <div class="SectionHeader__Description Rte">
+                {{- collection.description -}}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </header>
+  </div>
+{%- endcomment -%}
+  
+
     {%- elsif section.settings.show_collection_info -%}
       <header class="PageHeader">
         <div class="Container">
@@ -415,8 +453,8 @@
     {
       "type": "checkbox",
       "id": "show_variants",
-      "label": "Show variants",
-      "default": true
+      "label": "Unroll variants",
+      "default": false
     },
     {
       "type": "checkbox",
@@ -428,7 +466,7 @@
       "type": "checkbox",
       "id": "show_collection_image",
       "label": "Show collection image",
-      "default": false
+      "default": true
     },
     {
       "type": "checkbox",

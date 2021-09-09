@@ -11412,3 +11412,16 @@ shopify-payment-terms {
   text-align: center;
   padding-top: 35px;
 }
+
+/* customised collection info section */
+
+.collection-info-component {
+  padding:30px;
+}
+
+@media (max-width: 640px) {  .collection-info-component {
+  padding-left:0px;
+  padding-right: 0px;
+  padding-bottom: 30px;
+	}
+}
