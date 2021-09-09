@@ -11425,3 +11425,8 @@ shopify-payment-terms {
   padding-bottom: 30px;
 	}
 }
+
+
+.Article__TopImageWrapper img {
+  margin: 0px 0 18px;
+}

@@ -41,16 +41,25 @@
     </div>
   </aside>
 
-  {%- if article.image and section.settings.show_article_image -%}
-    <div class="Article__ImageWrapper" style="background-image: url({{ article.image | img_url: '1x1' }})">
-      <div class="Article__Image Image--lazyLoad Image--fadeIn"
-           data-optimumx="1.4"
-           data-bgset="{{ article.image | img_url: '400x' }} 400w, {{ article.image | img_url: '600x' }} 600w, {{ article.image | img_url: '800x' }} 800w, {{ article.image | img_url: '1200x' }} 1200w, {{ article.image | img_url: '1400x' }} 1400w, {{ article.image | img_url: '1600x' }} 1600w">
+  {% assign portrait_image = section.settings.portrait_image %}
+
+  {%- if article.image and section.settings.show_article_image and portrait_image == false -%}
+      <div class="Article__ImageWrapper" style="background-image: url({{ article.image | img_url: '1x1' }})">
+        <div class="Article__Image Image--lazyLoad Image--fadeIn"
+          data-optimumx="1.4"
+          data-bgset="{{ article.image | img_url: '400x' }} 400w, {{ article.image | img_url: '600x' }} 600w, {{ article.image | img_url: '800x' }} 800w, {{ article.image | img_url: '1200x' }} 1200w, {{ article.image | img_url: '1400x' }} 1400w, {{ article.image | img_url: '1600x' }} 1600w">
+        </div>
       </div>
-    </div>
   {%- endif -%}
 
   <div class="Article__Wrapper">
+
+    {% if portrait_image %}
+      <div class="Article__TopImageWrapper">
+        <img src="{{ article.image | img_url: '680x' }}"/>
+      </div> 
+    {% endif %}
+
     <div class="Article__Content">
       <header class="Article__Header">
         {%- capture article_meta -%}
@@ -227,6 +236,12 @@
       "id": "show_article_image",
       "label": "Show article image",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "portrait_image",
+      "label": "Portrait image",
+      "default": false
     },
     {
       "type": "checkbox",
