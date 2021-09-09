@@ -72,7 +72,7 @@
           "08628754-b72c-4ca8-a393-6ddb79f25556": {
             "type": "mega_menu",
             "settings": {
-              "navigation_mega_menu": "Shop",
+              "navigation_mega_menu": "Shop | Everyday",
               "push_1_heading": "Example heading",
               "push_1_subheading": "Example sub-heading",
               "push_1_url": "",
@@ -84,7 +84,7 @@
           "3fc53942-d535-48e8-89a2-004d366f4882": {
             "type": "mega_menu",
             "settings": {
-              "navigation_mega_menu": "Occasions",
+              "navigation_mega_menu": "Shop | Occasions",
               "push_1_heading": "Example heading",
               "push_1_subheading": "Example sub-heading",
               "push_1_url": "",
@@ -96,7 +96,7 @@
           "9a1dcf16-8a70-4cfa-8153-1712feaf5567": {
             "type": "mega_menu",
             "settings": {
-              "navigation_mega_menu": "About",
+              "navigation_mega_menu": "Information",
               "push_1_heading": "Example heading",
               "push_1_subheading": "Example sub-heading",
               "push_1_url": "",
