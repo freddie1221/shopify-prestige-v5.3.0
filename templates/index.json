@@ -46,6 +46,29 @@
         "button_background": "#ffffff"
       }
     },
+    "163119175238d76c29": {
+      "type": "product-showcase",
+      "blocks": {
+        "e3afabfb-09a9-44b4-afcd-6fc8b62602b3": {
+          "type": "quote",
+          "settings": {
+            "content": "<p>Sueded Cotton makes the absolutely classic Autumn glove<\/p>",
+            "author": ""
+          }
+        }
+      },
+      "block_order": [
+        "e3afabfb-09a9-44b4-afcd-6fc8b62602b3"
+      ],
+      "settings": {
+        "title": "Shop now",
+        "collection": "sueded-cotton-gloves",
+        "grid_items_count": 6,
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": true
+      }
+    },
     "featured-collections": {
       "type": "featured-collections",
       "blocks": {
@@ -287,6 +310,7 @@
   },
   "order": [
     "slideshow",
+    "163119175238d76c29",
     "featured-collections",
     "collection-list",
     "featured-product",
