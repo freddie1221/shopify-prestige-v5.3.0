@@ -118,7 +118,7 @@
           "mobile_logo_max_width": 190,
           "show_currency_selector": true,
           "show_locale_selector": true,
-          "navigation_menu": "beta-nav",
+          "navigation_menu": "main-menu",
           "navigation_style": "inline",
           "show_icons": false,
           "enable_transparent_header": true,
