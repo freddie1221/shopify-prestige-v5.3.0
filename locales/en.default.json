@@ -280,7 +280,7 @@
       "note_placeholder": "How can we help you?",
       "free_shipping": "You are eligible for free shipping!",
       "free_shipping_remaining_html": "Spend {{remaining_amount}} more and get free shipping!",
-      "shipping_and_taxes_notice": "Shipping & taxes calculated at checkout",
+      "shipping_and_taxes_notice": "",
       "discount": "Discount",
       "total": "Total",
       "checkout": "Checkout"
