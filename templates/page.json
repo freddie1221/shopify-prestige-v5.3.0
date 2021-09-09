@@ -3,8 +3,8 @@
     "main": {
       "type": "main-page",
       "settings": {
-        "hide_header": true,
-        "show_large": true,
+        "hide_header": false,
+        "show_large": false,
         "no_styling": true
       }
     }
