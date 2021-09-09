@@ -1,0 +1,81 @@
+<div class="ProductItem {% if use_horizontal %}ProductItem--horizontal{% endif %}">
+  <div class="ProductItem__Wrapper">
+    {%- comment -%}
+    We are using LazySizes to efficiently choose the most appropriate image in the set. However, because internally LazySizes uses srcset, we need to make
+    sure that the image sizes we offer is not larger than the max size uploaded by the merchants.
+    {%- endcomment -%}
+
+    {%- if settings.product_image_size == 'natural' or use_horizontal -%}
+      {%- assign use_natural_size = true -%}
+    {%- else -%}
+      {%- assign use_natural_size = false -%}
+    {%- endif -%}
+
+    {%- assign has_alternate_image = false -%}
+    {% assign top_media = variant.image %}
+    
+    <a href="{{ variant.url | within: collection }}" class="ProductItem__ImageWrapper {% if has_alternate_image %}ProductItem__ImageWrapper--withAlternateImage{% endif %}">
+      {%- if use_horizontal -%}
+        {%- assign max_width = 125 -%}
+      {%- else -%}
+        {%- assign max_width = top_media.preview_image.width -%}
+      {%- endif -%}
+
+      {%- assign media_aspect_ratio = top_media.aspect_ratio | default: ptop_media.preview_image.aspect_ratio -%}
+
+      <div class="AspectRatio AspectRatio--{% if use_natural_size %}withFallback{% else %}{{ settings.product_image_size }}{% endif %}" style="max-width: {{ max_width }}px; {% if use_natural_size %}padding-bottom: {{ 100.0 | divided_by: media_aspect_ratio }}%;{% endif %} --aspect-ratio: {{ media_aspect_ratio }}">
+        {%- comment -%}
+        IMPLEMENTATION NOTE: The alternate image (not visible by default) should be the first in the DOM, as the spinner (Image__Loader element) is
+        displayed based on the immediately previously shown image.
+        {%- endcomment -%}
+
+        {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,400,600,700,800,900,1000,1200', image: top_media -%}{%- endcapture -%}
+        {%- assign image_url = top_media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+        <img class="ProductItem__Image Image--lazyLoad Image--fadeIn" data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ top_media.alt | escape }}" data-media-id="{{ top_media.id }}">
+        <span class="Image__Loader"></span>
+
+        <noscript>
+          <img class="ProductItem__Image ProductItem__Image--alternate" src="{{ product.media[1] | img_url: '600x' }}" alt="{{ product.media[1].alt | escape }}">
+          <img class="ProductItem__Image" src="{{ top_media| img_url: '600x' }}" alt="{{ top_media.alt | escape }}">
+        </noscript>
+      </div>
+    </a>
+      
+    {%- if variant.available == false -%}
+      <div class="ProductItem__LabelList">
+        <span class="ProductItem__Label ProductItem__Label--soldOut Heading Text--subdued">{{ 'product.labels.sold_out' | t }}</span>
+      </div>
+    {%- endif -%}
+    
+    <div class="ProductItem__Info {% unless use_horizontal %}ProductItem__Info--{{ settings.product_info_alignment }}{% endunless %}">
+      {%- if show_vendor -%}
+        <p class="ProductItem__Vendor Heading">{{ product.vendor }}</p>
+      {%- endif -%}
+
+      <h2 class="ProductItem__Title Heading">
+        <a href="{{ variant.url | within: collection }}">{{ product.title }} | {{ variant.title }}</a>
+      </h2>
+
+      {%- if show_price_on_hover == nil -%}
+        {%- assign show_price_on_hover = settings.product_show_price_on_hover -%}
+      {%- endif -%}
+
+      {%- if show_price_on_hover and color_swatch_list != blank -%}
+        {{- color_swatch_list -}}
+      {%- endif -%}
+      
+      <div class="ProductItem__PriceList {% if show_price_on_hover %}ProductItem__PriceList--showOnHover{% endif %} Heading">
+        <span class="ProductItem__Price Price Text--subdued">{{ variant.price | money_without_trailing_zeros }}</span>
+      </div>
+
+      {%- if show_price_on_hover == false and color_swatch_list != blank -%}
+        {{- color_swatch_list -}}
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- if use_horizontal -%}
+    <a href="{{ product.url }}" class="ProductItem__ViewButton Button Button--secondary hidden-pocket">{{ 'collection.product.view_product' | t }}</a>
+  {%- endif -%}
+</div>

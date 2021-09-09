@@ -16,30 +16,58 @@
   {%- assign tablet_items_per_row = 2 -%}
 {%- endif -%}
 
+{% assign enable_filters = section.settings.show_filters %}
+
 {%- capture collection_inner -%}
   {%- comment -%}This is the common part to both template{%- endcomment -%}
-
-  {%- if collection.products_count > 0 -%}
-    {%- paginate collection.products by section.settings.grid_items_per_page -%}
-      <div class="ProductListWrapper">
-        <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">
-          {%- for product in collection.products -%}
-            <div class="Grid__Cell 1/{{ mobile_items_per_row }}--phone 1/{{ tablet_items_per_row }}--tablet-and-up 1/{{ desktop_items_per_row }}--{% if section.settings.filter_position == 'drawer' %}lap-and-up{% else %}desk{% endif %}">
-              {%- render 'product-item', product: product, show_product_info: true, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true -%}
-            </div>
-          {%- endfor -%}
+  {% if section.settings.show_variants %}
+    {% assign enable_filters = false %}
+    {%- if collection.products_count > 0 -%}
+      {%- paginate collection.products by section.settings.grid_items_per_page -%}
+        <div class="ProductListWrapper">
+          <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">
+            {%- for product in collection.products -%}
+              {% for variant in product.variants %}
+                <div class="Grid__Cell 1/{{ mobile_items_per_row }}--phone 1/{{ tablet_items_per_row }}--tablet-and-up 1/{{ desktop_items_per_row }}--{% if section.settings.filter_position == 'drawer' %}lap-and-up{% else %}desk{% endif %}">
+                  {%- render 'product-variant-item', product: product, variant: variant, show_vendor: section.settings.show_vendor, show_labels: true -%}
+                </div>
+              {% endfor %}
+            {%- endfor -%}
+          </div>
+        </div>
+        {%- render 'pagination', paginate: paginate -%}
+      {%- endpaginate -%}
+    {%- else -%}
+      <div class="EmptyState">
+        <div class="Container">
+          <h1 class="EmptyState__Title Heading u-h5">{{ 'collection.general.no_products' | t }}</h1>
+          <button class="EmptyState__Action Button Button--primary" data-action="reset-tags">{{ 'collection.general.reset' | t }}</button>
         </div>
       </div>
+    {%- endif -%}
+  {% else %}
+    {%- if collection.products_count > 0 -%}
+      {%- paginate collection.products by section.settings.grid_items_per_page -%}
+        <div class="ProductListWrapper">
+          <div class="ProductList ProductList--grid {% if paginate.pages > 1 %}ProductList--removeMargin{% endif %} Grid" data-mobile-count="{{ mobile_items_per_row }}" data-desktop-count="{{ desktop_items_per_row }}">
+            {%- for product in collection.products -%}
+              <div class="Grid__Cell 1/{{ mobile_items_per_row }}--phone 1/{{ tablet_items_per_row }}--tablet-and-up 1/{{ desktop_items_per_row }}--{% if section.settings.filter_position == 'drawer' %}lap-and-up{% else %}desk{% endif %}">
+                {%- render 'product-item', product: product, show_product_info: true, show_vendor: section.settings.show_vendor, show_color_swatch: section.settings.show_color_swatch, show_labels: true -%}
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
 
-      {%- render 'pagination', paginate: paginate -%}
-    {%- endpaginate -%}
-  {%- else -%}
-    <div class="EmptyState">
-      <div class="Container">
-        <h1 class="EmptyState__Title Heading u-h5">{{ 'collection.general.no_products' | t }}</h1>
-        <button class="EmptyState__Action Button Button--primary" data-action="clear-filters" data-url="{{ collection.url }}?sort_by={{ sort_by }}">{{ 'collection.general.reset' | t }}</button>
+        {%- render 'pagination', paginate: paginate -%}
+      {%- endpaginate -%}
+    {%- else -%}
+      <div class="EmptyState">
+        <div class="Container">
+          <h1 class="EmptyState__Title Heading u-h5">{{ 'collection.general.no_products' | t }}</h1>
+          <button class="EmptyState__Action Button Button--primary" data-action="clear-filters" data-url="{{ collection.url }}?sort_by={{ sort_by }}">{{ 'collection.general.reset' | t }}</button>
+        </div>
       </div>
-    </div>
+    {%- endif -%}
   {%- endif -%}
 {%- endcapture -%}
 
@@ -123,7 +151,7 @@
     {%- assign show_filters = false -%}
     {%- assign quick_links = linklists[section.settings.filter_menu] -%}
 
-    {%- if quick_links != blank or collection.filters != empty and section.settings.show_filters -%}
+    {%- if quick_links != blank or collection.filters != empty and enable_filters -%}
       {%- assign show_filters = true -%}
     {%- endif -%}
 
@@ -205,7 +233,7 @@
           </div>
         {%- endif -%}
 
-        {%- if section.settings.show_filters and collection.filters != empty -%}
+        {%- if enable_filters and collection.filters != empty -%}
           {%- assign color_label = 'color,colour,couleur,colore,farbe,색,色,färg,farve' | split: ',' -%}
 
           {%- for filter in collection.filters -%}
@@ -384,6 +412,12 @@
   "name": "Collection page",
   "class": "shopify-section--bordered",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_variants",
+      "label": "Show variants",
+      "default": true
+    },
     {
       "type": "checkbox",
       "id": "show_collection_info",
