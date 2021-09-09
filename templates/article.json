@@ -3,14 +3,24 @@
     "main": {
       "type": "main-article",
       "settings": {
+        "show_article_image": true,
+        "portrait_image": false,
+        "show_date": false,
+        "show_category": false,
+        "show_author": false,
+        "show_share_buttons": true,
+        "show_prev_next": true
       }
     },
     "shop-now": {
       "type": "shop-now",
+      "disabled": true,
       "blocks": {
         "quote": {
           "type": "quote",
           "settings": {
+            "content": "<p>You can use this element to add a quote, content...<\/p>",
+            "author": ""
           }
         }
       },
@@ -18,6 +28,12 @@
         "quote"
       ],
       "settings": {
+        "title": "Shop now",
+        "collection": "",
+        "grid_items_count": 6,
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false
       }
     }
   },
