@@ -51,6 +51,7 @@
       "blocks": {
         "1631211867e9e31b66-0": {
           "type": "quote",
+          "disabled": true,
           "settings": {
             "content": "<p><em>English Sueded Cotton is for the absolutely quintessential autumn day glove<\/em><\/p>",
             "author": "Genevieve James, Design Director"
