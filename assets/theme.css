@@ -11430,3 +11430,7 @@ shopify-payment-terms {
 .Article__TopImageWrapper img {
   margin: 0px 0 18px;
 }
+
+.Colour--number {
+  font-size: 10px;
+}
