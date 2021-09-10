@@ -55,7 +55,7 @@
         "description"
       ],
       "settings": {
-        "image_size": "large",
+        "image_size": "small",
         "stack_images": false,
         "show_thumbnails": true,
         "enable_image_zoom": true,
