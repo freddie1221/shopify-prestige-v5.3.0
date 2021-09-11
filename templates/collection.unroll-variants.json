@@ -23,6 +23,11 @@
         "grid_desktop_items_per_row": 4
       }
     },
+    "1631361476678c643c": {
+      "type": "article-features",
+      "settings": {
+      }
+    },
     "recently-viewed-products": {
       "type": "recently-viewed-products",
       "settings": {
@@ -35,6 +40,7 @@
   },
   "order": [
     "main",
+    "1631361476678c643c",
     "recently-viewed-products"
   ]
 }
