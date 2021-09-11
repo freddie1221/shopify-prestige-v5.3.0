@@ -300,7 +300,9 @@
                       <div class="Rte">
                         {% render 'pdp-made-in-england' %}
                         {{- product.description | replace: 'data-section-type', 'data-section-type-placeholder' -}}
-                        {% render 'pdp-shipping-info' %}   
+                        {% if product.title contains 'glove' %}
+                          {% render 'pdp-shipping-info' %}
+                        {% endif %}
                       </div>
                       {% render 'pdp-stamped-ratings-count' %}
                     </div>

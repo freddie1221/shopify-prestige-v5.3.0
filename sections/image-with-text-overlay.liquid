@@ -24,7 +24,7 @@
       {%- if section.settings.subheading != blank or section.settings.title != blank or section.settings.content != blank -%}
         <div class="ImageHero__ContentOverlay">
           {%- if section.settings.subheading != blank or section.settings.title != blank -%}
-            <header class="SectionHeader">
+            <header class="SectionHeader" style="padding-top:{{ sections.settings.extra_padding }}px; padding-bottom:{{ sections.settings.extra_padding }}px;"> 
               {%- if section.settings.subheading != blank -%}
                 <h3 class="SectionHeader__SubHeading Heading u-h6">{{ section.settings.subheading | escape }}</h3>
               {%- endif -%}
@@ -81,6 +81,12 @@
         }
       ],
       "default": "large"
+    },
+    {
+      "type": "text",
+      "id": "extra_padding",
+      "label": "Extra padding (px)",
+      "default": ""
     },
     {
       "type": "image_picker",
