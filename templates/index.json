@@ -204,6 +204,27 @@
         "button_link": "shopify:\/\/blogs\/journal",
         "button_text": "All Stories"
       }
+    },
+    "163136337950c4e3a4": {
+      "type": "blog-posts",
+      "blocks": {
+        "163136337950c4e3a4-0": {
+          "type": "blog",
+          "settings": {
+            "blog": "press-features"
+          }
+        }
+      },
+      "block_order": [
+        "163136337950c4e3a4-0"
+      ],
+      "settings": {
+        "subheading": "Articles",
+        "title": "Press & Features",
+        "show_category": false,
+        "button_link": "https:\/\/www.corneliajames.com\/blogs\/press-features",
+        "button_text": "View all features"
+      }
     }
   },
   "order": [
@@ -214,6 +235,7 @@
     "1631192323b7fc90f2",
     "16311956878ccd64ec",
     "16311942737cf1bceb",
-    "1631195707147fa6af"
+    "1631195707147fa6af",
+    "163136337950c4e3a4"
   ]
 }
