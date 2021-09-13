@@ -3,6 +3,9 @@
     "main": {
       "type": "main-page",
       "settings": {
+        "show_header": false,
+        "show_large": false,
+        "no_styling": true
       }
     }
   },
