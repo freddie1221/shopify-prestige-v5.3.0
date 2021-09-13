@@ -175,6 +175,7 @@
       "type": "image-with-text-overlay",
       "settings": {
         "section_size": "large",
+        "extra_padding": "200",
         "image": "shopify:\/\/shop_images\/Cornelia_James_0312_1_1500x_d90587c6-8edb-446f-aed3-ca364e234ba1.jpg",
         "text_color": "#ffffff",
         "overlay_color": "#292929",
