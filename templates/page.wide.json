@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "hide_header": false,
+        "show_large": false,
+        "no_styling": true
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
