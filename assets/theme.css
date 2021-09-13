@@ -5916,10 +5916,10 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 @supports (--css: variables) {
   .Article__Image {
-    height: calc(100% + 0px);
-    height: calc(100% + var(--announcement-bar-height, 0px));
-    top: calc(-1 * 0px);
-    top: calc(-1 * var(--announcement-bar-height, 0px));
+    height: calc(100% + 120px);
+    height: calc(100% + 120px + var(--announcement-bar-height, 0px));
+    top: calc(-1 * 120px);
+    top: calc(-1 * 120px);
   }
 }
 
