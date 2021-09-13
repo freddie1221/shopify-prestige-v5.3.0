@@ -1,14 +1,16 @@
+
+
 {% if section.settings.no_styling %}
   {{ page.content }}
 {% else %}
   <div class="Container">
-    {% unless section.settings.hide_header %}
+    {% if section.settings.show_header %}
       <header class="PageHeader">
         <div class="SectionHeader SectionHeader--center">
           <h1 class="SectionHeader__Heading Heading u-h1">{{ page.title }}</h1>
         </div>
       </header>
-    {% endunless %}
+    {% endif %}
     
     <div class="PageContent {% unless section.settings.show_large %}PageContent--narrow{% endunless %} Rte">
       {{ page.content }}
@@ -22,9 +24,9 @@
   "settings": [
     {
       "type": "checkbox",
-      "id": "hide_header",
+      "id": "show_header",
       "label": "Hide header",
-      "default": false
+      "default": true
     },
     {
       "type": "checkbox",
