@@ -4,8 +4,8 @@
       "type": "main-page",
       "settings": {
         "hide_header": false,
-        "show_large": false,
-        "no_styling": true
+        "show_large": true,
+        "no_styling": false
       }
     }
   },
