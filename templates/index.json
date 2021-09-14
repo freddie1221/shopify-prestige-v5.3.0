@@ -162,10 +162,70 @@
             "heading": "Company is born",
             "content": "<p>“Design student flees Nazi scourge, arrives in England with suitcase full of fabrics, finds fame and fortune as glove maker to the Queen”.<\/p><p>Cornelia had studied art and design in Vienna and arrived in England as a refugee in 1939. After the war, in a world made drab by rationing, the leather gloves that she made in a huge range of colours became fashion essentials. Vogue magazine profiled her as “the colour Queen of England” and Cornelia quickly established a thriving business supplying gloves to couturiers and leading stores.<\/p>"
           }
+        },
+        "9069b3c8-5e47-465b-bc6c-fdaaaefd442a": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Princess_Elizabeth_and_The_Duke_of_Edinburgh_Wedding_-_Westminster_Abbey_1000x_32a597a6-5eaa-42a3-88ee-4c4974d2d0b5.jpg",
+            "apply_overlay": true,
+            "title": "1947",
+            "subheading": "November 1947",
+            "heading": "MARRIAGE OF PRINCESS ELIZABETH TO LT. PHILIP MOUNTBATTEN",
+            "content": "<p>Princess Elizabeth – the future Queen Elizabeth ll – did not wear gloves for her wedding.  But, when she made the short trip in an open landau from Buckingham Palace to Waterloo station to begin her honeymoon, the new bride, accompanied by her husband and Susan, her corgi, wore an outfit in mist blue by Norman Hartnell and gloves by Cornelia James.<\/p>"
+          }
+        },
+        "8e340438-d30e-4706-9b33-75847034d31a": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Jean_Shrimpton_Melbourne_cup_1000x_e541f06c-e0e5-46e1-b347-604ce8a757c1.png",
+            "apply_overlay": true,
+            "title": "1965",
+            "subheading": "November 1965",
+            "heading": "Melbourne Cup day",
+            "content": "<p>The world of fashion and society at large is rocked by the news that Jean Shrimpton – first of the super-models – has attended the Melbourne Cup race meeting, Australia’s premier social event – wearing a mini-dress and no gloves.<\/p>"
+          }
+        },
+        "dc2b4ab2-d872-4ac3-b30b-819630a1180c": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Royal_warrant_LR_1024x1024_600x_1000x_6a0a7473-3323-4cc6-b7dc-4fb70434507f.jpg",
+            "apply_overlay": true,
+            "title": "1978",
+            "subheading": "August 1978",
+            "heading": "Royal Warrant",
+            "content": "<p>The Lord Chamberlain, by order of Her Majesty Queen Elizabeth ll, is pleased to grant Cornelia James a Royal Warrant as ‘Glove manufacturer by appointment to Her Majesty’. A Royal Warrant is a mark of excellence that is instantly recognised all over the world. Royal Warrant holders are ‘united by a commitment to the highest standards of service, quality and excellence’. That’s the theory. In practice, what it means to us is that we try to treat all our customers as royalty and, when we see the white gloved Royal hand waving at the window of the big, black car as it pulls away, we know that it’s probably our glove on the hand. And that puts a spring in our step.<\/p>"
+          }
+        },
+        "b53f0867-ef83-4933-9077-ccf1b6d6aa0a": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/maxresdefault_copy_1000x_ff7e0bb9-67f4-4f42-954a-c5ccc9c61c0d.jpg",
+            "apply_overlay": true,
+            "title": "1999",
+            "subheading": "April 1999",
+            "heading": "Disaster Narrowly Avoided",
+            "content": "<p>In preparation for the Queen’s visit to Korea, Buckingham Palace order a dozen pairs of white cotton gloves. The gloves are despatched. On the eve of Her Majesty’s departure Cornelia James receives an anguished (note – ‘anguished’ not ‘panicked’ – the Palace never panics) call from Buckingham Palace: the gloves have not arrived. Cornelia James reels and then rallies. Replacement gloves are found but – late on Saturday evening – delivery is a problem. As dawn breaks on Sunday – the day of the Queen’s departure – Andrew Lawson, Genevieve James’ husband, leaps heroically into the saddle of his powerful motorbike and roars off in the direction of London and the Palace... <a href=\"https:\/\/www.corneliajames.com\/blogs\/journal\/disaster-narrowly-avoided-april-1999\" title=\"https:\/\/www.corneliajames.com\/blogs\/journal\/disaster-narrowly-avoided-april-1999\">more<\/a><\/p>"
+          }
+        },
+        "5b760cda-317b-4795-9bf7-d16157f22a25": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Hall_Court_Farm_1000x_8d701c43-4ba1-455b-925a-ada8504b28b3.jpg",
+            "apply_overlay": true,
+            "title": "2010",
+            "subheading": "July 2010",
+            "heading": "Move the Ripe 'Centre of Excellence'",
+            "content": "<p>Cornelia James has had four addresses since 1946. From 1955 to 2002 the company was based at 123 Havelock Road, Brighton in a building that had been built in the 19th century to house dairy cows and provide milk to the population of Brighton. Since 2010 our address has been <a href=\"https:\/\/goo.gl\/maps\/jo5JNrfXF6N2\" title=\"https:\/\/goo.gl\/maps\/jo5JNrfXF6N2\">The Old Cattle Stall, Hall Court Farm, Ripe<\/a>. Does that mean that we have developed an affinity with cows? No - but good machinists are as rare as hen’s teeth these days and we are where the talent is.<\/p>"
+          }
         }
       },
       "block_order": [
-        "16311956878ccd64ec-0"
+        "16311956878ccd64ec-0",
+        "9069b3c8-5e47-465b-bc6c-fdaaaefd442a",
+        "8e340438-d30e-4706-9b33-75847034d31a",
+        "dc2b4ab2-d872-4ac3-b30b-819630a1180c",
+        "b53f0867-ef83-4933-9077-ccf1b6d6aa0a",
+        "5b760cda-317b-4795-9bf7-d16157f22a25"
       ],
       "settings": {
         "text_color": "#ffffff"
