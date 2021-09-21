@@ -3,9 +3,9 @@
     "main": {
       "type": "main-page",
       "settings": {
-        "hide_header": false,
+        "show_header": true,
         "show_large": false,
-        "no_styling": true
+        "no_styling": false
       }
     }
   },
