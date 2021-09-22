@@ -30,7 +30,7 @@
     "show_page_transition": false,
     "search_mode": "product,article",
     "product_show_price_on_hover": false,
-    "product_show_secondary_image": true,
+    "product_show_secondary_image": false,
     "product_info_alignment": "left",
     "product_image_size": "square",
     "product_list_horizontal_spacing": "medium",
