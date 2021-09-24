@@ -405,7 +405,7 @@
                     </div>
                   {%- endif -%}
                 {% when 'back_in_stock' %}
-                  {% unless current_variant.available %}
+                  {% unless current_variant.available or current_variant.inventory_policy == 'continue' %}
                     <div style="padding-top: 10px; padding-bottom: 10px;">
                       <a class="ProductForm__AddToCart Button Button--full Button--primary" href="#">Notify Me When Available</a>
                     </div>
