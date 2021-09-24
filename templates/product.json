@@ -34,6 +34,12 @@
             "show_payment_button": false
           }
         },
+        "ee8af388-c6b3-4f3a-9a4a-e044944189ae": {
+          "type": "back_in_stock",
+          "disabled": true,
+          "settings": {
+          }
+        },
         "share_buttons": {
           "type": "share_buttons",
           "disabled": true,
@@ -51,6 +57,7 @@
         "variant_selector",
         "quantity_selector",
         "buy_buttons",
+        "ee8af388-c6b3-4f3a-9a4a-e044944189ae",
         "share_buttons",
         "description"
       ],
