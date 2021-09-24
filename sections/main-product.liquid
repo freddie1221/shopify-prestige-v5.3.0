@@ -404,7 +404,12 @@
                       {{- block.settings.text -}}
                     </div>
                   {%- endif -%}
-
+                {% when 'back_in_stock' %}
+                  {% unless current_variant.available %}
+                    <div style="padding-top: 10px; padding-bottom: 10px;">
+                      <a class="ProductForm__AddToCart Button Button--full Button--primary" href="#">Notify Me When Available</a>
+                    </div>
+                  {% endunless %}
               {%- endcase -%}
             {%- endfor -%}
 
@@ -562,6 +567,11 @@ This is the root container for the zoom functionality. Must not be removed, as o
     {
       "type": "share_buttons",
       "name": "Share buttons",
+      "limit": 1
+    },
+    {
+      "type": "back_in_stock",
+      "name": "Back in stock",
       "limit": 1
     },
     {
