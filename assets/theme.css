@@ -11327,8 +11327,13 @@ shopify-payment-terms {
 
 
 /* zindex updates */
-/* Sending the Shopify chat icon behind the Klaviyo form & sidebar-cart */
+
 #ShopifyChat {
+  z-index: 2147483642 !important;
+}
+
+/* fit modals */
+.Modal--fullScreen {
   z-index: 2147483643 !important;
 }
 
