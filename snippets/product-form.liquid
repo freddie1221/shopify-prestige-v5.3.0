@@ -215,53 +215,71 @@ for size, we use it to display a size chart (if applicable)
         {%- endif -%}
       </div>
     {%- endfor -%}
+
+  {% if product.tags contains '__MIE' %}
+    
+    {%- assign index_finger_fit_page = pages['index-finger-fit'] -%}
+    <div class="Collapsible Index__Container">
+      <button type="button" class="Collapsible__Button" data-action="toggle-collapsible" aria-expanded="false">Index Finger Fit (optional)
+        <span class="Collapsible__Plus"></span>
+      </button>
+      <div class="Collapsible__Inner">
+        <div class="Index__Inner">
+          <div class="ProductForm__Option Index__Input">
+            <input class="Index__Finger" type="number" min="2" max="5"  step="0.25" name="properties[Index Finger Fit]" >
+            <div><strong>inches</strong></div>
+          </div>
+          <div>
+            <button type="button" class="ProductForm__LabelLink Link Text--subdued" style="margin-bottom:14px;" data-action="open-modal" aria-controls="modal-{{ index_finger_fit_page.handle }}">&rarr; See fit guide</button>
+          </div>
+        </div>
+      </div>
+    </div> 
+  {% endif %}
+    
   
+      
     {%- comment -%}
     --------------------------------------------------------------------------------------------------------------------
     The below items are to handle upper arm and forearm fit. Built by Freddie, 13.1.21
     --------------------------------------------------------------------------------------------------------------------
     {%- endcomment -%}
     {%- if product.tags contains '__upper length' -%}
+    
+      
       <div class="armFit__container">
         {%- assign glove_fit_page = pages['glove-fit'] -%}
-        
         <div class="ProductForm__Option FitSelector" style="margin-right: 12px;">
-          <span class="ProductForm__Label">Upper Arm Fit (<strong>inches</strong>)</span>
-          <div class="ProductForm__QuantitySelector FitSelector">
-            <div class="QuantitySelector QuantitySelector--large line-item-property__field">
-              <span class="QuantitySelector__Button Link Link--secondary" data-action="decrease-quantity">{% render 'icon' with 'minus' %}</span>
-              <input type="text" class="QuantitySelector__CurrentQuantity" pattern="[0-9]*" name="properties[Upper arm fit]" value="10">
-              <span class="QuantitySelector__Button Link Link--secondary" data-action="increase-quantity">{% render 'icon' with 'plus' %}</span>
-            </div>
+          <span class="ProductForm__Label">Forearm Fit</span>
+          <div class="ProductForm__Option Index__Input">
+            <input class="Index__Finger" type="number" min="0" max="20" value="9" step="0.25" name="properties[Forearm Fit]" >
+            <div><strong>inches</strong></div>
           </div>
         </div>
-        <div class="ProductForm__Option FitSelector">
-          <span class="ProductForm__Label">Forearm Fit (<strong>inches</strong>)</span>
-          <div class="ProductForm__QuantitySelector FitSelector">
-            <div class="QuantitySelector QuantitySelector--large line-item-property__field">
-              <span class="QuantitySelector__Button Link Link--secondary" data-action="decrease-quantity">{% render 'icon' with 'minus' %}</span>
-              <input type="text" class="QuantitySelector__CurrentQuantity" pattern="[0-9]*" name="properties[Forearm fit]" value="9">
-              <span class="QuantitySelector__Button Link Link--secondary" data-action="increase-quantity">{% render 'icon' with 'plus' %}</span>
-            </div>
+        <div class="ProductForm__Option FitSelector" >
+          <span class="ProductForm__Label">Upper Arm Fit</span>
+          <div class="ProductForm__Option Index__Input">
+            <input class="Index__Finger" type="number" min="0" max="20" value="10" step="0.25" name="properties[Upper Arm Fit]" >
+            <div><strong>inches</strong></div>
           </div>
         </div>
         <div>
-        <button type="button" class="ProductForm__LabelLink Link Text--subdued" style="margin-bottom:14px;" data-action="open-modal" aria-controls="modal-{{ glove_fit_page.handle }}">&rarr; See fit guide</button>
+          <button type="button" class="ProductForm__LabelLink Link Text--subdued" style="margin-bottom:14px;" data-action="open-modal" aria-controls="modal-{{ glove_fit_page.handle }}">&rarr; See fit guide</button>
+        </div>
       </div>
-    </div>
     {%- endif -%}
     {%- if product.tags contains '__forearm length' -%}
       {%- assign glove_fit_page = pages['glove-fit'] -%}
-      <div class="ProductForm__Option">
-        <button type="button" class="ProductForm__LabelLink Link Text--subdued" data-action="open-modal" aria-controls="modal-{{ glove_fit_page.handle }}">&rarr; See our fit guide</button>
-        <span class="ProductForm__Label">Forearm Fit (<strong>inches</strong>)</span>
-
-        <div class="ProductForm__QuantitySelector">
-          <div class="QuantitySelector QuantitySelector--large line-item-property__field">
-            <span class="QuantitySelector__Button Link Link--secondary" data-action="decrease-quantity">{% render 'icon' with 'minus' %}</span>
-            <input type="text" class="QuantitySelector__CurrentQuantity" pattern="[0-9]*" name="properties[Forearm fit]" value="9">
-            <span class="QuantitySelector__Button Link Link--secondary" data-action="increase-quantity">{% render 'icon' with 'plus' %}</span>
+      <div class="armFit__container">
+        <div class="ProductForm__Option FitSelector" style="margin-right: 12px;">
+          <span class="ProductForm__Label">Forearm Fit</span>
+          <div class="ProductForm__Option Index__Input">
+            <input class="Index__Finger" type="number" min="0" max="20" value="9" step="0.25" name="properties[Forearm Fit]" >
+            <div><strong>inches</strong></div>
           </div>
+        </div>
+        <div>
+          <button type="button" class="ProductForm__LabelLink Link Text--subdued" style="margin-bottom:14px;" data-action="open-modal" aria-controls="modal-{{ glove_fit_page.handle }}">&rarr; See fit guide</button>
         </div>
       </div>
     {%- endif -%}
@@ -314,6 +332,15 @@ for size, we use it to display a size chart (if applicable)
       <div class="Modal__Content Rte">
         <div class="Container Container--extraNarrow">
           {{- glove_fit_page.content -}}
+        </div>
+      </div>
+      <button class="Modal__Close RoundButton RoundButton--large" data-animate-bottom data-action="close-modal">{% render 'icon' with 'close' %}</button>
+    </div>
+    <div id="modal-{{ index_finger_fit_page.handle }}" class="Modal Modal--dark Modal--fullScreen Modal--pageContent" aria-hidden="true" role="dialog" data-scrollable>
+  
+      <div class="Modal__Content Rte">
+        <div class="Container Container--extraNarrow">
+          {{- index_finger_fit_page.content -}}
         </div>
       </div>
       <button class="Modal__Close RoundButton RoundButton--large" data-animate-bottom data-action="close-modal">{% render 'icon' with 'close' %}</button>

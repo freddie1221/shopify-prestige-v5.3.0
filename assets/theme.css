@@ -11434,3 +11434,35 @@ shopify-payment-terms {
 .Colour--number {
   font-size: 10px;
 }
+
+
+.Index__Finger[type="number"] {
+  text-align: center;
+}
+
+.Index__Container {
+  margin-bottom: 24px;
+}
+
+.Index__Inner {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 18px;
+}
+
+.Index__Input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px 0px 9px;
+  border: 1px solid var(--border-color);
+  width: 139px;
+}
+
+.Index__Finger {
+  padding: 12px 0px 12px 0px;
+  background: none;
+  border: none;
+  text-align: center;
+  width: 60px;
+}
