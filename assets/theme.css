@@ -11471,3 +11471,14 @@ shopify-payment-terms {
   text-align: center;
   width: 60px;
 }
+
+.Product__Callout {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stamped-badge {
+  display: flex;
+  align-items: center;
+}

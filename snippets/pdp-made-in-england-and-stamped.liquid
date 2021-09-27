@@ -1,0 +1,25 @@
+{% assign ratings_count = product.metafields.stamped.reviews_count | plus:0 %}
+{% if product.tags contains '__MIE' %}
+  {% assign made_in_england = true %}
+{% endif %}
+
+{% if made_in_england or ratings_count > 0 %}
+  <div class="Product__Callout">
+    {% if made_in_england %}
+      <em>Made in Sussex, England</em>
+    {% else %}
+      <div></div>
+    {% endif %}
+    {% if ratings_count > 0 %}
+      <span 
+        class="stamped-product-reviews-badge stamped-main-badge" 
+        data-id="{{ product.id }}" 
+        data-product-sku="{{ product.handle }}" 
+        data-product-type="{{product.type}}" 
+        data-product-title="{{product.title}}" 
+        style="display: inline-block;">
+          {{ product.metafields.stamped.badge }}
+        </span>
+    {% endif %}
+  </div>
+{% endif %}

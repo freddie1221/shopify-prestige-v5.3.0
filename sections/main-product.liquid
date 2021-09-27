@@ -298,11 +298,10 @@
                   {%- if product.description != blank -%}
                     <div class="ProductMeta__Description" {{ block.shopify_attributes }}>
                       <div class="Rte">
-                        {% render 'pdp-made-in-england' %}
+                        {% render 'pdp-made-in-england-and-stamped' %}
                         {{- product.description | replace: 'data-section-type', 'data-section-type-placeholder' -}}                        
                         {% render 'pdp-shipping-info' %}
                       </div>
-                      {% render 'pdp-stamped-ratings-count' %}
                     </div>
                   {%- endif -%}
 
