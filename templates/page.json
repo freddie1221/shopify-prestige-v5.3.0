@@ -3,7 +3,7 @@
     "main": {
       "type": "main-page",
       "settings": {
-        "show_header": true,
+        "show_header": false,
         "show_large": false,
         "no_styling": false
       }
