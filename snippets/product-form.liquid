@@ -326,9 +326,6 @@ for size, we use it to display a size chart (if applicable)
       <button class="Modal__Close RoundButton RoundButton--large" data-animate-bottom data-action="close-modal">{% render 'icon' with 'close' %}</button>
     </div>
     <div id="modal-{{ glove_fit_page.handle }}" class="Modal Modal--dark Modal--fullScreen Modal--pageContent" aria-hidden="true" role="dialog" data-scrollable>
-      <header class="Modal__Header">
-        <h2 class="Modal__Title Heading u-h1">{{ glove_fit_page.title }}</h2>
-      </header>
       <div class="Modal__Content Rte">
         <div class="Container Container--extraNarrow">
           {{- glove_fit_page.content -}}
@@ -337,7 +334,6 @@ for size, we use it to display a size chart (if applicable)
       <button class="Modal__Close RoundButton RoundButton--large" data-animate-bottom data-action="close-modal">{% render 'icon' with 'close' %}</button>
     </div>
     <div id="modal-{{ index_finger_fit_page.handle }}" class="Modal Modal--dark Modal--fullScreen Modal--pageContent" aria-hidden="true" role="dialog" data-scrollable>
-  
       <div class="Modal__Content Rte">
         <div class="Container Container--extraNarrow">
           {{- index_finger_fit_page.content -}}
