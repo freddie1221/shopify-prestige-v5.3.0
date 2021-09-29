@@ -88,8 +88,8 @@
         "featured-collection-0": {
           "type": "collection",
           "settings": {
-            "collection": "swiss-cotton-gloves",
-            "title": "Swiss Cotton",
+            "collection": "leather-gloves",
+            "title": "Leather",
             "grid_items_count": 4,
             "button_text": "Collection"
           }
@@ -97,8 +97,8 @@
         "9984a67a-a7d8-41d5-b8dc-15fa131ba693": {
           "type": "collection",
           "settings": {
-            "collection": "sueded-cotton-gloves",
-            "title": "Sueded cotton",
+            "collection": "suede-gloves",
+            "title": "Suede",
             "grid_items_count": 4,
             "button_text": "Collection"
           }
