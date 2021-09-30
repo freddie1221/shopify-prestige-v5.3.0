@@ -1,15 +1,30 @@
 {
   "sections": {
+    "1633010583c0613013": {
+      "type": "image-with-text-overlay",
+      "settings": {
+        "section_size": "large",
+        "extra_padding": "0",
+        "image": "shopify:\/\/shop_images\/Royal_warrant_LR_1024x1024_600x_x650_9e50bd73-f283-4fb7-819c-3c319f3296c7.jpg",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
-        "show_header": false,
+        "show_header": true,
         "show_large": false,
         "no_styling": false
       }
     }
   },
   "order": [
+    "1633010583c0613013",
     "main"
   ]
 }
