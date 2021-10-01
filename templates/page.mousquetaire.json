@@ -10,14 +10,14 @@
         "overlay_color": "#000000",
         "overlay_opacity": 30,
         "subheading": "",
-        "title": "Mousquetaire",
+        "title": "",
         "content": ""
       }
     },
     "main": {
       "type": "main-page",
       "settings": {
-        "show_header": false,
+        "show_header": true,
         "show_large": false,
         "no_styling": false
       }
