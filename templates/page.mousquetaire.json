@@ -1,5 +1,19 @@
 {
   "sections": {
+    "1633105122763db811": {
+      "type": "image-with-text-overlay",
+      "settings": {
+        "section_size": "large",
+        "extra_padding": "0",
+        "image": "shopify:\/\/shop_images\/Cornelia_James_0337_4.jpg",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "subheading": "",
+        "title": "Mousquetaire",
+        "content": ""
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -10,6 +24,7 @@
     }
   },
   "order": [
+    "1633105122763db811",
     "main"
   ]
 }
