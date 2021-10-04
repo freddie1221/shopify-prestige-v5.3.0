@@ -2,6 +2,7 @@
   "sections": {
     "1633105122763db811": {
       "type": "image-with-text-overlay",
+      "disabled": true,
       "settings": {
         "section_size": "large",
         "extra_padding": "0",
@@ -16,10 +17,25 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "show_header": true,
         "show_large": false,
         "no_styling": false
+      }
+    },
+    "1633335190cf63497c": {
+      "type": "image-with-text-block",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Cornelia_James_0337_4.jpg",
+        "background": "#ffffff",
+        "text_color": "#1c1b1b",
+        "block_size": "large",
+        "title": "MOUSQUETAIRE",
+        "content": "<p>A mousquetaire is a buttoned opening on the inside of the wrist of a long glove.  The purpose of the mousquetaire is to allow the wearer to remove the hand from the glove whilst keeping the sleeve of the glove on the arm. The empty ‘hand’ of the glove is then neatly tucked up inside the sleeve.  At a very formal banquet or dinner, it is ‘incorrect’ to wield knife and fork in a gloved hand and the mousquetaire opening offers a way around this social hurdle.  It is also most helpful when a ring finger needs to be made available at a wedding.<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "show_parallax": true
       }
     },
     "16333351813c17712d": {
@@ -52,6 +68,7 @@
   "order": [
     "1633105122763db811",
     "main",
+    "1633335190cf63497c",
     "16333351813c17712d"
   ]
 }
