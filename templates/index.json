@@ -6,13 +6,13 @@
         "slide-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2021_05_CorneliaJames-5_3430a481-ca6b-4664-8a23-c7db6473ed71.jpg",
+            "image": "shopify:\/\/shop_images\/JH-2951.jpg",
             "apply_overlay": true,
             "content_position": "bottomLeft",
-            "subheading": "The classic",
-            "title": "Cotton Day Gloves",
+            "subheading": "Pure wool but not woolly",
+            "title": "Merino Wool Gloves",
             "button_1_text": "Collection",
-            "button_1_link": "shopify:\/\/collections\/sueded-cotton-gloves",
+            "button_1_link": "shopify:\/\/collections\/merino-wool-gloves",
             "button_2_text": "",
             "button_2_link": ""
           }
