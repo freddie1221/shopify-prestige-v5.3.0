@@ -21,10 +21,37 @@
         "show_large": false,
         "no_styling": false
       }
+    },
+    "16333351813c17712d": {
+      "type": "featured-collections",
+      "blocks": {
+        "16333351813c17712d-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "gloves-with-mousquetaire",
+            "title": "Mousquetaire",
+            "grid_items_count": 8,
+            "button_text": "Collection"
+          }
+        }
+      },
+      "block_order": [
+        "16333351813c17712d-0"
+      ],
+      "settings": {
+        "title": "Gloves with",
+        "layout_mode": "grid",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4
+      }
     }
   },
   "order": [
     "1633105122763db811",
-    "main"
+    "main",
+    "16333351813c17712d"
   ]
 }
