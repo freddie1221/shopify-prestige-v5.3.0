@@ -77,9 +77,10 @@
             "type": "mega_menu",
             "settings": {
               "navigation_mega_menu": "Shop | Everyday",
-              "push_1_heading": "New Arrival",
-              "push_1_subheading": "Eloise | Cashmere Lined Suede Glove",
-              "push_1_url": "shopify:\/\/products\/eloise-suede-gloves",
+              "push_1_image": "shopify:\/\/shop_images\/pexels-cottonbro-4614250_1.jpg",
+              "push_1_heading": "The guide",
+              "push_1_subheading": "To sizing your gloves",
+              "push_1_url": "shopify:\/\/blogs\/information\/sizing-your-gloves",
               "push_2_heading": "Example heading",
               "push_2_subheading": "Example sub-heading",
               "push_2_url": ""
