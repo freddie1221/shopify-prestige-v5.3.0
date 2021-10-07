@@ -1,13 +1,5 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "show_header": true,
-        "show_large": false,
-        "no_styling": false
-      }
-    },
     "163360727094bc339a": {
       "type": "collection-list",
       "blocks": {
@@ -92,10 +84,18 @@
         "text_color": "#ffffff",
         "button_color": "#363636"
       }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_header": true,
+        "show_large": false,
+        "no_styling": false
+      }
     }
   },
   "order": [
-    "main",
-    "163360727094bc339a"
+    "163360727094bc339a",
+    "main"
   ]
 }
