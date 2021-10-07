@@ -107,6 +107,7 @@
         },
         "1633607702c233da36-1": {
           "type": "share_buttons",
+          "disabled": true,
           "settings": {
           }
         },
@@ -123,7 +124,13 @@
           "type": "buy_buttons",
           "settings": {
             "show_price_in_button": false,
-            "show_payment_button": true
+            "show_payment_button": false
+          }
+        },
+        "71adb44b-c85f-4031-aaef-247a2c8b5c19": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
           }
         }
       },
@@ -131,7 +138,8 @@
         "1633607702c233da36-0",
         "1633607702c233da36-1",
         "1633607702c233da36-2",
-        "1633607702c233da36-3"
+        "1633607702c233da36-3",
+        "71adb44b-c85f-4031-aaef-247a2c8b5c19"
       ],
       "settings": {
         "subheading": "",
