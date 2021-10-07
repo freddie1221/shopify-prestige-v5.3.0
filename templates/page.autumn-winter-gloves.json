@@ -27,12 +27,12 @@
         "163360727094bc339a-1": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "cashmere-gloves",
             "image_alignment": "center center",
             "content_position": "bottomLeft",
-            "subheading": "Sub-heading",
-            "title": "Collection name",
-            "button_text": "View products",
+            "subheading": "",
+            "title": "Cashmere",
+            "button_text": "Collection",
             "button_link": "",
             "apply_overlay": true
           }
