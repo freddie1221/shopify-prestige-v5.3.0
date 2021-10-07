@@ -40,12 +40,12 @@
         "163360727094bc339a-2": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "leather-gloves",
             "image_alignment": "center center",
             "content_position": "bottomLeft",
-            "subheading": "Sub-heading",
-            "title": "Collection name",
-            "button_text": "View products",
+            "subheading": "",
+            "title": "Leather",
+            "button_text": "Collection",
             "button_link": "",
             "apply_overlay": true
           }
