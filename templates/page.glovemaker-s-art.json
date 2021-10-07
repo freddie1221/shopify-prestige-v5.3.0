@@ -1,15 +1,27 @@
 {
   "sections": {
+    "1633602807c186e7f8": {
+      "type": "featured-video",
+      "settings": {
+        "section_size": "large",
+        "text_color": "#ffffff",
+        "subheading": "",
+        "title": "The Glovemaker's art",
+        "image": "shopify:\/\/shop_images\/Screenshot_2021-10-07_at_11.28.41.png",
+        "video_url": "https:\/\/player.vimeo.com\/video\/502242565"
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
-        "show_header": true,
+        "show_header": false,
         "show_large": false,
         "no_styling": false
       }
     }
   },
   "order": [
+    "1633602807c186e7f8",
     "main"
   ]
 }
