@@ -49,12 +49,26 @@
             "button_link": "",
             "apply_overlay": true
           }
+        },
+        "331bc7ee-9d15-4541-9a2a-2d8fabcd97ad": {
+          "type": "collection",
+          "settings": {
+            "collection": "suede-gloves",
+            "image_alignment": "center center",
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "Suede",
+            "button_text": "Collection",
+            "button_link": "",
+            "apply_overlay": true
+          }
         }
       },
       "block_order": [
         "163360727094bc339a-0",
         "163360727094bc339a-1",
-        "163360727094bc339a-2"
+        "163360727094bc339a-2",
+        "331bc7ee-9d15-4541-9a2a-2d8fabcd97ad"
       ],
       "settings": {
         "image_size": "normal",
