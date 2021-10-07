@@ -1,0 +1,157 @@
+{
+  "sections": {
+    "163360727094bc339a": {
+      "type": "collection-list",
+      "blocks": {
+        "163360727094bc339a-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "merino-wool-gloves",
+            "image_alignment": "center center",
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "Merino Wool",
+            "button_text": "Collection",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "163360727094bc339a-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "cashmere-gloves",
+            "image_alignment": "center center",
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "Cashmere",
+            "button_text": "Collection",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "331bc7ee-9d15-4541-9a2a-2d8fabcd97ad": {
+          "type": "collection",
+          "settings": {
+            "collection": "suede-gloves",
+            "image_alignment": "center center",
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "Suede",
+            "button_text": "Collection",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "163360727094bc339a-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "leather-gloves",
+            "image_alignment": "center center",
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "Leather",
+            "button_text": "Collection",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "de812a69-8a59-4b44-a98a-4c9dfadfe322": {
+          "type": "collection",
+          "settings": {
+            "collection": "sueded-cotton-gloves",
+            "image_alignment": "center center",
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "Sueded Cotton",
+            "button_text": "Collection",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        }
+      },
+      "block_order": [
+        "163360727094bc339a-0",
+        "163360727094bc339a-1",
+        "331bc7ee-9d15-4541-9a2a-2d8fabcd97ad",
+        "163360727094bc339a-2",
+        "de812a69-8a59-4b44-a98a-4c9dfadfe322"
+      ],
+      "settings": {
+        "image_size": "normal",
+        "add_spacing": true,
+        "expand_collection": true,
+        "stack_on_mobile": true,
+        "text_color": "#ffffff",
+        "button_color": "#363636"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_header": true,
+        "show_large": false,
+        "no_styling": false
+      }
+    },
+    "1633607702c233da36": {
+      "type": "featured-product",
+      "blocks": {
+        "1633607702c233da36-0": {
+          "type": "product_meta",
+          "settings": {
+            "show_vendor": true,
+            "show_sku": false,
+            "show_product_rating": false,
+            "show_taxes_included": false
+          }
+        },
+        "1633607702c233da36-1": {
+          "type": "share_buttons",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "1633607702c233da36-2": {
+          "type": "variant_selector",
+          "settings": {
+            "selector_mode": "dropdown",
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "size_chart": ""
+          }
+        },
+        "1633607702c233da36-3": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_price_in_button": false,
+            "show_payment_button": false
+          }
+        },
+        "71adb44b-c85f-4031-aaef-247a2c8b5c19": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "1633607702c233da36-0",
+        "1633607702c233da36-1",
+        "1633607702c233da36-2",
+        "1633607702c233da36-3",
+        "71adb44b-c85f-4031-aaef-247a2c8b5c19"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Latest Arrival",
+        "show_headings_on_mobile": true,
+        "product": "eloise-suede-gloves"
+      }
+    }
+  },
+  "order": [
+    "163360727094bc339a",
+    "main",
+    "1633607702c233da36"
+  ]
+}
