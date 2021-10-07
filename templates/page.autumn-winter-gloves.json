@@ -37,19 +37,6 @@
             "apply_overlay": true
           }
         },
-        "163360727094bc339a-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "leather-gloves",
-            "image_alignment": "center center",
-            "content_position": "bottomLeft",
-            "subheading": "",
-            "title": "Leather",
-            "button_text": "Collection",
-            "button_link": "",
-            "apply_overlay": true
-          }
-        },
         "331bc7ee-9d15-4541-9a2a-2d8fabcd97ad": {
           "type": "collection",
           "settings": {
@@ -58,6 +45,19 @@
             "content_position": "bottomLeft",
             "subheading": "",
             "title": "Suede",
+            "button_text": "Collection",
+            "button_link": "",
+            "apply_overlay": true
+          }
+        },
+        "163360727094bc339a-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "leather-gloves",
+            "image_alignment": "center center",
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "Leather",
             "button_text": "Collection",
             "button_link": "",
             "apply_overlay": true
@@ -80,14 +80,14 @@
       "block_order": [
         "163360727094bc339a-0",
         "163360727094bc339a-1",
-        "163360727094bc339a-2",
         "331bc7ee-9d15-4541-9a2a-2d8fabcd97ad",
+        "163360727094bc339a-2",
         "de812a69-8a59-4b44-a98a-4c9dfadfe322"
       ],
       "settings": {
         "image_size": "normal",
         "add_spacing": true,
-        "expand_collection": false,
+        "expand_collection": true,
         "stack_on_mobile": true,
         "text_color": "#ffffff",
         "button_color": "#363636"
