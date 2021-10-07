@@ -39,9 +39,15 @@ for size, we use it to display a size chart (if applicable)
 
             {%- if size_label contains downcase_option and size_chart_page != blank -%}
               <button type="button" class="ProductForm__LabelLink Link Text--subdued" data-action="open-modal" aria-controls="modal-{{ size_chart_page.handle }}">
-              {{- 'product.form.size_chart' | t -}}
-            </button>
+                {{- 'product.form.size_chart' | t -}}
+              </button>
             {%- endif -%}
+            {% if downcase_option == 'touchscreen option' %}
+              {% assign touchscreen_glove_page = pages['touchscreen-gloves'] %}
+              <button type="button" class="ProductForm__LabelLink Link Text--subdued" data-action="open-modal" aria-controls="modal-{{ touchscreen_glove_page.handle }}">
+                More information
+              </button>
+            {% endif %}
           </span>
         {%- endif -%}
 
@@ -215,9 +221,14 @@ for size, we use it to display a size chart (if applicable)
         {%- endif -%}
       </div>
     {%- endfor -%}
-
-  {% if product.tags contains '__MIE' %}
     
+  {%- comment -%}
+  --------------------------------------------------------------------------------------------------------------------
+  Logic for fit components
+  --------------------------------------------------------------------------------------------------------------------
+  {%- endcomment -%}
+  
+  {% if product.tags contains '__MIE' %}
     {%- assign index_finger_fit_page = pages['index-finger-fit'] -%}
     <div class="Collapsible Index__Container">
       <button type="button" class="Collapsible__Button" data-action="toggle-collapsible" aria-expanded="false">Index Finger Fit (optional)
@@ -237,58 +248,49 @@ for size, we use it to display a size chart (if applicable)
     </div> 
   {% endif %}
     
-  
-      
-    {%- comment -%}
-    --------------------------------------------------------------------------------------------------------------------
-    The below items are to handle upper arm and forearm fit. Built by Freddie, 13.1.21
-    --------------------------------------------------------------------------------------------------------------------
-    {%- endcomment -%}
-    {%- if product.tags contains '__upper length' -%}
-    
-      
-      <div class="armFit__container">
-        {%- assign glove_fit_page = pages['glove-fit'] -%}
-        <div class="ProductForm__Option FitSelector" style="margin-right: 12px;">
-          <span class="ProductForm__Label">Forearm Fit</span>
-          <div class="ProductForm__Option Index__Input">
-            <input class="Index__Finger" type="number" min="0" max="20" value="9" step="0.25" name="properties[Forearm Fit]" >
-            <div><strong>inches</strong></div>
-          </div>
-        </div>
-        <div class="ProductForm__Option FitSelector" >
-          <span class="ProductForm__Label">Upper Arm Fit</span>
-          <div class="ProductForm__Option Index__Input">
-            <input class="Index__Finger" type="number" min="0" max="20" value="10" step="0.25" name="properties[Upper Arm Fit]" >
-            <div><strong>inches</strong></div>
-          </div>
-        </div>
-        <div>
-          <button type="button" class="ProductForm__LabelLink Link Text--subdued" style="margin-bottom:14px;" data-action="open-modal" aria-controls="modal-{{ glove_fit_page.handle }}">&rarr; See fit guide</button>
-        </div>
-      </div>
-    {%- endif -%}
-    {%- if product.tags contains '__forearm length' -%}
+  {%- if product.tags contains '__upper length' -%}
+    <div class="armFit__container">
       {%- assign glove_fit_page = pages['glove-fit'] -%}
-      <div class="armFit__container">
-        <div class="ProductForm__Option FitSelector" style="margin-right: 12px;">
-          <span class="ProductForm__Label">Forearm Fit</span>
-          <div class="ProductForm__Option Index__Input">
-            <input class="Index__Finger" type="number" min="0" max="20" value="9" step="0.25" name="properties[Forearm Fit]" >
-            <div><strong>inches</strong></div>
-          </div>
-        </div>
-        <div>
-          <button type="button" class="ProductForm__LabelLink Link Text--subdued" style="margin-bottom:14px;" data-action="open-modal" aria-controls="modal-{{ glove_fit_page.handle }}">&rarr; See fit guide</button>
+      <div class="ProductForm__Option FitSelector" style="margin-right: 12px;">
+        <span class="ProductForm__Label">Forearm Fit</span>
+        <div class="ProductForm__Option Index__Input">
+          <input required class="Index__Finger" type="number" min="0" max="20" value="9" step="0.25" name="properties[Forearm Fit]" >
+          <div><strong>inches</strong></div>
         </div>
       </div>
-    {%- endif -%}
+      <div class="ProductForm__Option FitSelector" >
+        <span class="ProductForm__Label">Upper Arm Fit</span>
+        <div class="ProductForm__Option Index__Input">
+          <input required class="Index__Finger" type="number" min="4" max="20" value="10" step="0.25" name="properties[Upper Arm Fit]" >
+          <div><strong>inches</strong></div>
+        </div>
+      </div>
+      <div>
+        <button type="button" class="ProductForm__LabelLink Link Text--subdued" style="margin-bottom:14px;" data-action="open-modal" aria-controls="modal-{{ glove_fit_page.handle }}">&rarr; See fit guide</button>
+      </div>
+    </div>
+  {%- endif -%}
+  {%- if product.tags contains '__forearm length' -%}
+    {%- assign glove_fit_page = pages['glove-fit'] -%}
+    <div class="armFit__container">
+      <div class="ProductForm__Option FitSelector" style="margin-right: 12px;">
+        <span class="ProductForm__Label">Forearm Fit</span>
+        <div class="ProductForm__Option Index__Input">
+          <input required class="Index__Finger" type="number" min="4" max="20" value="9" step="0.25" name="properties[Forearm Fit]" >
+          <div><strong>inches</strong></div>
+        </div>
+      </div>
+      <div>
+        <button type="button" class="ProductForm__LabelLink Link Text--subdued" style="margin-bottom:14px;" data-action="open-modal" aria-controls="modal-{{ glove_fit_page.handle }}">&rarr; See fit guide</button>
+      </div>
+    </div>
+  {%- endif -%}
         
-      {%- comment -%}
-      --------------------------------------------------------------------------------------------------------------------
-      End of forearm and upper arm fit inputs
-      --------------------------------------------------------------------------------------------------------------------
-      {%- endcomment -%}
+  {%- comment -%}
+  --------------------------------------------------------------------------------------------------------------------
+  End of forearm and upper arm fit inputs
+  --------------------------------------------------------------------------------------------------------------------
+  {%- endcomment -%}
 
 
 
@@ -337,6 +339,14 @@ for size, we use it to display a size chart (if applicable)
       <div class="Modal__Content Rte">
         <div class="Container Container--extraNarrow">
           {{- index_finger_fit_page.content -}}
+        </div>
+      </div>
+      <button class="Modal__Close RoundButton RoundButton--large" data-animate-bottom data-action="close-modal">{% render 'icon' with 'close' %}</button>
+    </div>
+    <div id="modal-{{ touchscreen_glove_page.handle }}" class="Modal Modal--dark Modal--fullScreen Modal--pageContent" aria-hidden="true" role="dialog" data-scrollable>
+      <div class="Modal__Content Rte">
+        <div class="Container Container--extraNarrow">
+          {{- touchscreen_glove_page.content -}}
         </div>
       </div>
       <button class="Modal__Close RoundButton RoundButton--large" data-animate-bottom data-action="close-modal">{% render 'icon' with 'close' %}</button>
