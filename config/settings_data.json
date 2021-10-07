@@ -77,13 +77,14 @@
             "type": "mega_menu",
             "settings": {
               "navigation_mega_menu": "Shop | Everyday",
-              "push_1_image": "shopify:\/\/shop_images\/Thumnail_680x_10cc6755-eaaf-452d-9cdc-2e364951560b.png",
-              "push_1_heading": "The Glovemaker's Art",
-              "push_1_subheading": "How our gloves are made",
+              "push_1_image": "shopify:\/\/shop_images\/Thumnail_680x_1_copy.png",
+              "push_1_heading": "The Glovemaker's",
+              "push_1_subheading": "Art",
               "push_1_url": "shopify:\/\/blogs\/journal\/the-glovemakers-art",
-              "push_2_heading": "Example heading",
-              "push_2_subheading": "Example sub-heading",
-              "push_2_url": ""
+              "push_2_image": "shopify:\/\/shop_images\/Cornelia_James_0252.jpg",
+              "push_2_heading": "Our",
+              "push_2_subheading": "story",
+              "push_2_url": "shopify:\/\/blogs\/information\/story"
             }
           },
           "3fc53942-d535-48e8-89a2-004d366f4882": {
