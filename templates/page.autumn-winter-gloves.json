@@ -62,13 +62,27 @@
             "button_link": "",
             "apply_overlay": true
           }
+        },
+        "de812a69-8a59-4b44-a98a-4c9dfadfe322": {
+          "type": "collection",
+          "settings": {
+            "collection": "sueded-cotton-gloves",
+            "image_alignment": "center center",
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "Sueded Cotton",
+            "button_text": "Collection",
+            "button_link": "",
+            "apply_overlay": true
+          }
         }
       },
       "block_order": [
         "163360727094bc339a-0",
         "163360727094bc339a-1",
         "163360727094bc339a-2",
-        "331bc7ee-9d15-4541-9a2a-2d8fabcd97ad"
+        "331bc7ee-9d15-4541-9a2a-2d8fabcd97ad",
+        "de812a69-8a59-4b44-a98a-4c9dfadfe322"
       ],
       "settings": {
         "image_size": "normal",
