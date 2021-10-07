@@ -92,10 +92,58 @@
         "show_large": false,
         "no_styling": false
       }
+    },
+    "1633607702c233da36": {
+      "type": "featured-product",
+      "blocks": {
+        "1633607702c233da36-0": {
+          "type": "product_meta",
+          "settings": {
+            "show_vendor": true,
+            "show_sku": false,
+            "show_product_rating": false,
+            "show_taxes_included": false
+          }
+        },
+        "1633607702c233da36-1": {
+          "type": "share_buttons",
+          "settings": {
+          }
+        },
+        "1633607702c233da36-2": {
+          "type": "variant_selector",
+          "settings": {
+            "selector_mode": "dropdown",
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "size_chart": ""
+          }
+        },
+        "1633607702c233da36-3": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_price_in_button": false,
+            "show_payment_button": true
+          }
+        }
+      },
+      "block_order": [
+        "1633607702c233da36-0",
+        "1633607702c233da36-1",
+        "1633607702c233da36-2",
+        "1633607702c233da36-3"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Latest Arrival",
+        "show_headings_on_mobile": true,
+        "product": "agnes-suede-glove"
+      }
     }
   },
   "order": [
     "163360727094bc339a",
-    "main"
+    "main",
+    "1633607702c233da36"
   ]
 }
