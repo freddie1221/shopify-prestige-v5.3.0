@@ -16,7 +16,7 @@
       "type": "main-page",
       "settings": {
         "show_header": false,
-        "show_large": false,
+        "show_large": true,
         "no_styling": false
       }
     }
