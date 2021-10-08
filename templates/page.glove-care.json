@@ -1,5 +1,19 @@
 {
   "sections": {
+    "1633676698ce01ac1e": {
+      "type": "image-with-text-overlay",
+      "settings": {
+        "section_size": "large",
+        "extra_padding": "0",
+        "image": "shopify:\/\/shop_images\/cornelia-james-imogen-gloves.jpg",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -10,6 +24,7 @@
     }
   },
   "order": [
+    "1633676698ce01ac1e",
     "main"
   ]
 }
