@@ -1,5 +1,36 @@
 {
   "sections": {
+    "16336755365de3d4b8": {
+      "type": "slideshow",
+      "blocks": {
+        "16336755365de3d4b8-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cornelia-james-imogen-gloves.jpg",
+            "apply_overlay": true,
+            "content_position": "bottomLeft",
+            "subheading": "",
+            "title": "",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "16336755365de3d4b8-0"
+      ],
+      "settings": {
+        "show_fullscreen": true,
+        "show_arrow": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -10,6 +41,7 @@
     }
   },
   "order": [
+    "16336755365de3d4b8",
     "main"
   ]
 }
