@@ -1,0 +1,45 @@
+{% layout none %}
+<!doctype html>
+<html lang="{{ shop.locale }}">
+<head>
+  <meta charset="utf-8">
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {%- endif -%}
+  <title>Redirecting...</title>
+  {% comment %}
+    {{ content_for_header }}
+  {% endcomment %}
+  
+  {% assign growthhero_secret = shop.metafields['growthhero'].secret %}
+  {% assign growthhero_panel_href = "https://app.growthhero.io/#/c/cornelia-james-ltd/registration" %}
+
+  {% if customer.id %}
+    {% assign growthhero_digest = customer.id | hmac_sha256: growthhero_secret %}
+    {% assign growthhero_panel_href = "https://app.growthhero.io/#/c/cornelia-james-ltd/customer-login/" 
+      | append: customer.id 
+      | append: '-' 
+      | append: growthhero_digest 
+    %}
+  {% endif %}
+
+  <script type="text/javascript">  
+    (function() {
+      var location = '{{growthhero_panel_href}}';
+      function getCookie(a){var b=document.cookie.match("(^|[^;]+)\\s*".concat(a,"\\s*=\\s*([^;]+)"));return b?b.pop():null}
+      var postPurchaseModal = getCookie('_growthhero_post_purchase_modal');
+      if (postPurchaseModal) {
+        if (location.includes('?')) {
+          location = location + '&post_purchase_modal=true';
+        } else {
+          location = location + '?post_purchase_modal=true';
+        }
+      }
+      window.location = location;
+    })()
+  </script>
+</head>
+<body>
+  {{content_for_layout}}
+</body>
+</html>
