@@ -12,11 +12,11 @@
   {% endcomment %}
   
   {% assign growthhero_secret = shop.metafields['growthhero'].secret %}
-  {% assign growthhero_panel_href = "https://app.growthhero.io/#/c/cornelia-james-ltd/registration" %}
+  {% assign growthhero_panel_href = "https://app.growthhero.io/#/c/cornelia-james/registration" %}
 
   {% if customer.id %}
     {% assign growthhero_digest = customer.id | hmac_sha256: growthhero_secret %}
-    {% assign growthhero_panel_href = "https://app.growthhero.io/#/c/cornelia-james-ltd/customer-login/" 
+    {% assign growthhero_panel_href = "https://app.growthhero.io/#/c/cornelia-james/customer-login/" 
       | append: customer.id 
       | append: '-' 
       | append: growthhero_digest 
