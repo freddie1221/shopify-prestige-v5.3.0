@@ -1,0 +1,30 @@
+<div id="_gh_partner_config" style="display: none;">
+  {{ page.content }}
+</div>
+
+<div id="_gh_partner_page" style="display: none;">
+</div>
+
+<script>
+  (function() {
+    var partnerPageSettings = {"body":"\n      \u003cp style=\"text-align: center;\"\u003e\u003cspan style=\"font-size: 32px;\"\u003e__partner_name__\u003c/span\u003e\u003c/p\u003e\n      \u003cp style=\"text-align: center;\"\u003e\u003cspan style=\"font-size: 16px;\"\u003eStore Partner\u003c/span\u003e\u003c/p\u003e\n      \u003cp style=\"text-align: center;\"\u003e\u0026nbsp;\u003c/p\u003e\n      \u003cp style=\"text-align: center;\"\u003e\u003cspan style=\"font-size: 16px;\"\u003e\u003cimg src=\"/__partner_picture__.png\" alt=\"\" width=\"400\" /\u003e\u003c/span\u003e\u003c/p\u003e\n      \u003cp style=\"text-align: center;\"\u003e\u0026nbsp;\u003c/p\u003e\n      \u003cp style=\"text-align: center; margin-left: auto; margin-right: auto; width: 500px;\"\u003e\u003cspan style=\"font-size: 16px;\"\u003e__partner_bio__\u003c/span\u003e\u003c/p\u003e\n      \u003cp style=\"text-align: center;\"\u003e\u0026nbsp;\u003c/p\u003e\n      \u003cp style=\"text-align: center;\"\u003e\u003cspan style=\"font-size: 16px;\"\u003e\u003ca href=\"__partner_referral_link__\"\u003e\u003cbutton\u003eGET STARTED\u003c/button\u003e\u003c/a\u003e\u003c/span\u003e\u003c/p\u003e\n      \u003cp style=\"text-align: center;\"\u003e\u0026nbsp;\u003c/p\u003e\n    "};
+    var pageBody = partnerPageSettings.body;
+
+    var partnerIdVariable = document.getElementById("#_gh_variable_partner_id").textContent;
+    var partnerTitleVariable = document.getElementById("#_gh_variable_partner_title").textContent;
+    var partnerNameVariable = document.getElementById("#_gh_variable_partner_name").textContent;
+    var partnerBioVariable = document.getElementById("#_gh_variable_partner_bio").textContent;
+    var partnerPictureVariable = document.getElementById("#_gh_variable_partner_picture").textContent;
+    var partnerReferralLink = document.getElementById("#_gh_variable_partner_referral_link").textContent;
+
+    pageBody = pageBody.replace(new RegExp('__partner_id__', 'g'), partnerIdVariable);
+    pageBody = pageBody.replace(new RegExp('__partner_title__', 'g'), partnerTitleVariable);
+    pageBody = pageBody.replace(new RegExp('__partner_name__', 'g'), partnerNameVariable);
+    pageBody = pageBody.replace(new RegExp('__partner_bio__', 'g'), partnerBioVariable);
+    pageBody = pageBody.replace(new RegExp('/__partner_picture__.png', 'g'), partnerPictureVariable);
+    pageBody = pageBody.replace(new RegExp('__partner_referral_link__', 'g'), partnerReferralLink);
+
+    document.getElementById("_gh_partner_page").innerHTML = pageBody;
+    document.getElementById("_gh_partner_page").style.display = 'block';
+  })();
+</script>

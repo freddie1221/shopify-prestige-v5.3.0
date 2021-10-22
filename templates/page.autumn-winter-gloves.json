@@ -7,6 +7,7 @@
           "type": "collection",
           "settings": {
             "collection": "merino-wool-gloves",
+            "image": "shopify:\/\/shop_images\/JH-1759.jpg",
             "image_alignment": "center center",
             "content_position": "bottomLeft",
             "subheading": "",
