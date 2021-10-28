@@ -11,7 +11,7 @@
             "image_alignment": "center center",
             "content_position": "bottomLeft",
             "subheading": "",
-            "title": "Merino Wool",
+            "title": "Merino Wool Gloves",
             "button_text": "Collection",
             "button_link": "",
             "apply_overlay": true
@@ -24,7 +24,7 @@
             "image_alignment": "center center",
             "content_position": "bottomLeft",
             "subheading": "",
-            "title": "Cashmere",
+            "title": "Cashmere Gloves",
             "button_text": "Collection",
             "button_link": "",
             "apply_overlay": true
@@ -37,7 +37,7 @@
             "image_alignment": "center center",
             "content_position": "bottomLeft",
             "subheading": "",
-            "title": "Suede",
+            "title": "Suede Gloves",
             "button_text": "Collection",
             "button_link": "",
             "apply_overlay": true
@@ -50,7 +50,7 @@
             "image_alignment": "center center",
             "content_position": "bottomLeft",
             "subheading": "",
-            "title": "Leather",
+            "title": "Leather Gloves",
             "button_text": "Collection",
             "button_link": "",
             "apply_overlay": true
@@ -59,11 +59,11 @@
         "de812a69-8a59-4b44-a98a-4c9dfadfe322": {
           "type": "collection",
           "settings": {
-            "collection": "sueded-cotton-gloves",
+            "collection": "cashmere-pashminas",
             "image_alignment": "center center",
             "content_position": "bottomLeft",
             "subheading": "",
-            "title": "Sueded Cotton",
+            "title": "Pashminas",
             "button_text": "Collection",
             "button_link": "",
             "apply_overlay": true
