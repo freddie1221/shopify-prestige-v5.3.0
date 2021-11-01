@@ -30,6 +30,7 @@
     },
     "1635779368b46e31d4": {
       "type": "custom-html",
+      "disabled": true,
       "settings": {
         "subheading": "Pinterest",
         "title": "Inspiration",
