@@ -28,6 +28,14 @@
       "settings": {
       }
     },
+    "1635779368b46e31d4": {
+      "type": "custom-html",
+      "settings": {
+        "subheading": "Pinterest",
+        "title": "Inspiration",
+        "html": "<a data-pin-do=\"embedBoard\" data-pin-board-width=\"600\" data-pin-scale-height=\"400\" data-pin-scale-width=\"100\" href=\"https:\/\/www.pinterest.co.uk\/corneliajames\/wedding-inspiration\/\"><\/a>\n\n<script async=\"\" defer src=\"\/\/assets.pinterest.com\/js\/pinit.js\"><\/script>"
+      }
+    },
     "recently-viewed-products": {
       "type": "recently-viewed-products",
       "settings": {
@@ -41,6 +49,7 @@
   "order": [
     "main",
     "1631213807fc03a4fc",
+    "1635779368b46e31d4",
     "recently-viewed-products"
   ]
 }
