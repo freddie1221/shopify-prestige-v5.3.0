@@ -1,0 +1,43 @@
+
+<section class="Section">
+  <div class="Container">
+    
+      <header class="PageHeader">
+        <div class="SectionHeader SectionHeader--center">
+          <h1 class="SectionHeader__Heading Heading u-h1">{{ section.settings.header }}</h1>
+        </div>
+      </header>
+    
+    
+    <div class="PageContent {% unless section.settings.show_large %}PageContent--narrow{% endunless %} Rte">
+      {{ section.settings.content }}
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Text block",
+  "settings": [
+    {
+      "type": "text",
+      "id": "header",
+      "label": "Header"
+      "default": "Header"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body"
+      "default": "Some content"
+    } 
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "text-block"
+    }
+  ]
+}
+{% endschema %}

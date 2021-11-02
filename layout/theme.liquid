@@ -3,7 +3,7 @@
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
 
-      <!-- Global site tag (gtag.js) - Google Ads: 975218407 -->
+    <!-- Global site tag (gtag.js) - Google Ads: 975218407 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-975218407"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -12,20 +12,12 @@
       gtag('config', 'AW-975218407');
       gtag('config', 'G-EFQ4T3KE4M');
     </script>
-
+      
+    <!-- Bing ads UET -->
     <script>
       (function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"56075812"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");
     </script>
     
-    {%- comment -%}
-    gtag('config', 'UA-679351-1');
-    {%- endcomment -%}
-
-      <!-- Google Ads Dynamic Remarketing -->
-    {%- comment -%}
-      {% render "google-ads-dynamic-remarketing" %}
-      {%- endcomment -%}
-      
     <!-- Facebook domain verification -->
     <meta name="facebook-domain-verification" content="wz3a12gftz6le4mjk19u1aapko4t8f" />
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -33,28 +25,27 @@
       $m = $.noConflict();
     </script>
 
-                
-  {% render 'orbislabs_sitemap_noindex' %}
-
+    
     <meta charset="utf-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="theme-color" content="{{ settings.accent_color }}">
-
+    
     <title>
       {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
     </title>
-
+    
     {%- if page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
     {%- endif -%}
-
+    
     <link rel="canonical" href="{{ canonical_url }}">
-
+    
     {%- if settings.favicon -%}
       <link rel="shortcut icon" href="{{ settings.favicon | img_url: '96x' }}" type="image/png">
     {%- endif -%}
-
+    
+    {% render 'orbislabs_sitemap_noindex' %}
     {% render 'social-meta-tags' %}
     {% render 'css-variables' %}
 
