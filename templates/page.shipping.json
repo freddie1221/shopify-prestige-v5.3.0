@@ -1,5 +1,19 @@
 {
   "sections": {
+    "1635864664d76271a9": {
+      "type": "image-with-text-block",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/2018_08_CorneliaJames-14.jpg",
+        "background": "#ffffff",
+        "text_color": "#1c1b1b",
+        "block_size": "normal",
+        "title": "Our glovemaking",
+        "content": "<p>Most of our gloves are made to order and we do our best to make them within two working days of receiving the order and then having them on their way to you. If there are likely to be any significant delays we will be sure to be in touch<\/p><p><\/p><p>See below for shipping times<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "show_parallax": false
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -10,6 +24,7 @@
     }
   },
   "order": [
+    "1635864664d76271a9",
     "main"
   ]
 }
