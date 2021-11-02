@@ -12,7 +12,7 @@
   <meta property="og:url" content="{{ shop.url }}">
   <meta property="og:title" content="{{ shop.name }}">
   <meta property="og:type" content="website">
-  <meta property="og:description" content="{{shop.description | default: shop.name}}">
+  <meta property="og:description" content="{{ shop.description | default: shop.name }}">
   {% if settings.share_image %}
   	{%- capture og_image_tags -%}<meta property="og:image" content="http:{{ settings.share_image | img_url: '1200x1200' }}">{%- endcapture -%}
   	{%- capture og_image_secure_url_tags -%}<meta property="og:image:secure_url" content="https:{{ settings.share_image | img_url: '1200x1200' }}">{%- endcapture -%}
@@ -63,6 +63,6 @@
   </script>
 </head>
 <body>
-  {{content_for_layout}}
+  {{ content_for_layout }}
 </body>
 </html>

@@ -25,7 +25,7 @@
 
   <script type="text/javascript">  
     (function() {
-      var location = '{{growthhero_panel_href}}';
+      var location = '{{ growthhero_panel_href }}';
       function getCookie(a){var b=document.cookie.match("(^|[^;]+)\\s*".concat(a,"\\s*=\\s*([^;]+)"));return b?b.pop():null}
       var postPurchaseModal = getCookie('_growthhero_post_purchase_modal');
       if (postPurchaseModal) {
@@ -40,6 +40,6 @@
   </script>
 </head>
 <body>
-  {{content_for_layout}}
+  {{ content_for_layout }}
 </body>
 </html>

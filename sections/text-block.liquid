@@ -4,13 +4,11 @@
     
       <header class="PageHeader">
         <div class="SectionHeader SectionHeader--center">
-          <h1 class="SectionHeader__Heading Heading u-h1">{{ section.settings.header }}</h1>
+          <h1 class="SectionHeader__Heading Heading u-h1">hello</h1>
         </div>
       </header>
-    
-    
     <div class="PageContent {% unless section.settings.show_large %}PageContent--narrow{% endunless %} Rte">
-      {{ section.settings.content }}
+      hello
     </div>
   </div> 
 
@@ -39,6 +37,7 @@
       "name": "text-block",
       "settings": {}
     }
-  ]
+  ],
+  "templates": ["product", "collection", "page"]
 }
 {% endschema %}

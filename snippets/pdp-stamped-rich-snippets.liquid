@@ -3,7 +3,7 @@
 {
        "@context": "http://schema.org/",
        "@type": "Product",
-       "url": "{{shop.secure_url | escape}}{{ product.url | escape }}",
+       "url": "{{ shop.secure_url | escape }}{{ product.url | escape }}",
        "name": "{{ product.title | escape }}",
        "image": "https:{{ product.featured_image.src | img_url: 'master' }}",
        "description": "{{ product.description | escape }}",
@@ -24,7 +24,7 @@
                "@type": "Organization",
                 "name": "{{ shop.name }}"
            },
-           "url": "{{shop.secure_url | escape}}{{ product.url | escape }}"}
+           "url": "{{ shop.secure_url | escape }}{{ product.url | escape }}"}
        {%- if forloop.index < product.variants.size -%},{%- endif -%}
       {%- endfor -%}
       ]
