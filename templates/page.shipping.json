@@ -7,8 +7,8 @@
         "background": "#ffffff",
         "text_color": "#1c1b1b",
         "block_size": "normal",
-        "title": "Our glovemaking",
-        "content": "<p>Most of our gloves are made to order and we do our best to make them within two working days of receiving the order and then having them on their way to you. If there are likely to be any significant delays we will be sure to be in touch<\/p><p><\/p><p>See below for shipping times<\/p>",
+        "title": "",
+        "content": "",
         "button_label": "",
         "button_link": "",
         "show_parallax": false
@@ -24,6 +24,7 @@
     },
     "163586550734b0d54e": {
       "type": "text-with-image",
+      "disabled": true,
       "settings": {
         "subheading": "How will my gloves arrive?",
         "title": "Our presentation box",
