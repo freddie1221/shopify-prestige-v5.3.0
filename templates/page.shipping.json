@@ -34,11 +34,19 @@
         "link_text": "",
         "link_url": ""
       }
+    },
+    "1635872891967ed591": {
+      "type": "text-block",
+      "settings": {
+        "header": "How long does it take to make gloves?",
+        "content": "<p>Most of our gloves are made to order and we do our best to make them within two working days of receiving the order and then having them on their way to you. If there are likely to be any delays we will be sure to be in touch.<\/p>"
+      }
     }
   },
   "order": [
     "1635864664d76271a9",
     "main",
-    "163586550734b0d54e"
+    "163586550734b0d54e",
+    "1635872891967ed591"
   ]
 }
