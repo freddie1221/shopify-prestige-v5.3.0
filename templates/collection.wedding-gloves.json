@@ -27,20 +27,10 @@
       "type": "article-features-restricted",
       "settings": {
       }
-    },
-    "recently-viewed-products": {
-      "type": "recently-viewed-products",
-      "settings": {
-        "title": "Recently viewed",
-        "show_product_info": true,
-        "show_vendor": false,
-        "show_color_swatch": false
-      }
     }
   },
   "order": [
     "main",
-    "16359586820740f94c",
-    "recently-viewed-products"
+    "16359586820740f94c"
   ]
 }
