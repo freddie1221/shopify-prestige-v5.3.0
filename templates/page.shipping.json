@@ -48,6 +48,11 @@
         "header": "How will my gloves by presented?",
         "content": "<p>All our gloves come with a storage bag for safe keeping. All orders are delivered in our presentation box (pictured above) which is, like our gloves, built to last. For us, it's about the product, not the packaging, but when we designed our box we made sure it was beautiful and we chose the colour, '<a href=\"https:\/\/www.corneliajames.com\/blogs\/information\/our-promise\">light cockpit green<\/a>' to symbolise a style that endures. If the gloves are a gift for somebody special, we'll be happy to include a handwritten note - just let us know in the order notes section during checkout.<\/p>"
       }
+    },
+    "16359381837b7f509f": {
+      "type": "contact",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -55,6 +60,7 @@
     "main",
     "163586550734b0d54e",
     "1635872891967ed591",
-    "16358734252411a1f2"
+    "16358734252411a1f2",
+    "16359381837b7f509f"
   ]
 }
