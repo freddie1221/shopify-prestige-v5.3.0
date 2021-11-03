@@ -3,6 +3,7 @@
   
   {% assign object_tags = collection.all_tags %}
   {% assign features_subheader = collection.title %}
+  {%- capture collection_tag -%}__{{collection.handle}}{%- endcapture -%}
 
 
   {% assign delimiter = ',' %}
@@ -14,7 +15,7 @@
       {% assign size = tag.size %}
       {% assign article_handle = tag | slice: 2, size %}
       {% assign feature = articles[article_handle] | sort %}
-      {% if feature[0].tags contains collection.handle %}
+      {% if feature[0].tags contains collection_tag %} 
         {% assign article_array = article_array | concat: feature %}
         {% assign show_features = true %}
         {% assign list_length = list_length | plus: 1 %}
