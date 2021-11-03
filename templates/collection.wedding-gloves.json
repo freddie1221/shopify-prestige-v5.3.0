@@ -44,24 +44,10 @@
             "button_2_text": "",
             "button_2_link": ""
           }
-        },
-        "1635959172d15aa9b3-1": {
-          "type": "image",
-          "settings": {
-            "apply_overlay": true,
-            "content_position": "bottomLeft",
-            "subheading": "Slide title",
-            "title": "Tell your story",
-            "button_1_text": "",
-            "button_1_link": "",
-            "button_2_text": "",
-            "button_2_link": ""
-          }
         }
       },
       "block_order": [
-        "1635959172d15aa9b3-0",
-        "1635959172d15aa9b3-1"
+        "1635959172d15aa9b3-0"
       ],
       "settings": {
         "show_fullscreen": true,
@@ -72,11 +58,47 @@
         "button_color": "#363636",
         "button_background": "#ffffff"
       }
+    },
+    "1635962486f6b1c870": {
+      "type": "testimonials",
+      "blocks": {
+        "1635962486f6b1c870-0": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "<p>The best accessory I ever bought for my wedding! It kept me warm and the same time I was fabulous, glamorous and sophisticated. Size fitted perfectly, the quality of the fabric was just exceptional, the cut and the seams were perfect, the box was practical and light, the delivery was prompt and overall was worth it!I am always sceptical to buy online, and I was very happy that I was able to obtain a sample with the colours by post, all free of charge. That made me decide what I truly need! Thank you Cornelia James and team<\/p><p>~ Maria L<\/p>"
+          }
+        },
+        "1635962486f6b1c870-1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "<p>Share what your customers are saying about your products, your company...Share what your customers are saying about your products, your company...Share what your customers are saying about your products, your company...Share what your customers are saying about your products, your company...<\/p>"
+          }
+        },
+        "1635962486f6b1c870-2": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "quote": "<p>Share what your customers are saying about your products, your company...<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1635962486f6b1c870-0",
+        "1635962486f6b1c870-1",
+        "1635962486f6b1c870-2"
+      ],
+      "settings": {
+        "autoplay": true,
+        "cycle_speed": 5,
+        "background": "#eaeaea",
+        "text_color": "#1c1b1b"
+      }
     }
   },
   "order": [
     "main",
     "16359586820740f94c",
-    "1635959172d15aa9b3"
+    "1635959172d15aa9b3",
+    "1635962486f6b1c870"
   ]
 }
