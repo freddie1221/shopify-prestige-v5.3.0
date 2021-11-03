@@ -1,13 +1,9 @@
 {% assign list_length = 0 %}
 
-  {% if template.name == 'product' %}
-    {% assign object_tags = product.tags %}
-    {% assign product_sliced = product.title | split: " "  %}
-    {% assign features_subheader = product_sliced[0] %}
-  {% elsif template.name == 'collection' %}
-    {% assign object_tags = collection.all_tags %}
-    {% assign features_subheader = collection.title %}
-  {% endif %}
+  
+  {% assign object_tags = collection.all_tags %}
+  {% assign features_subheader = collection.title %}
+
 
   {% assign delimiter = ',' %}
   {% assign handles = '' %}
@@ -18,7 +14,7 @@
       {% assign size = tag.size %}
       {% assign article_handle = tag | slice: 2, size %}
       {% assign feature = articles[article_handle] | sort %}
-      {% if feature[0].tags contains '__wedding-gloves' %}
+      {% if feature[0].tags contains collection.handle %}
         {% assign article_array = article_array | concat: feature %}
         {% assign show_features = true %}
         {% assign list_length = list_length | plus: 1 %}
@@ -90,14 +86,15 @@
 
 {% schema %}
 {
-  "name": "Article features restricted",
+  "name": "Features restricted",
   "settings": [],
   "presets": [
     {
       "category": "Advanced",
-      "name": "Article features restricted",
+      "name": "Features restricted",
       "settings": {}
     }
-  ]
+  ],
+  "templates": ["collection"]
 }
 {% endschema %}
