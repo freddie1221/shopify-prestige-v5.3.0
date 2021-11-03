@@ -1,7 +1,24 @@
 
 <section class="Section">
   <div class="Container">
-    <div class="PageContent {% unless section.settings.show_large %}PageContent--narrow{% endunless %} Rte">
+    <header class="PageHeader">
+      <div class="SectionHeader SectionHeader--center">
+        <h1 class="SectionHeader__Heading Heading u-h1">
+        Contact us
+        </h1>
+      </div>
+    </header>
+    <div class="PageContent PageContent--narrow Rte">
+      <p>
+        Please contact us through any of the below channels. Our office hours are usually 9am-6pm GMT
+      </p>
+      <p>
+        Phone: +44 (0) 1273 977103
+        Email: hello@corneliajames.com
+      </p>
+      <p>
+        Or simply use the contact form below
+      </p>
 
       {%- form 'contact', class: 'Form Form--spacingTight' -%}
         {%- if form.posted_successfully? -%}
