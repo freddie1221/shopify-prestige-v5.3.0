@@ -27,10 +27,56 @@
       "type": "article-features-restricted",
       "settings": {
       }
+    },
+    "1635959172d15aa9b3": {
+      "type": "slideshow",
+      "blocks": {
+        "1635959172d15aa9b3-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/119710015_1422073954850182_1300866643795381387_n.jpg",
+            "apply_overlay": true,
+            "content_position": "bottomLeft",
+            "subheading": "How to choose your",
+            "title": "Wedding gloves",
+            "button_1_text": "Read",
+            "button_1_link": "shopify:\/\/blogs\/journal\/how-to-choose-your-wedding-gloves",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        },
+        "1635959172d15aa9b3-1": {
+          "type": "image",
+          "settings": {
+            "apply_overlay": true,
+            "content_position": "bottomLeft",
+            "subheading": "Slide title",
+            "title": "Tell your story",
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1635959172d15aa9b3-0",
+        "1635959172d15aa9b3-1"
+      ],
+      "settings": {
+        "show_fullscreen": true,
+        "show_arrow": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
+      }
     }
   },
   "order": [
     "main",
-    "16359586820740f94c"
+    "16359586820740f94c",
+    "1635959172d15aa9b3"
   ]
 }
