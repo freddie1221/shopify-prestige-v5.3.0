@@ -23,6 +23,40 @@
         "grid_desktop_items_per_row": 4
       }
     },
+    "1635962486f6b1c870": {
+      "type": "testimonials",
+      "blocks": {
+        "1635962486f6b1c870-0": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "<p>The best accessory I ever bought for my wedding! It kept me warm and the same time I was fabulous, glamorous and sophisticated. Size fitted perfectly, the quality of the fabric was just exceptional, the cut and the seams were perfect, the box was practical and light, the delivery was prompt and overall was worth it!I am always sceptical to buy online, and I was very happy that I was able to obtain a sample with the colours by post, all free of charge. That made me decide what I truly need! Thank you Cornelia James and team<\/p><p>~ Maria L<\/p>"
+          }
+        },
+        "1635962486f6b1c870-1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "<p>The best accessory I ever bought for my wedding! It kept me warm and the same time I was fabulous, glamorous and sophisticated. Size fitted perfectly, the quality of the fabric was just exceptional, the cut and the seams were perfect, the box was practical and light, the delivery was prompt and overall was worth it!I am always sceptical to buy online, and I was very happy that I was able to obtain a sample with the colours by post, all free of charge. That made me decide what I truly need! Thank you Cornelia James and team<\/p><p>~ Rhiannon K<\/p>"
+          }
+        },
+        "1635962486f6b1c870-2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "<p>I loved every elegant, beautiful pair of gloves on the website and promised myself Elena in ivory for my wedding.<\/p><p>They arrived this week ; exquisite is the only word I can use, so fine and charming yet adding that little nod of character ! Perfectly presented, such a feeling of luxury . I think you can gather I’m delighted ?<\/p><p>~ Anne M<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1635962486f6b1c870-0",
+        "1635962486f6b1c870-1",
+        "1635962486f6b1c870-2"
+      ],
+      "settings": {
+        "autoplay": true,
+        "cycle_speed": 5,
+        "background": "#eaeaea",
+        "text_color": "#1c1b1b"
+      }
+    },
     "16359586820740f94c": {
       "type": "article-features-restricted",
       "settings": {
@@ -58,46 +92,12 @@
         "button_color": "#363636",
         "button_background": "#ffffff"
       }
-    },
-    "1635962486f6b1c870": {
-      "type": "testimonials",
-      "blocks": {
-        "1635962486f6b1c870-0": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "<p>The best accessory I ever bought for my wedding! It kept me warm and the same time I was fabulous, glamorous and sophisticated. Size fitted perfectly, the quality of the fabric was just exceptional, the cut and the seams were perfect, the box was practical and light, the delivery was prompt and overall was worth it!I am always sceptical to buy online, and I was very happy that I was able to obtain a sample with the colours by post, all free of charge. That made me decide what I truly need! Thank you Cornelia James and team<\/p><p>~ Maria L<\/p>"
-          }
-        },
-        "1635962486f6b1c870-1": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "<p>The best accessory I ever bought for my wedding! It kept me warm and the same time I was fabulous, glamorous and sophisticated. Size fitted perfectly, the quality of the fabric was just exceptional, the cut and the seams were perfect, the box was practical and light, the delivery was prompt and overall was worth it!I am always sceptical to buy online, and I was very happy that I was able to obtain a sample with the colours by post, all free of charge. That made me decide what I truly need! Thank you Cornelia James and team<\/p><p>~ Rhiannon K<\/p>"
-          }
-        },
-        "1635962486f6b1c870-2": {
-          "type": "testimonial",
-          "settings": {
-            "quote": "<p>I loved every elegant, beautiful pair of gloves on the website and promised myself Elena in ivory for my wedding.<\/p><p>They arrived this week ; exquisite is the only word I can use, so fine and charming yet adding that little nod of character ! Perfectly presented, such a feeling of luxury . I think you can gather I’m delighted ?<\/p><p>~ Anne M<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "1635962486f6b1c870-0",
-        "1635962486f6b1c870-1",
-        "1635962486f6b1c870-2"
-      ],
-      "settings": {
-        "autoplay": true,
-        "cycle_speed": 5,
-        "background": "#eaeaea",
-        "text_color": "#1c1b1b"
-      }
     }
   },
   "order": [
     "main",
+    "1635962486f6b1c870",
     "16359586820740f94c",
-    "1635959172d15aa9b3",
-    "1635962486f6b1c870"
+    "1635959172d15aa9b3"
   ]
 }
