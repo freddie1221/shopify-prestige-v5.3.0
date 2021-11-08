@@ -11348,10 +11348,11 @@ shopify-payment-terms {
   z-index: 2147483645 !important;
 }
 
-/* Bringing the Klaviyo form towards the front of the stack */
+/* Bringing the Klaviyo form towards the front of the stack 
 .klaviyo-form {
   z-index: 2147483646 !important;
 }
+*/
 
 
 /* customisations for article features */
