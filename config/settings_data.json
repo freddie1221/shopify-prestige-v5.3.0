@@ -120,7 +120,7 @@
         ],
         "settings": {
           "use_sticky_header": false,
-          "logo": "shopify:\/\/shop_images\/Montserrat.png",
+          "logo": "shopify:\/\/shop_images\/Montserrat_1.png",
           "logo_max_width": 280,
           "mobile_logo_max_width": 190,
           "show_currency_selector": true,
@@ -132,7 +132,7 @@
           "enable_transparent_header_collection": false,
           "show_transparent_header_border": true,
           "transparent_text_color": "#ffffff",
-          "transparent_logo": "shopify:\/\/shop_images\/Montserrat_inverted.png"
+          "transparent_logo": "shopify:\/\/shop_images\/Montserrat_1_3cc91ca5-7b64-48c8-94bc-b32345e35219.png"
         }
       },
       "footer": {
