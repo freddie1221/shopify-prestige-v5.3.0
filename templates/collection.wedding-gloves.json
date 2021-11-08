@@ -23,24 +23,81 @@
         "grid_desktop_items_per_row": 4
       }
     },
+    "1635962486f6b1c870": {
+      "type": "testimonials",
+      "blocks": {
+        "1635962486f6b1c870-0": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "<p>The best accessory I ever bought for my wedding! It kept me warm and the same time I was fabulous, glamorous and sophisticated. Size fitted perfectly, the quality of the fabric was just exceptional, the cut and the seams were perfect, the box was practical and light, the delivery was prompt and overall was worth it!I am always sceptical to buy online, and I was very happy that I was able to obtain a sample with the colours by post, all free of charge. That made me decide what I truly need! Thank you Cornelia James and team<\/p><p>~ Maria L<\/p>"
+          }
+        },
+        "1635962486f6b1c870-1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "<p>So happy with my gloves! I contacted Cornelia James to inquire about fabric characteristics (to see which material most complemented my wedding dress). They sent swatches which arrived quickly and helped me settle on Desdemona in Ivory. My gloves arrived quickly and were nicely wrapped (and included a sweet handwritten card). They are beautiful, fit perfectly (not too tight, but didn’t fall down either), and the material felt so luxurious! Picture attached :) I love them and felt like a queen. Customer service was a class act from start to finish. Thank you!<\/p><p>~ Rhiannon K<\/p>"
+          }
+        },
+        "1635962486f6b1c870-2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "<p>I loved every elegant, beautiful pair of gloves on the website and promised myself Elena in ivory for my wedding.<\/p><p>They arrived this week ; exquisite is the only word I can use, so fine and charming yet adding that little nod of character ! Perfectly presented, such a feeling of luxury . I think you can gather I’m delighted ?<\/p><p>~ Anne M<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1635962486f6b1c870-0",
+        "1635962486f6b1c870-1",
+        "1635962486f6b1c870-2"
+      ],
+      "settings": {
+        "autoplay": true,
+        "cycle_speed": 5,
+        "background": "#eaeaea",
+        "text_color": "#1c1b1b"
+      }
+    },
     "16359586820740f94c": {
       "type": "article-features-restricted",
       "settings": {
       }
     },
-    "recently-viewed-products": {
-      "type": "recently-viewed-products",
+    "1635959172d15aa9b3": {
+      "type": "slideshow",
+      "blocks": {
+        "1635959172d15aa9b3-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/119710015_1422073954850182_1300866643795381387_n.jpg",
+            "apply_overlay": true,
+            "content_position": "bottomLeft",
+            "subheading": "How to choose your",
+            "title": "Wedding gloves",
+            "button_1_text": "Read",
+            "button_1_link": "shopify:\/\/blogs\/journal\/how-to-choose-your-wedding-gloves",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1635959172d15aa9b3-0"
+      ],
       "settings": {
-        "title": "Recently viewed",
-        "show_product_info": true,
-        "show_vendor": false,
-        "show_color_swatch": false
+        "show_fullscreen": true,
+        "show_arrow": false,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_color": "#ffffff",
+        "button_color": "#363636",
+        "button_background": "#ffffff"
       }
     }
   },
   "order": [
     "main",
+    "1635962486f6b1c870",
     "16359586820740f94c",
-    "recently-viewed-products"
+    "1635959172d15aa9b3"
   ]
 }
