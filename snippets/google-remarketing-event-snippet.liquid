@@ -26,7 +26,7 @@
 {% endcase %}
 
 {% capture fa_product_id %}
-shopify_{{ alpha2_code }}_{{ product.id }}_{{ fa_current_variant.id }}
+{{ alpha2_code }}_{{ product.id }}
 {%- endcapture -%}
 
 
@@ -57,7 +57,7 @@ shopify_{{ alpha2_code }}_{{ product.id }}_{{ fa_current_variant.id }}
       'items': [
       {% for item in cart.items %}
         {
-        'id': 'shopify_{{ alpha2_code }}_{{ item.product_id }}_{{ item.variant_id }}',
+        'id': '{{fa_product_id}}',
         'google_business_vertical': 'retail'
         },
       {% endfor %}
