@@ -22,7 +22,7 @@
 {% assign fa_product_id_alpha2_code = 'GB' %}
 
 {% capture fa_product_id %}
-shopify_{{ fa_product_id_alpha2_code }}_{{ product.id }}_{{ fa_current_variant }}
+shopify_{{ fa_product_id_alpha2_code }}_{{ product.id }}_{{ fa_current_variant.id }}
 {%- endcapture -%}
 
 
