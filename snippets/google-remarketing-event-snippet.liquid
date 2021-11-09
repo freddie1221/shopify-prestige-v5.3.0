@@ -1,6 +1,5 @@
 
 
-
 {%- assign fa_current_variant = product.selected_or_first_available_variant -%}
 {%- if cart.currency.iso_code == 'GBP' or cart.currency.iso_code == 'USD' or cart.currency.iso_code == 'CAD' or cart.currency.iso_code == 'AUD' or cart.currency.iso_code == 'BWP' or cart.currency.iso_code == 'BND' or cart.currency.iso_code == 'DOP' or cart.currency.iso_code == 'GTQ' or cart.currency.iso_code == 'HKD' or cart.currency.iso_code == 'INR' or cart.currency.iso_code == 'ILS' or cart.currency.iso_code == 'YEN' or cart.currency.iso_code == 'KES' or cart.currency.iso_code == 'KOR' or cart.currency.iso_code == 'LBP' or cart.currency.iso_code == 'MYR' or cart.currency.iso_code == 'MXN' or cart.currency.iso_code == 'NPR' or cart.currency.iso_code == 'NZD' or cart.currency.iso_code == 'NIO' or cart.currency.iso_code == 'NGN' or cart.currency.iso_code == 'PKR' or cart.currency.iso_code == 'CNY' or cart.currency.iso_code == 'PHP' or cart.currency.iso_code == 'SGD' or cart.currency.iso_code == 'LKR' or cart.currency.iso_code == 'CHF' or cart.currency.iso_code == 'TWD' or cart.currency.iso_code == 'TSH' or cart.currency.iso_code == 'THB' or cart.currency.iso_code == 'UGX' or cart.currency.iso_code == 'KWD' -%}
   {% if template contains 'product' %}
@@ -18,11 +17,16 @@
 
 
 
-
-{% assign fa_product_id_alpha2_code = 'GB' %}
+{% assign alpha2_code = 'GB' %}
+{% case cart.currency.iso_code %}
+  {% when 'USD' %}
+    {% assign alpha2_code = 'US' %}
+  {% else %}
+  {% assign alpha2_code = 'GB' %}
+{% endcase %}
 
 {% capture fa_product_id %}
-shopify_{{ fa_product_id_alpha2_code }}_{{ product.id }}_{{ fa_current_variant.id }}
+shopify_{{ alpha2_code }}_{{ product.id }}_{{ fa_current_variant.id }}
 {%- endcapture -%}
 
 
@@ -53,7 +57,7 @@ shopify_{{ fa_product_id_alpha2_code }}_{{ product.id }}_{{ fa_current_variant.i
       'items': [
       {% for item in cart.items %}
         {
-        'id': 'shopify_{{ fa_product_id_alpha2_code }}_{{ item.product_id }}_{{ item.variant_id }}',
+        'id': 'shopify_{{ alpha2_code }}_{{ item.product_id }}_{{ item.variant_id }}',
         'google_business_vertical': 'retail'
         },
       {% endfor %}
