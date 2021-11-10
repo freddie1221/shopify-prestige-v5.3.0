@@ -1,70 +1,48 @@
 
-
-{%- assign fa_current_variant = product.selected_or_first_available_variant -%}
-{%- if cart.currency.iso_code == 'GBP' or cart.currency.iso_code == 'USD' or cart.currency.iso_code == 'CAD' or cart.currency.iso_code == 'AUD' or cart.currency.iso_code == 'BWP' or cart.currency.iso_code == 'BND' or cart.currency.iso_code == 'DOP' or cart.currency.iso_code == 'GTQ' or cart.currency.iso_code == 'HKD' or cart.currency.iso_code == 'INR' or cart.currency.iso_code == 'ILS' or cart.currency.iso_code == 'YEN' or cart.currency.iso_code == 'KES' or cart.currency.iso_code == 'KOR' or cart.currency.iso_code == 'LBP' or cart.currency.iso_code == 'MYR' or cart.currency.iso_code == 'MXN' or cart.currency.iso_code == 'NPR' or cart.currency.iso_code == 'NZD' or cart.currency.iso_code == 'NIO' or cart.currency.iso_code == 'NGN' or cart.currency.iso_code == 'PKR' or cart.currency.iso_code == 'CNY' or cart.currency.iso_code == 'PHP' or cart.currency.iso_code == 'SGD' or cart.currency.iso_code == 'LKR' or cart.currency.iso_code == 'CHF' or cart.currency.iso_code == 'TWD' or cart.currency.iso_code == 'TSH' or cart.currency.iso_code == 'THB' or cart.currency.iso_code == 'UGX' or cart.currency.iso_code == 'KWD' -%}
-  {% if template contains 'product' %}
-    {%- assign fa_product_price = fa_current_variant.price | money_without_currency | remove:',' -%}
-    {% elsif template contains 'cart' %}
-    {%- assign fa_product_price = cart.total_price | money_without_currency | remove:',' -%}
-  {% endif %}
-{%- else -%}
-  {% if template contains 'product' %}
-   {%- assign fa_product_price = fa_current_variant.price | money_without_currency | remove:'.' | replace: ',', '.' -%}
-  {% elsif template contains 'cart' %}
-    {%- assign fa_product_price = cart.total_price | money_without_currency | remove:'.' | replace: ',', '.' -%}
-  {% endif %}
-{%- endif -%}
-
-
-
-{% assign alpha2_code = 'GB' %}
-{% case cart.currency.iso_code %}
-  {% when 'USD' %}
-    {% assign alpha2_code = 'US' %}
-  {% else %}
-  {% assign alpha2_code = 'GB' %}
-{% endcase %}
-
-{% capture fa_product_id %}
-{{ alpha2_code }}_{{ product.id }}
-{%- endcapture -%}
-
-
-{% if template contains 'collection' %}
-  {% assign fa_event = 'view_item_list' %}
-{% elsif template contains 'product' %}
-  {% assign fa_event = 'view_item' %}
-{% elsif template contains 'search' %}
-  {% assign fa_event = 'view_search_results' %}
-{% elsif template contains 'cart' %}
-  {% assign fa_event = 'add_to_cart' %}
-{% elsif template contains 'index' %}
-  {% assign fa_event = 'home' %}
-{% else %}
-  {% assign fa_event = 'other' %}
-{% endif %}
-
+{% if template contains 'index' %}
 <script>
-  gtag('event', '{{ fa_event }}', {
-    'send_to': 'AW-975218407',
-    {% if template contains 'product' or template contains 'cart' %}'value': {{ fa_product_price }},{% endif %}
-    {% if template contains 'product' %}
-      'items': [{
-        'id': '{{fa_product_id}}',
-        'google_business_vertical': 'retail'
-      }]
-    {% elsif template contains 'cart' %}
-      'items': [
-      {% for item in cart.items %}
-        {
-        'id': '{{fa_product_id}}',
-        'google_business_vertical': 'retail'
-        },
-      {% endfor %}
-      ]
-    {% endif %}
-  });
+ gtag('event', 'page_view', {
+ 'send_to': 'AW-975218407',
+ 'ecomm_pagetype': ‘home’
+ });
 </script>
-
-
-<!-- Google Ads Remarketing Tag By FeedArmy Version 2.16 END -->
+{% elsif template contains 'collection' %}
+<script>
+ gtag('event', 'page_view', {
+ 'send_to': 'AW-975218407',
+ 'ecomm_pagetype': 'category'
+ });
+</script>
+{% elsif template contains 'product' %}
+<script>
+ gtag('event', 'page_view', {
+ 'send_to': 'AW-975218407',
+ 'ecomm_pagetype': 'product',
+ 'ecomm_prodid': '{{ product.id }}',
+ 'ecomm_totalvalue': '{{ product.price | money_without_currency | remove: ',' }}'
+ });
+</script>
+{% elsif template contains 'cart' %}
+<script>
+ gtag('event', 'page_view', {
+ 'send_to': 'AW-975218407',
+ 'ecomm_pagetype': 'cart',
+ 'ecomm_prodid': [{% for item in cart.items %}'{{item.product.id}}'{% unless forloop.last %},{% endunless %}{% endfor %}],
+ 'ecomm_totalvalue': '{{cart.total_price | money_without_currency | remove: ',' }}'
+ });
+</script>
+{% elsif template contains 'search' %}
+<script>
+ gtag('event', 'page_view', {
+ 'send_to': 'AW-975218407',
+ 'ecomm_pagetype': 'searchresults'
+ });
+</script>
+{% else %}
+<script>
+ gtag('event', 'page_view', {
+ 'send_to': 'AW-975218407',
+ 'ecomm_pagetype': 'other'
+ });
+</script>
+{% endif %}
