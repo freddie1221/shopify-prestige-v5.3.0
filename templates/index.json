@@ -85,6 +85,15 @@
     "featured-collections": {
       "type": "featured-collections",
       "blocks": {
+        "9984a67a-a7d8-41d5-b8dc-15fa131ba693": {
+          "type": "collection",
+          "settings": {
+            "collection": "cashmere-gloves",
+            "title": "Cashmere",
+            "grid_items_count": 4,
+            "button_text": "Collection"
+          }
+        },
         "featured-collection-0": {
           "type": "collection",
           "settings": {
@@ -93,20 +102,11 @@
             "grid_items_count": 4,
             "button_text": "Collection"
           }
-        },
-        "9984a67a-a7d8-41d5-b8dc-15fa131ba693": {
-          "type": "collection",
-          "settings": {
-            "collection": "suede-gloves",
-            "title": "Suede",
-            "grid_items_count": 4,
-            "button_text": "Collection"
-          }
         }
       },
       "block_order": [
-        "featured-collection-0",
-        "9984a67a-a7d8-41d5-b8dc-15fa131ba693"
+        "9984a67a-a7d8-41d5-b8dc-15fa131ba693",
+        "featured-collection-0"
       ],
       "settings": {
         "title": "Winter '21",
