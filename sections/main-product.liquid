@@ -391,6 +391,13 @@
                     {%- if block.settings.show_payment_button and product.template_suffix != 'pre-order' -%}
                       {{ form | payment_button }}
                     {%- endif -%}
+
+                    <style>
+                      .shopify-payment-button .shopify-cleanslate [data-testid~=PayPalInContext-button] {
+                        background: #6b6b6b !important;
+                        border-color: #6b6b6b !important;
+                        }
+                    </style>
                   </div>
 
                 {%- when 'store_pickup' -%}
