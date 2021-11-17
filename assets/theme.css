@@ -11019,6 +11019,7 @@ shopify-payment-terms {
   .Testimonial__Content {
     max-width: 550px;
     margin: 0 auto;
+    font-size: 17px;
   }
 
   .Testimonial__Logo,
