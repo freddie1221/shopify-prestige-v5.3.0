@@ -31,7 +31,7 @@
           "type": "buy_buttons",
           "settings": {
             "show_price_in_button": false,
-            "show_payment_button": true
+            "show_payment_button": false
           }
         },
         "ee8af388-c6b3-4f3a-9a4a-e044944189ae": {
