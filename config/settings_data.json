@@ -27,7 +27,7 @@
     "text_font": "nunito_sans_n4",
     "base_text_font_size": 14,
     "color_swatch_config": "Ascot Grey:#B8B8B8\nAzure: #468689\nApple:#89D23A\nBlack:#000000\nBlush Pink:#FFD7D7\nBurgundy:#5E2933\nCamel:#F4D599\nCardinal Red:#B10000\nChampagne:#EBD9BA\nCharcoal:#383838\nChocolate:#3E1D10\nCognac:#691F01\nDark Brown:#2E170B\nDark Grey:#343536\nDark Navy:#090926\nDove Grey:#BCBCC5\nElephant Grey:#8B8990\nForest:#153615\nFuchsia:#FF005C\nIvory:#FEFFF7\nLight Yellow:#E4E2A6\nLight Pink:#f2c2c5\nMidnight Blue:#0F0E3E\nNavy:#12122F\nOyster:#F6F3EF\nPalomino:#EAEAEA\nParchment:#EEEDE2\nPine:#116560\nPink:#E4437D\nPlum:#632F61\nPowder Blue:#D7DCE7\nPowder White:#FFFFFF\nRaspberry Rose:#DE4790\nRed:#A51B1B\nRose:#EC7F7F\nSilver Mist:#DBDAE2\nSmoke:#C4C4C4\nSmokey Rose:#EFC6BE\nSoft Rose:#FFD7D7\nTaupe:#E1DDD2\nViolet:#591E57\nWhite:#FFFFFF\nWinter White:#FFFFFF\nWhite \/ Black:white-black.png\nBlack \/ White:black-white.png\nAnimal Print: animal-print-1.png\nPearl:#F6F3EF\nOptic White:#f5f5f0\nClaret:#571830",
-    "show_page_transition": false,
+    "show_page_transition": true,
     "search_mode": "product,article",
     "product_show_price_on_hover": false,
     "product_show_secondary_image": true,
