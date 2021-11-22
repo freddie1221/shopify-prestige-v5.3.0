@@ -8,7 +8,7 @@
         "image": "shopify:\/\/shop_images\/Christmas_3.jpg",
         "text_color": "#ffffff",
         "overlay_color": "#404040",
-        "overlay_opacity": 39,
+        "overlay_opacity": 0,
         "subheading": "",
         "title": "",
         "content": ""
