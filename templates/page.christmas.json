@@ -105,6 +105,27 @@
         "link_text": "",
         "link_url": ""
       }
+    },
+    "1637579645554537ac": {
+      "type": "blog-posts",
+      "blocks": {
+        "16375796456fc1ca19-0": {
+          "type": "blog",
+          "settings": {
+            "blog": "information"
+          }
+        }
+      },
+      "block_order": [
+        "16375796456fc1ca19-0"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Blog posts",
+        "show_category": false,
+        "button_link": "",
+        "button_text": "View all articles"
+      }
     }
   },
   "order": [
@@ -112,6 +133,7 @@
     "main",
     "163757907242822a6b",
     "1637579134815e6962",
-    "16375796157ce93592"
+    "16375796157ce93592",
+    "1637579645554537ac"
   ]
 }
