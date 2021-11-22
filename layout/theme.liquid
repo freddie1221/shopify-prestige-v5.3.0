@@ -2,6 +2,7 @@
 
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
+ {%- render 'layouthub_header' -%}
 
     <!-- Global site tag (gtag.js) - Google Ads: 975218407 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-975218407"></script>
@@ -208,7 +209,7 @@
       {% section 'header' %}
 
       <main id="main" role="main">
-        {{ content_for_layout }}
+        <!--LayoutHub-Workspace-Start-->{{ content_for_layout }}<!--LayoutHub-Workspace-End-->
       </main>
 
       {% section 'footer' %}
@@ -291,5 +292,6 @@
 }
     </style>
     
-  </body>
+  {%- render 'layouthub_footer' -%} 
+ </body>
 </html>
