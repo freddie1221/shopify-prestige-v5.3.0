@@ -1,5 +1,19 @@
 {
   "sections": {
+    "1637577823558995fb": {
+      "type": "image-with-text-overlay",
+      "settings": {
+        "section_size": "normal",
+        "extra_padding": "0",
+        "image": "shopify:\/\/shop_images\/Christmas_3.jpg",
+        "text_color": "#ffffff",
+        "overlay_color": "#404040",
+        "overlay_opacity": 39,
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -7,9 +21,84 @@
         "show_large": false,
         "no_styling": false
       }
+    },
+    "163757907242822a6b": {
+      "type": "featured-collections",
+      "blocks": {
+        "16375790729830f5e7-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "merino-wool-gloves",
+            "title": "",
+            "grid_items_count": 8,
+            "button_text": "View collection"
+          }
+        },
+        "84aa5730-4ece-4435-b23c-e57e5051aeae": {
+          "type": "collection",
+          "settings": {
+            "collection": "cashmere-gloves",
+            "title": "",
+            "grid_items_count": 8,
+            "button_text": "View all products"
+          }
+        }
+      },
+      "block_order": [
+        "16375790729830f5e7-0",
+        "84aa5730-4ece-4435-b23c-e57e5051aeae"
+      ],
+      "settings": {
+        "title": "Featured collection",
+        "layout_mode": "grid",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4
+      }
+    },
+    "1637579134815e6962": {
+      "type": "featured-collections",
+      "blocks": {
+        "163757913435b8e031-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "leather-gloves",
+            "title": "",
+            "grid_items_count": 8,
+            "button_text": "View all products"
+          }
+        },
+        "12341bcd-90c7-4213-bc10-958d33176d14": {
+          "type": "collection",
+          "settings": {
+            "collection": "suede-gloves",
+            "title": "",
+            "grid_items_count": 8,
+            "button_text": "View all products"
+          }
+        }
+      },
+      "block_order": [
+        "163757913435b8e031-0",
+        "12341bcd-90c7-4213-bc10-958d33176d14"
+      ],
+      "settings": {
+        "title": "Featured collection",
+        "layout_mode": "grid",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4
+      }
     }
   },
   "order": [
-    "main"
+    "1637577823558995fb",
+    "main",
+    "163757907242822a6b",
+    "1637579134815e6962"
   ]
 }
