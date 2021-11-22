@@ -93,12 +93,25 @@
         "grid_mobile_items_per_row": "2",
         "grid_desktop_items_per_row": 4
       }
+    },
+    "16375796157ce93592": {
+      "type": "text-with-image",
+      "settings": {
+        "subheading": "Sub-heading",
+        "title": "Title",
+        "image": "shopify:\/\/shop_images\/D813755_copy.jpg",
+        "image_position": "left",
+        "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>",
+        "link_text": "",
+        "link_url": ""
+      }
     }
   },
   "order": [
     "1637577823558995fb",
     "main",
     "163757907242822a6b",
-    "1637579134815e6962"
+    "1637579134815e6962",
+    "16375796157ce93592"
   ]
 }
