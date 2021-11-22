@@ -97,11 +97,11 @@
     "16375796157ce93592": {
       "type": "text-with-image",
       "settings": {
-        "subheading": "Sub-heading",
-        "title": "Title",
+        "subheading": "Our presentation box",
+        "title": "Gifting",
         "image": "shopify:\/\/shop_images\/D813755_copy.jpg",
         "image_position": "left",
-        "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>",
+        "content": "<p>All our gloves come with a storage bag for safe keeping. All orders are delivered in our presentation box which is, like our gloves, built to last. For us, it's about the product, not the packaging, but when we designed our box we made sure it was beautiful and we chose the colour, '<a href=\"https:\/\/www.corneliajames.com\/blogs\/information\/our-promise\">light cockpit green<\/a>' to symbolise a style that endures. If the gloves are a gift for somebody special, we'll be happy to include a handwritten note - just let us know in the order notes section during checkout.<\/p>",
         "link_text": "",
         "link_url": ""
       }
