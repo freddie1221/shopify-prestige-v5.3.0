@@ -106,25 +106,16 @@
         "link_url": ""
       }
     },
-    "1637579645554537ac": {
-      "type": "blog-posts",
-      "blocks": {
-        "16375796456fc1ca19-0": {
-          "type": "blog",
-          "settings": {
-            "blog": "information"
-          }
-        }
-      },
-      "block_order": [
-        "16375796456fc1ca19-0"
-      ],
+    "16375865754b194dbb": {
+      "type": "text-with-image",
       "settings": {
         "subheading": "",
-        "title": "Blog posts",
-        "show_category": false,
-        "button_link": "",
-        "button_text": "View all articles"
+        "title": "Sizing Your gloves",
+        "image": "shopify:\/\/shop_images\/Group_6_1_1024x1024_f3275d48-e913-4472-986d-f326f6de2128.png",
+        "image_position": "left",
+        "content": "<p>All our gloves are made with a glove size from 6 to 8½, and for our longer gloves we include an arm fit to ensure the correct sizing<\/p><p>To ascertain your glove size: <\/p><p>Pass a tape measure around the widest part of your hand - usually over your knuckles, excluding the thumb. The result, in inches, is your glove size - e.g. if your hand measures 7 inches, you are a glove size 7.If you are between two sizes, round down to the lower of the two.<\/p><p>Of course, there are times when you might not know the glove size, perhaps if you are buying our gloves as a gift. In that case, we would recommend a size 7, because this is the average size, and is likely to fit most people. Of course, if your glove doesn't fit perfectly, we are more than happy to exchange it - just <a href=\"https:\/\/www.corneliajames.com\/pages\/contact\" title=\"Contact Us\">contact us<\/a>, and we will do our best to help. Special size requirements are always available on request.<\/p><p>If you are between two sizes, round down to the lower of the two. If you are buying gloves for someone else and do not know their glove size, we recommend choosing size 7, which is the average glove size<\/p>",
+        "link_text": "",
+        "link_url": ""
       }
     }
   },
@@ -134,6 +125,6 @@
     "163757907242822a6b",
     "1637579134815e6962",
     "16375796157ce93592",
-    "1637579645554537ac"
+    "16375865754b194dbb"
   ]
 }
