@@ -82,6 +82,30 @@
         "link_url": ""
       }
     },
+    "1637784881d5cb0a82": {
+      "type": "shop-now",
+      "blocks": {
+        "163778488148ce4fcf-0": {
+          "type": "quote",
+          "disabled": true,
+          "settings": {
+            "content": "<p>You can use this element to add a quote, content...<\/p>",
+            "author": ""
+          }
+        }
+      },
+      "block_order": [
+        "163778488148ce4fcf-0"
+      ],
+      "settings": {
+        "title": "Winter Warmers",
+        "collection": "cashmere-gloves",
+        "grid_items_count": 9,
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false
+      }
+    },
     "featured-collections": {
       "type": "featured-collections",
       "blocks": {
@@ -292,6 +316,7 @@
     "slideshow",
     "1631211867e9e31b66",
     "163119180946bed970",
+    "1637784881d5cb0a82",
     "featured-collections",
     "1631192323b7fc90f2",
     "16311956878ccd64ec",
