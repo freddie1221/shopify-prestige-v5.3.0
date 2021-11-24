@@ -11332,6 +11332,10 @@ shopify-payment-terms {
 /* zindex updates */
 
 #ShopifyChat {
+  z-index: 2147483641 !important;
+}
+
+.needsclick {
   z-index: 2147483642 !important;
 }
 
