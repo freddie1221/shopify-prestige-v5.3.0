@@ -49,7 +49,7 @@
         "84aa5730-4ece-4435-b23c-e57e5051aeae"
       ],
       "settings": {
-        "title": "Featured collection",
+        "title": "Winter Warmers",
         "layout_mode": "grid",
         "show_product_info": true,
         "show_vendor": false,
@@ -85,7 +85,7 @@
         "12341bcd-90c7-4213-bc10-958d33176d14"
       ],
       "settings": {
-        "title": "Featured collection",
+        "title": "Sans Pareil",
         "layout_mode": "grid",
         "show_product_info": true,
         "show_vendor": false,
@@ -97,8 +97,8 @@
     "16375796157ce93592": {
       "type": "text-with-image",
       "settings": {
-        "subheading": "Our presentation box",
-        "title": "Gifting",
+        "subheading": "",
+        "title": "Our presentation box",
         "image": "shopify:\/\/shop_images\/D813755_copy.png",
         "image_position": "left",
         "content": "<p>All our gloves come with a storage bag for safe keeping. All orders are delivered in our presentation box which is, like our gloves, built to last. For us, it's about the product, not the packaging, but when we designed our box we made sure it was beautiful and we chose the colour, '<a href=\"https:\/\/www.corneliajames.com\/blogs\/information\/our-promise\">light cockpit green<\/a>' to symbolise a style that endures. If the gloves are a gift for somebody special, we'll be happy to include a handwritten note - just let us know in the order notes section during checkout.<\/p>",
