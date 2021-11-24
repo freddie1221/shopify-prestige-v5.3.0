@@ -106,55 +106,19 @@
         "show_color_swatch": false
       }
     },
-    "featured-collections": {
-      "type": "featured-collections",
-      "blocks": {
-        "9984a67a-a7d8-41d5-b8dc-15fa131ba693": {
-          "type": "collection",
-          "settings": {
-            "collection": "cashmere-gloves",
-            "title": "Cashmere",
-            "grid_items_count": 4,
-            "button_text": "Collection"
-          }
-        },
-        "featured-collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "leather-gloves",
-            "title": "Leather",
-            "grid_items_count": 4,
-            "button_text": "Collection"
-          }
-        }
-      },
-      "block_order": [
-        "9984a67a-a7d8-41d5-b8dc-15fa131ba693",
-        "featured-collection-0"
-      ],
-      "settings": {
-        "title": "Winter '21",
-        "layout_mode": "grid",
-        "show_product_info": true,
-        "show_vendor": false,
-        "show_color_swatch": false,
-        "grid_mobile_items_per_row": "2",
-        "grid_desktop_items_per_row": 4
-      }
-    },
     "1631192323b7fc90f2": {
       "type": "slideshow",
       "blocks": {
         "1631192323b7fc90f2-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/483bc74e.jpg",
+            "image": "shopify:\/\/shop_images\/85385f8e_2.jpg",
             "apply_overlay": true,
             "content_position": "bottomLeft",
-            "subheading": "You shall go to the ball",
-            "title": "Evening & Opera gloves",
+            "subheading": "Nature's gift to the Glovemaker",
+            "title": "Leather Gloves",
             "button_1_text": "collection",
-            "button_1_link": "shopify:\/\/collections\/evening-gloves",
+            "button_1_link": "shopify:\/\/collections\/leather-gloves",
             "button_2_text": "",
             "button_2_link": ""
           }
@@ -317,7 +281,6 @@
     "1631211867e9e31b66",
     "163119180946bed970",
     "1637784881d5cb0a82",
-    "featured-collections",
     "1631192323b7fc90f2",
     "16311956878ccd64ec",
     "16311942737cf1bceb",
