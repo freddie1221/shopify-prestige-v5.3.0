@@ -7733,7 +7733,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 .Footer {
   padding: 34px 0;
-  margin-top: 50px;
+  margin-top: 150px;
   background: var(--footer-background);
   color: var(--footer-text-color);
 }
@@ -7817,7 +7817,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 @media screen and (min-width: 641px) {
   .Footer {
     padding: 75px 0 42px 0;
-    margin-top: 50px;
+    margin-top: 150px;
   }
 
   .Footer__Inner {
