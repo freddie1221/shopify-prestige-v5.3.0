@@ -5106,7 +5106,7 @@ body:not(.features--show-image-zooming) .Image--lazyLoaded.Image--zoomOut {
 
 @media screen and (min-width: 641px) {
   .PageContent {
-    margin-bottom: 80px;
+    margin-bottom: 50px;
     margin-top: 80px;
   }
 
