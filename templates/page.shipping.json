@@ -1,19 +1,5 @@
 {
   "sections": {
-    "1635864664d76271a9": {
-      "type": "image-with-text-block",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/version_2-_green-enhanced_1024x1024_a1efe5fe-7c31-4e94-8067-722fc5958aea.jpg",
-        "background": "#ffffff",
-        "text_color": "#1c1b1b",
-        "block_size": "normal",
-        "title": "",
-        "content": "",
-        "button_label": "",
-        "button_link": "",
-        "show_parallax": false
-      }
-    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -56,7 +42,6 @@
     }
   },
   "order": [
-    "1635864664d76271a9",
     "main",
     "163586550734b0d54e",
     "1635872891967ed591",
