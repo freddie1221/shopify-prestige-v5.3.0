@@ -8,19 +8,6 @@
         "no_styling": false
       }
     },
-    "163586550734b0d54e": {
-      "type": "text-with-image",
-      "disabled": true,
-      "settings": {
-        "subheading": "How will my gloves arrive?",
-        "title": "Our presentation box",
-        "image": "shopify:\/\/shop_images\/version_2-_green-enhanced_1024x1024_a1efe5fe-7c31-4e94-8067-722fc5958aea.jpg",
-        "image_position": "left",
-        "content": "<p>All our gloves come with a storage bag for safe keeping. All orders are delivered in our presentation box which is, like our gloves, built to last. For us, it's about the product, not the packaging, but when we designed our box we made sure it was beautiful and we chose the colour, '<a href=\"https:\/\/www.corneliajames.com\/blogs\/information\/our-promise\">light cockpit green<\/a>' to symbolise a style that endures. If the gloves are a gift for somebody special, we'll be happy to include a handwritten note - just let us know in the order notes section during checkout.<\/p>",
-        "link_text": "",
-        "link_url": ""
-      }
-    },
     "1635872891967ed591": {
       "type": "text-block",
       "settings": {
@@ -28,11 +15,16 @@
         "content": "<p>Most of our gloves are made to order and we do our best to make them within two working days of receiving the order and then having them on their way to you. If there are likely to be any delays we will be sure to be in touch.<\/p>"
       }
     },
-    "16358734252411a1f2": {
-      "type": "text-block",
+    "163586550734b0d54e": {
+      "type": "text-with-image",
       "settings": {
-        "header": "How will my gloves by presented?",
-        "content": "<p>All our gloves come with a storage bag for safe keeping. All orders are delivered in our presentation box (pictured above) which is, like our gloves, built to last. For us, it's about the product, not the packaging, but when we designed our box we made sure it was beautiful and we chose the colour, '<a href=\"https:\/\/www.corneliajames.com\/blogs\/information\/our-promise\">light cockpit green<\/a>' to symbolise a style that endures. If the gloves are a gift for somebody special, we'll be happy to include a handwritten note - just let us know in the order notes section during checkout.<\/p>"
+        "subheading": "How will my gloves arrive?",
+        "title": "Our presentation box",
+        "image": "shopify:\/\/shop_images\/D813755_copy.png",
+        "image_position": "left",
+        "content": "<p>All our gloves come with a storage bag for safe keeping. All orders are delivered in our presentation box which is, like our gloves, built to last. For us, it's about the product, not the packaging, but when we designed our box we made sure it was beautiful and we chose the colour, '<a href=\"https:\/\/www.corneliajames.com\/blogs\/information\/our-promise\">light cockpit green<\/a>' to symbolise a style that endures. If the gloves are a gift for somebody special, we'll be happy to include a handwritten note - just let us know in the order notes section during checkout.<\/p>",
+        "link_text": "",
+        "link_url": ""
       }
     },
     "16359381837b7f509f": {
@@ -43,9 +35,8 @@
   },
   "order": [
     "main",
-    "163586550734b0d54e",
     "1635872891967ed591",
-    "16358734252411a1f2",
+    "163586550734b0d54e",
     "16359381837b7f509f"
   ]
 }
