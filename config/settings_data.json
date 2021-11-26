@@ -63,11 +63,11 @@
       "announcement": {
         "type": "announcement",
         "settings": {
-          "enable_bar": false,
+          "enable_bar": true,
           "home_page_only": false,
           "background": "#000000",
           "text_color": "#ffffff",
-          "content": "15% off everything - Discount applied at checkout",
+          "content": "15% off everything - Code applied at checkout",
           "link": ""
         }
       },
