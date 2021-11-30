@@ -124,7 +124,7 @@
         "16382818336a1bb462-0": {
           "type": "product_meta",
           "settings": {
-            "show_vendor": true,
+            "show_vendor": false,
             "show_sku": false,
             "show_product_rating": false,
             "show_taxes_included": false
@@ -148,7 +148,7 @@
           "type": "buy_buttons",
           "settings": {
             "show_price_in_button": false,
-            "show_payment_button": true
+            "show_payment_button": false
           }
         }
       },
@@ -159,8 +159,8 @@
         "16382818336a1bb462-3"
       ],
       "settings": {
-        "subheading": "",
-        "title": "Winter Extra",
+        "subheading": "Pashminas",
+        "title": "The classic",
         "show_headings_on_mobile": true,
         "product": "cressida-pure-cashmere-pashmina"
       }
