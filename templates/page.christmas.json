@@ -117,6 +117,53 @@
         "link_text": "",
         "link_url": ""
       }
+    },
+    "163828183306c057e2": {
+      "type": "featured-product",
+      "blocks": {
+        "16382818336a1bb462-0": {
+          "type": "product_meta",
+          "settings": {
+            "show_vendor": true,
+            "show_sku": false,
+            "show_product_rating": false,
+            "show_taxes_included": false
+          }
+        },
+        "16382818336a1bb462-1": {
+          "type": "share_buttons",
+          "settings": {
+          }
+        },
+        "16382818336a1bb462-2": {
+          "type": "variant_selector",
+          "settings": {
+            "selector_mode": "dropdown",
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "size_chart": ""
+          }
+        },
+        "16382818336a1bb462-3": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_price_in_button": false,
+            "show_payment_button": true
+          }
+        }
+      },
+      "block_order": [
+        "16382818336a1bb462-0",
+        "16382818336a1bb462-1",
+        "16382818336a1bb462-2",
+        "16382818336a1bb462-3"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Winter Extra",
+        "show_headings_on_mobile": true,
+        "product": "cressida-pure-cashmere-pashmina"
+      }
     }
   },
   "order": [
@@ -125,6 +172,7 @@
     "163757907242822a6b",
     "1637579134815e6962",
     "16375796157ce93592",
-    "16375865754b194dbb"
+    "16375865754b194dbb",
+    "163828183306c057e2"
   ]
 }
