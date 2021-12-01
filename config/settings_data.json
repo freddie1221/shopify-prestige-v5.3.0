@@ -63,12 +63,12 @@
       "announcement": {
         "type": "announcement",
         "settings": {
-          "enable_bar": false,
+          "enable_bar": true,
           "home_page_only": false,
           "background": "#000000",
           "text_color": "#ffffff",
-          "content": "Black Friday Weekend - 15% off everything til tonight at midnight - automatically applied at checkout",
-          "link": ""
+          "content": "Click here for our Christmas Shipping dates",
+          "link": "https:\/\/www.corneliajames.com\/pages\/christmas-delivery-2021"
         }
       },
       "header": {
