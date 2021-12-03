@@ -422,5 +422,16 @@
     "month_day_year": "%B %d, %Y",
     "month_day_year_short": "%m\/%d\/%Y",
     "month_day_year_time": "%B %d, %Y at %I:%M%p"
+  },
+  "shopify": {
+    "checkout": {
+      "shipping": {
+        "estimated_delivery_date": {
+          "one": " ",
+          "other": " "
+        },
+        "estimated_delivery_date_range": " "
+      }
+    }
   }
 }
