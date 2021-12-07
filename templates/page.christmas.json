@@ -126,12 +126,13 @@
           "settings": {
             "show_vendor": false,
             "show_sku": false,
-            "show_product_rating": false,
+            "show_product_rating": true,
             "show_taxes_included": false
           }
         },
         "16382818336a1bb462-1": {
           "type": "share_buttons",
+          "disabled": true,
           "settings": {
           }
         },
@@ -144,11 +145,24 @@
             "size_chart": ""
           }
         },
+        "03f40d6d-12b9-45db-ac9f-1c9ce05be509": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Simply the best, fine enough to pass through a wedding ring. Pure, feather light, warm and glamorous cashmere - a true classic which will repay your investment time after time after time."
+          }
+        },
         "16382818336a1bb462-3": {
           "type": "buy_buttons",
           "settings": {
             "show_price_in_button": false,
             "show_payment_button": false
+          }
+        },
+        "52c58e8a-2274-4c2d-8b72-b712d4efaea6": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
           }
         }
       },
@@ -156,7 +170,9 @@
         "16382818336a1bb462-0",
         "16382818336a1bb462-1",
         "16382818336a1bb462-2",
-        "16382818336a1bb462-3"
+        "03f40d6d-12b9-45db-ac9f-1c9ce05be509",
+        "16382818336a1bb462-3",
+        "52c58e8a-2274-4c2d-8b72-b712d4efaea6"
       ],
       "settings": {
         "subheading": "Pashminas",
