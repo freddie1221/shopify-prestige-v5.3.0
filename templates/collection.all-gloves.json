@@ -18,13 +18,14 @@
         "expand_filters": true,
         "filter_position": "sidebar",
         "filter_menu": "",
-        "grid_items_per_page": 16,
+        "grid_items_per_page": 36,
         "grid_mobile_items_per_row": "2",
         "grid_desktop_items_per_row": 4
       }
     },
     "1631213807fc03a4fc": {
       "type": "article-features",
+      "disabled": true,
       "settings": {
       }
     }
