@@ -126,7 +126,7 @@
           "settings": {
             "show_vendor": false,
             "show_sku": false,
-            "show_product_rating": true,
+            "show_product_rating": false,
             "show_taxes_included": false
           }
         },
