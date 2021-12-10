@@ -27,16 +27,16 @@
             "show_label": true
           }
         },
-        "ee8af388-c6b3-4f3a-9a4a-e044944189ae": {
-          "type": "back_in_stock",
-          "settings": {
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_price_in_button": false,
             "show_payment_button": false
+          }
+        },
+        "ee8af388-c6b3-4f3a-9a4a-e044944189ae": {
+          "type": "back_in_stock",
+          "settings": {
           }
         },
         "share_buttons": {
@@ -55,8 +55,8 @@
         "product_meta",
         "variant_selector",
         "quantity_selector",
-        "ee8af388-c6b3-4f3a-9a4a-e044944189ae",
         "buy_buttons",
+        "ee8af388-c6b3-4f3a-9a4a-e044944189ae",
         "share_buttons",
         "description"
       ],
