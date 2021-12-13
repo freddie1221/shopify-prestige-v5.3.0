@@ -196,7 +196,29 @@
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "10830403595879607806": {
+        "type": "shopify:\/\/apps\/reviews-io\/blocks\/reviewsio-core\/92a082e5-b297-4e88-b428-ac96cbc505f9",
+        "disabled": false,
+        "settings": {
+          "url_key": "REVIEWS.io",
+          "lang": "auto"
+        }
+      },
+      "15316669992541710076": {
+        "type": "shopify:\/\/apps\/reviews-io\/blocks\/reviewsio-rating-snippet\/92a082e5-b297-4e88-b428-ac96cbc505f9",
+        "disabled": true,
+        "settings": {
+          "star": "#1c1b1b",
+          "snippet_mode": "default",
+          "text": "Reviews",
+          "line_break": false,
+          "show_popup": true,
+          "anchor_to_reviews_widget": false
+        }
+      }
+    }
   },
   "presets": {
     "Allure": {
