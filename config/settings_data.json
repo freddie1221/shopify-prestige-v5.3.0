@@ -202,13 +202,13 @@
         "type": "shopify:\/\/apps\/reviews-io\/blocks\/reviewsio-core\/92a082e5-b297-4e88-b428-ac96cbc505f9",
         "disabled": false,
         "settings": {
-          "url_key": "REVIEWS.io",
+          "url_key": "www.corneliajames.com",
           "lang": "auto"
         }
       },
       "15316669992541710076": {
         "type": "shopify:\/\/apps\/reviews-io\/blocks\/reviewsio-rating-snippet\/92a082e5-b297-4e88-b428-ac96cbc505f9",
-        "disabled": true,
+        "disabled": false,
         "settings": {
           "star": "#1c1b1b",
           "snippet_mode": "default",
