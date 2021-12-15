@@ -317,7 +317,7 @@
             "button_text": "Follow us",
             "button_link": "https:\/\/www.instagram.com\/cornelia_james\/",
             "layout": "collage",
-            "image_size": "small",
+            "image_size": "medium",
             "add_spacing": true,
             "rows_count": 2,
             "show_author": false,
