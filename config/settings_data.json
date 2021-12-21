@@ -63,8 +63,8 @@
       "announcement": {
         "type": "announcement",
         "settings": {
-          "enable_bar": false,
-          "home_page_only": false,
+          "enable_bar": true,
+          "home_page_only": true,
           "background": "#000000",
           "text_color": "#ffffff",
           "content": "See here for our 2021 Christmas Shipping dates",
