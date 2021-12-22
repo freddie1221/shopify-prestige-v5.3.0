@@ -1,17 +1,17 @@
 {%- assign metarobots_found = false -%}
 {%- assign allowUrlFound = false -%}
 {%- assign allowQueryStringUrls = '' -%}
-{%- assign fullUrl = request.host | append: request.path -%}
+{%- assign fullUrl = request.host | append: request.path | remove: "www." -%}
 {%- if shop.metafields.seo.allow_url_normal != empty -%}
-	{%- assign allow_urls_normal = shop.metafields.seo.allow_url_normal | split: ',' -%}
+    {%- assign allow_urls_normal = shop.metafields.seo.allow_url_normal | split: ',' -%}
     {%- for allow_url_normal in allow_urls_normal -%}
-      {%- if request.path == allow_url_normal or request.host == allow_url_normal or fullUrl == allow_url_normal -%}
-        {%- assign allowUrlFound = true -%}
-      {%- endif -%}
-      {%- if allow_url_normal contains '?' -%}
-        {%- assign allowQueryStrings = allow_url_normal | prepend: ',' -%}
-        {%- assign allowQueryStringUrls = allowQueryStringUrls | append: allowQueryStrings -%}
-      {%- endif -%}
+        {%- if request.path == allow_url_normal or request.host == allow_url_normal or fullUrl == allow_url_normal -%}
+            {%- assign allowUrlFound = true -%}
+        {%- endif -%}
+        {%- if allow_url_normal contains '?' -%}
+            {%- assign allowQueryStrings = allow_url_normal | prepend: ',' -%}
+            {%- assign allowQueryStringUrls = allowQueryStringUrls | append: allowQueryStrings -%}
+        {%- endif -%}
     {%- endfor -%}
 {%- endif -%}
 {%- if allowUrlFound == false -%}
@@ -288,26 +288,26 @@
         {%- assign noindex_urls_contains = shop.metafields.seo.noindex_url_contains | split: ',' -%}
         {%- assign queryStringUrls = '' -%}
         {%- for noindex_url_normal in noindex_urls_normal -%}
-          {%- if request.path == noindex_url_normal or request.host == noindex_url_normal or fullUrl == noindex_url_normal -%}
-              {%- assign metarobots_found = true -%}
-          {%- endif -%}
-          {%- if noindex_url_normal contains '?' -%}
-            {%- assign queryStrings = noindex_url_normal | prepend: ',' -%}
-            {%- assign queryStringUrls = queryStringUrls | append: queryStrings -%}
-          {%- endif -%}
-          {%- if metarobots_found == true -%}
-            <meta name="robots" content="noindex,nofollow" />
-            {%- break -%}
-          {%- endif -%}
-        {%- endfor -%}
-        {%- if metarobots_found == false -%}
-          {%- for noindex_url_contains in noindex_urls_contains -%}
-            {%- if request.path contains noindex_url_contains -%}
-                <meta name="robots" content="noindex,nofollow" />
+            {%- if request.path == noindex_url_normal or request.host == noindex_url_normal or fullUrl == noindex_url_normal -%}
                 {%- assign metarobots_found = true -%}
+            {%- endif -%}
+            {%- if noindex_url_normal contains '?' -%}
+                {%- assign queryStrings = noindex_url_normal | prepend: ',' -%}
+                {%- assign queryStringUrls = queryStringUrls | append: queryStrings -%}
+            {%- endif -%}
+            {%- if metarobots_found == true -%}
+                <meta name="robots" content="noindex,nofollow" />
                 {%- break -%}
             {%- endif -%}
-          {%- endfor -%}
+        {%- endfor -%}
+        {%- if metarobots_found == false -%}
+            {%- for noindex_url_contains in noindex_urls_contains -%}
+                {%- if request.path contains noindex_url_contains -%}
+                    <meta name="robots" content="noindex,nofollow" />
+                    {%- assign metarobots_found = true -%}
+                    {%- break -%}
+                {%- endif -%}
+            {%- endfor -%}
         {%- endif -%}
     {%- endif -%}
     {%- if metarobots_found == false -%}
@@ -317,102 +317,102 @@
         {%- assign noindex_urls_contains = noindex_urls_contains | join:',' -%}
         {%- assign urlsToCheck = noindex_urls_contains | append:queryStringUrls -%}
         {% if urlsToCheck != empty %}
-          {%- assign allowUrlsToCheck = allowQueryStringUrls | remove_first: ',' -%}
-          <script>
-              var queryString = window.location.search;
+            {%- assign allowUrlsToCheck = allowQueryStringUrls | remove_first: ',' -%}
+            <script>
+                var queryString = window.location.search;
 
-              if(queryString != '') {
-                var pathName = window.location.pathname;
-                var url = pathName + queryString;
-                var urlsToCheck = '{{ urlsToCheck }}'
-                var urlsToCheck = urlsToCheck.split(',');
-                var allowUrlsToCheck = '{{ allowUrlsToCheck }}'
-                if(allowUrlsToCheck != '') {
-                  var allowUrlsToCheck = allowUrlsToCheck.split(',');
-                }
-
-                if(document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll)) {
-                    var processNoIndex = true;
-                } else {
-                    var processNoIndex = true;
-                }
-
-                if(processNoIndex == true) {
-                    var allowFound = false;
-                    var applyNoIndex = false;
-
+                if(queryString != '') {
+                    var pathName = window.location.pathname;
+                    var url = pathName + queryString;
+                    var urlsToCheck = '{{ urlsToCheck }}'
+                    var urlsToCheck = urlsToCheck.split(',');
+                    var allowUrlsToCheck = '{{ allowUrlsToCheck }}'
                     if(allowUrlsToCheck != '') {
-                      for (i = 0; i < allowUrlsToCheck.length; i++) {
-                          var allowCheckQueryString = url.includes(allowUrlsToCheck[i]);
-
-                          if(allowCheckQueryString == true) {
-                              allowFound = true;
-                              break;
-                          }
-                      }
+                        var allowUrlsToCheck = allowUrlsToCheck.split(',');
                     }
 
-                    if(allowFound == false) {
-                        for (i = 0; i < urlsToCheck.length; i++) {
-                          var checkQueryString = url.includes(urlsToCheck[i]);
+                    if(document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll)) {
+                        var processNoIndex = true;
+                    } else {
+                        var processNoIndex = true;
+                    }
 
-                          if(checkQueryString == true) {
-                            applyNoIndex = true;
-                            break;
-                          }
+                    if(processNoIndex == true) {
+                        var allowFound = false;
+                        var applyNoIndex = false;
+
+                        if(allowUrlsToCheck != '') {
+                            for (i = 0; i < allowUrlsToCheck.length; i++) {
+                                var allowCheckQueryString = url.includes(allowUrlsToCheck[i]);
+
+                                if(allowCheckQueryString == true) {
+                                    allowFound = true;
+                                    break;
+                                }
+                            }
                         }
 
-                        if(applyNoIndex == true) {
+                        if(allowFound == false) {
+                            for (i = 0; i < urlsToCheck.length; i++) {
+                                var checkQueryString = url.includes(urlsToCheck[i]);
+
+                                if(checkQueryString == true) {
+                                    applyNoIndex = true;
+                                    break;
+                                }
+                            }
+
+                            if(applyNoIndex == true) {
+                                var metaRobots = document.getElementsByName("robots");
+                                for(var i=metaRobots.length-1;i>=0;i--)
+                                {
+                                    metaRobots[i].parentNode.removeChild(metaRobots[i]);
+                                }
+
+                                var meta = document.createElement('meta');
+                                meta.name = "robots";
+                                meta.content = "noindex, nofollow";
+                                document.getElementsByTagName('head')[0].appendChild(meta);
+                            }
+                        } else {
                             var metaRobots = document.getElementsByName("robots");
                             for(var i=metaRobots.length-1;i>=0;i--)
                             {
                                 metaRobots[i].parentNode.removeChild(metaRobots[i]);
                             }
-
-                            var meta = document.createElement('meta');
-                            meta.name = "robots";
-                            meta.content = "noindex, nofollow";
-                            document.getElementsByTagName('head')[0].appendChild(meta);
                         }
-                    } else {
-                      var metaRobots = document.getElementsByName("robots");
-                      for(var i=metaRobots.length-1;i>=0;i--)
-                      {
-                        metaRobots[i].parentNode.removeChild(metaRobots[i]);
-                      }
                     }
                 }
-              }
-          </script>
+            </script>
         {% endif %}
     {%- endif -%}
 {%- endif -%}
 {% if allowQueryStringUrls != empty %}
-  {%- assign allowUrlsToCheck = allowQueryStringUrls | remove_first: ',' -%}
-  <script>
-    var allowUrlsToCheck = '{{ allowUrlsToCheck }}'
-    if(allowUrlsToCheck != '') {
-      var allowUrlsToCheck = allowUrlsToCheck.split(',');
-      var pathName = window.location.pathname;
-      var queryString = window.location.search;
-      var url = pathName + queryString;
+    {%- assign allowUrlsToCheck = allowQueryStringUrls | remove_first: ',' -%}
+    <script>
+        var allowUrlsToCheck = '{{ allowUrlsToCheck }}'
+        if(allowUrlsToCheck != '') {
+            var allowUrlsToCheck = allowUrlsToCheck.split(',');
+            var pathName = window.location.pathname;
+            var queryString = window.location.search;
+            var url = pathName + queryString;
 
-      for (i = 0; i < allowUrlsToCheck.length; i++) {
-        var allowCheckQueryString = url.includes(allowUrlsToCheck[i]);
+            for (i = 0; i < allowUrlsToCheck.length; i++) {
+                var allowCheckQueryString = url.includes(allowUrlsToCheck[i]);
 
-        if(allowCheckQueryString == true) {
-          allowFound = true;
-          break;
+                if(allowCheckQueryString == true) {
+                    allowFound = true;
+                    break;
+                }
+            }
+
+            if(allowFound == true) {
+                var metaRobots = document.getElementsByName("robots");
+                for(var i=metaRobots.length-1;i>=0;i--)
+                {
+                    metaRobots[i].parentNode.removeChild(metaRobots[i]);
+                }
+            }
         }
-      }
-
-      if(allowFound == true) {
-        var metaRobots = document.getElementsByName("robots");
-        for(var i=metaRobots.length-1;i>=0;i--)
-        {
-          metaRobots[i].parentNode.removeChild(metaRobots[i]);
-        }
-      }
-    }
-  </script>
+    </script>
 {% endif %}
