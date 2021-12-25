@@ -11,9 +11,8 @@
 <script>
   console.log("should_be_working!");
   setTimeout(function(){
-    $(".nps-name-wrapper #input-name").val("{% endraw %}{{customer.first_name}} {{customer.last_name}}{% raw %}"); 
-    $(".nps-name-wrapper #input-email").val("{% endraw %}{{customer.email}}{% raw %}");
-    
+    $(".nps-name-wrapper #input-name").attr('placeholder', '{% endraw %}{{customer.first_name}} {{customer.last_name}}{% raw %}'); 
+    $(".nps-name-wrapper #input-email").attr('placeholder', '{% endraw %}{{customer.email}}{% raw %}');
    },500);
 </script>{% endraw %}
 {% endif %}
