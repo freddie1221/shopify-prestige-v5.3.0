@@ -11,7 +11,7 @@
 <script>
   console.log("should_be_working!");
   setTimeout(function(){
-    jQuery(".nps-name-wrapper #input-name").attr('placeholder', '{% endraw %}{{customer.first_name}} {{customer.last_name}}{% raw %}'); 
+    jQuery(".nps-name-wrapper #input-name").val('Anonymous'); 
     jQuery(".nps-name-wrapper #input-email").attr('placeholder', '{% endraw %}{{customer.email}}{% raw %}');
    },1500);
 </script>{% endraw %}
