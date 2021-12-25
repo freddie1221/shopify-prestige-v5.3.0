@@ -298,7 +298,7 @@ if (!customerName){
 customerName = 'Anonymous';
 }
 $('.nps-name-wrapper input[type="text"]').val(customerName);
-$('.stamped-form-contact-email input[type="email"]').val('{{customer.email}}');
+$('.nps-email-wrapper input[type="email"]').val('{{customer.email}}');
 $('.spr-form-contact-email input[type="email"]').val('{{customer.email}}');
 </script>
 {% endif %}
