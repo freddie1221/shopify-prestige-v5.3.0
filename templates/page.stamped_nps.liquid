@@ -12,7 +12,7 @@
   console.log("should_be_working!");
   setTimeout(function(){
     jQuery(".nps-name-wrapper #input-name").val('Anonymous'); 
-    jQuery(".nps-name-wrapper #input-email").val('placeholder', 'email@example.com');
-   },5000);
+    jQuery(".nps-name-wrapper #input-email").attr('placeholder', 'email@example.com');
+   },2000);
 </script>{% endraw %}
 {% endunless %}
