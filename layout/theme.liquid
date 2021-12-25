@@ -290,17 +290,5 @@
     
   {%- render 'layouthub_footer' -%} 
   {% include 'smile-initializer' %}
-{%if customer %}
-<script>
-var customerName = '{{customer.first_name }}';
-
-if (!customerName){
-customerName = 'Anonymous';
-}
-$('.nps-name-wrapper input[type="text"]').val(customerName);
-$('.nps-email-wrapper input[type="email"]').val('{{customer.email}}');
-$('.spr-form-contact-email input[type="email"]').val('{{customer.email}}');
-</script>
-{% endif %}
 </body>
 </html>
