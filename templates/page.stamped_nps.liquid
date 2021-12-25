@@ -6,7 +6,7 @@
      data-title="Thank you for your review!" 
      data-message="How likely are you to recommend us to friend or family?">
 </div>{% endraw %}
-{% if !customer %}
+{% unless customer.email %}
 {% raw %}
 <script>
   console.log("should_be_working!");
@@ -15,4 +15,4 @@
     $(".nps-name-wrapper #input-email").attr('placeholder', '{% endraw %}{{customer.email}}{% raw %}');
    },500);
 </script>{% endraw %}
-{% endif %}
+{% endunless %}
