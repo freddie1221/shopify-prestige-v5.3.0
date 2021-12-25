@@ -1,21 +1,3 @@
-{%- comment -%}{% raw %}<div 
-     id="stamped-reviews-widget" 
-     data-widget-type="nps-submission-form" 
-     data-email="{% endraw %}{% if customer %}{{customer.email}}{% else %}{% endif %}{% raw %}" 
-     data-name="{% endraw %}{% if customer.first_name %}{{ customer.first_name }} {{ customer.last_name }}{% else %}Anonymous{% endif %}{% raw %}"
-     data-title="Thank you for your review!" 
-     data-message="How likely are you to recommend us to friend or family?">
-</div>{% endraw %}
-{% unless customer.email %}
-{% raw %}
-<script>
-  setTimeout(function(){
-    jQuery(".nps-name-wrapper #input-name").val('Anonymous'); 
-    jQuery(".nps-email-wrapper #input-email").attr('placeholder', 'email@example.com');
-  },2000);
-</script>{% endraw %}
-{% endunless %}{%- endcomment -%}
-
 <div 
      id="stamped-reviews-widget" 
      data-widget-type="nps-submission-form" 
