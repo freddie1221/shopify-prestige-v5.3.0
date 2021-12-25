@@ -6,3 +6,14 @@
      data-title="Thank you for your review!" 
      data-message="How likely are you to recommend us to friend or family?">
 </div>{% endraw %}
+{% if customer %}
+{% raw %}
+<script>
+  console.log("should_be_working!");
+  setTimeout(function(){
+    $(".nps-name-wrapper #input-name").val("{% endraw %}{{customer.first_name}} {{customer.last_name}}{% raw %}"); 
+    $(".nps-name-wrapper #input-email").val("{% endraw %}{{customer.email}}{% raw %}");
+    
+   },500);
+</script>{% endraw %}
+{% endif %}
