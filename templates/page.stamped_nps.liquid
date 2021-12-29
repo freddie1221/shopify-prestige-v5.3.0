@@ -6,14 +6,11 @@
      data-title="Thank you for your review!" 
      data-message="How likely are you to recommend us to friend or family?">
 </div>
-{%if customer %}
+{% unless customer.email %}
 <script>
-var customerName = '{{customer.first_name }}';
-
-if (!customerName){
-customerName = 'Anonymous';
-}
-$('.nps-name-wrapper input[type="text"]').val(customerName);
-$('.nps-email-wrapper input[type="email"]').val('{{customer.email}}');
+  setTimeout(function(){
+    jQuery(".nps-name-wrapper #input-name").val('Anonymous'); 
+    jQuery(".nps-email-wrapper #input-email").attr('placeholder', 'email@example.com');
+  },2000);
 </script>
-{% endif %}
+{% endunless %}
