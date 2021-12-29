@@ -96,7 +96,6 @@
     },
     "1633607702c233da36": {
       "type": "featured-product",
-      "disabled": true,
       "blocks": {
         "1633607702c233da36-0": {
           "type": "product_meta",
