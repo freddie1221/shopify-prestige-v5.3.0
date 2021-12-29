@@ -96,6 +96,7 @@
     },
     "1633607702c233da36": {
       "type": "featured-product",
+      "disabled": true,
       "blocks": {
         "1633607702c233da36-0": {
           "type": "product_meta",
@@ -144,9 +145,9 @@
       ],
       "settings": {
         "subheading": "",
-        "title": "Latest Arrival",
+        "title": "Popular Now",
         "show_headings_on_mobile": true,
-        "product": "eloise-suede-gloves"
+        "product": "charlotte-suede-glove-with-button-cuff"
       }
     }
   },
