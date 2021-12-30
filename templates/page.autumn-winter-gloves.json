@@ -264,7 +264,7 @@
           "type": "buy_buttons",
           "settings": {
             "show_price_in_button": false,
-            "show_payment_button": true
+            "show_payment_button": false
           }
         },
         "c54c2a2b-91c8-4b91-b34a-c19eafbcc394": {
