@@ -232,6 +232,60 @@
         "grid_mobile_items_per_row": "2",
         "grid_desktop_items_per_row": 4
       }
+    },
+    "1640858614830b2035": {
+      "type": "featured-product",
+      "blocks": {
+        "1640858614c6407fde-0": {
+          "type": "product_meta",
+          "settings": {
+            "show_vendor": true,
+            "show_sku": false,
+            "show_product_rating": false,
+            "show_taxes_included": false
+          }
+        },
+        "1640858614c6407fde-1": {
+          "type": "share_buttons",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "1640858614c6407fde-2": {
+          "type": "variant_selector",
+          "settings": {
+            "selector_mode": "dropdown",
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "size_chart": ""
+          }
+        },
+        "1640858614c6407fde-3": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_price_in_button": false,
+            "show_payment_button": true
+          }
+        },
+        "c54c2a2b-91c8-4b91-b34a-c19eafbcc394": {
+          "type": "description",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "1640858614c6407fde-0",
+        "1640858614c6407fde-1",
+        "1640858614c6407fde-2",
+        "1640858614c6407fde-3",
+        "c54c2a2b-91c8-4b91-b34a-c19eafbcc394"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "The Classic",
+        "show_headings_on_mobile": true,
+        "product": "cressida-pure-cashmere-pashmina"
+      }
     }
   },
   "order": [
@@ -240,6 +294,7 @@
     "1633607702c233da36",
     "1640794888f5ad83b7",
     "164085842063534639",
-    "16408584420bfe7829"
+    "16408584420bfe7829",
+    "1640858614830b2035"
   ]
 }
