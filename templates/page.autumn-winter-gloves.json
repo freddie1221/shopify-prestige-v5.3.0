@@ -196,6 +196,42 @@
         "grid_mobile_items_per_row": "2",
         "grid_desktop_items_per_row": 4
       }
+    },
+    "16408584420bfe7829": {
+      "type": "featured-collections",
+      "blocks": {
+        "16408584423b54d761-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "leather-gloves",
+            "title": "Leather",
+            "grid_items_count": 8,
+            "button_text": "Collection"
+          }
+        },
+        "8703f71d-07c9-4d9d-855b-ab2a173fac88": {
+          "type": "collection",
+          "settings": {
+            "collection": "suede-gloves",
+            "title": "Suede",
+            "grid_items_count": 8,
+            "button_text": "Collection"
+          }
+        }
+      },
+      "block_order": [
+        "16408584423b54d761-0",
+        "8703f71d-07c9-4d9d-855b-ab2a173fac88"
+      ],
+      "settings": {
+        "title": "Sans Pareil",
+        "layout_mode": "grid",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false,
+        "grid_mobile_items_per_row": "2",
+        "grid_desktop_items_per_row": 4
+      }
     }
   },
   "order": [
@@ -203,6 +239,7 @@
     "main",
     "1633607702c233da36",
     "1640794888f5ad83b7",
-    "164085842063534639"
+    "164085842063534639",
+    "16408584420bfe7829"
   ]
 }
