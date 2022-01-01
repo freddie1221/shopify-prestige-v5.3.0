@@ -1,9 +1,8 @@
 
 /* Elements to hide */
-#tab-reviews .stamped-review-reply {
+.stamped-review-reply {
   display: none;
 }
-
 .summary-overview {
   display: none;
 }
@@ -765,12 +764,4 @@
 .ProductMeta__Description .stamped-product-reviews-badge .stamped-fa-star-o:before, 
 .ProductMeta__Description .stamped-product-reviews-badge .stamped-fa-star:before {
   color:#404040 !important; 
-}
-
-/*Unhide based on request with ticket ID #534405*/
-#stamped-questions-tab .stamped-review {
-    color: #1c1b1b;
-    font-size: 14px !important;
-    font-weight: 400;
-    margin-bottom: 18px;
 }
