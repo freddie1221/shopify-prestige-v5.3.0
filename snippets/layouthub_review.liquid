@@ -149,7 +149,7 @@
         {% elsif review_type == 'form'%}
             {% render "reviews-importer", product: product %}
         {% else%}
-            <div class="scm-reviews-rate" data-rate-version2= {{ product.metafields.scm_review_importer.reviewsData.reviewCountInfo | json }}>
+            <div class="scm-reviews-rate" data-rate-version2= {{ product.metafields.scm_review_importer.reviewsData.reviewCountInfo | json}}>
             </div>
         {% endif %}
     {%- when 'photo-reviews'-%}
@@ -158,7 +158,7 @@
         {% elsif review_type == 'form'%}
             <div style="clear:both;"></div>
             <div id="opinew-reviews-product-page-code" class="">
-                <span id="opinew-plugin" data-server-address="https://www.opinew.com" data-opw-prodreviews="{{ product.metafields.opinew_metafields['product_plugin'] }}" data-opinew-shop-id="{{ shop.id }}" data-shop-url="{{ shop.domain }}" data-platform-product-id="{{ product.id }}">
+                <span id="opinew-plugin" data-server-address="https://www.opinew.com" data-opw-prodreviews="{{ product.metafields.opinew_metafields['product_plugin'] }}" data-opinew-shop-id="{{ shop.id }}" data-shop-url="{{shop.domain}}" data-platform-product-id="{{product.id}}">
                 <span id="opinew_product_plugin_app"></span>
                 </span>
             </div>
