@@ -1,8 +1,9 @@
 
 /* Elements to hide */
-/*.stamped-review-reply {
+#tab-reviews .stamped-review-reply {
   display: none;
-}*/
+}
+
 .summary-overview {
   display: none;
 }
