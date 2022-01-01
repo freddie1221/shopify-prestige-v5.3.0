@@ -19,6 +19,7 @@
       <a href="{{ product.url }}">{{ product.title }}</a>
     {%- endif -%}
   </h1>
+  
 
   {%- if block.settings.show_product_rating -%}
     <div class="ProductMeta__Rating Heading Text--subdued u-h7">
@@ -34,17 +35,17 @@
     <div class="ProductMeta__PriceList Heading">
       {%- if settings.currency_code_enabled -%}
         {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
-          <span class="ProductMeta__Price Price Price--highlight Text--subdued u-h4">{{ product.selected_or_first_available_variant.price | money_with_currency }}</span>
-          <span class="ProductMeta__Price Price Price--compareAt Text--subdued u-h4">{{ product.selected_or_first_available_variant.compare_at_price | money_with_currency }}</span>
+          <span class="ProductMeta__Price Price Price--highlight  u-h4">{{ product.selected_or_first_available_variant.price | money_with_currency }}</span>
+          <span class="ProductMeta__Price Price Price--compareAt u-h4">{{ product.selected_or_first_available_variant.compare_at_price | money_with_currency }}</span>
         {%- else -%}
-          <span class="ProductMeta__Price Price Text--subdued u-h4">{{ product.selected_or_first_available_variant.price | money_with_currency }}</span>
+          <span class="ProductMeta__Price Price u-h4">{{ product.selected_or_first_available_variant.price | money_with_currency }}</span>
         {%- endif -%}
       {%- else -%}
         {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
-          <span class="ProductMeta__Price Price Price--highlight Text--subdued u-h4">{{ product.selected_or_first_available_variant.price | money }}</span>
-          <span class="ProductMeta__Price Price Price--compareAt Text--subdued u-h4">{{ product.selected_or_first_available_variant.compare_at_price | money }}</span>
+          <span class="ProductMeta__Price Price Price--highlight u-h4">{{ product.selected_or_first_available_variant.price | money }}</span>
+          <span class="ProductMeta__Price Price Price--compareAt u-h4">{{ product.selected_or_first_available_variant.compare_at_price | money }}</span>
         {%- else -%}
-          <span class="ProductMeta__Price Price Text--subdued u-h4">{{ product.selected_or_first_available_variant.price | money }}</span>
+          <span class="ProductMeta__Price Price u-h4">{{ product.selected_or_first_available_variant.price | money }}</span>
         {%- endif -%}
       {%- endif -%}
     </div>

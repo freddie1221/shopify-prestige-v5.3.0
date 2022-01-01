@@ -28,7 +28,7 @@
  'send_to': 'AW-975218407',
  'ecomm_pagetype': 'cart',
  'ecomm_prodid': [{% for item in cart.items %}'{{item.product.id}}'{% unless forloop.last %},{% endunless %}{% endfor %}],
- 'ecomm_totalvalue': '{{cart.total_price | money_without_currency | remove: ',' }}'
+ 'ecomm_totalvalue': '{{ cart.total_price | money_without_currency | remove: ',' }}'
  });
 </script>
 {% elsif template contains 'search' %}

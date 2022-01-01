@@ -1,25 +1,40 @@
 {
   "sections": {
-    "1631192323b7fc90f2": {
+    "slideshow": {
       "type": "slideshow",
       "blocks": {
-        "1631192323b7fc90f2-0": {
+        "slide-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/85385f8e_2.jpg",
+            "image": "shopify:\/\/shop_images\/JH-2951.jpg",
             "apply_overlay": true,
             "content_position": "bottomLeft",
-            "subheading": "Nature's gift to the Glovemaker",
-            "title": "Leather Gloves",
-            "button_1_text": "collection",
-            "button_1_link": "shopify:\/\/collections\/leather-gloves",
+            "subheading": "Merino, the King of sheep",
+            "title": "Merino Wool Gloves",
+            "button_1_text": "Collection",
+            "button_1_link": "shopify:\/\/collections\/merino-wool-gloves",
+            "button_2_text": "",
+            "button_2_link": ""
+          }
+        },
+        "slide-1": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "apply_overlay": true,
+            "content_position": "bottomLeft",
+            "subheading": "Slide title",
+            "title": "Tell your story",
+            "button_1_text": "",
+            "button_1_link": "",
             "button_2_text": "",
             "button_2_link": ""
           }
         }
       },
       "block_order": [
-        "1631192323b7fc90f2-0"
+        "slide-0",
+        "slide-1"
       ],
       "settings": {
         "show_fullscreen": true,
@@ -91,41 +106,26 @@
         "show_color_swatch": false
       }
     },
-    "slideshow": {
+    "1631192323b7fc90f2": {
       "type": "slideshow",
       "blocks": {
-        "slide-0": {
+        "1631192323b7fc90f2-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/JH-2951.jpg",
+            "image": "shopify:\/\/shop_images\/85385f8e_2.jpg",
             "apply_overlay": true,
             "content_position": "bottomLeft",
-            "subheading": "Merino, the King of sheep",
-            "title": "Merino Wool Gloves",
-            "button_1_text": "Collection",
-            "button_1_link": "shopify:\/\/collections\/merino-wool-gloves",
-            "button_2_text": "",
-            "button_2_link": ""
-          }
-        },
-        "slide-1": {
-          "type": "image",
-          "disabled": true,
-          "settings": {
-            "apply_overlay": true,
-            "content_position": "bottomLeft",
-            "subheading": "Slide title",
-            "title": "Tell your story",
-            "button_1_text": "",
-            "button_1_link": "",
+            "subheading": "Nature's gift to the Glovemaker",
+            "title": "Leather Gloves",
+            "button_1_text": "collection",
+            "button_1_link": "shopify:\/\/collections\/leather-gloves",
             "button_2_text": "",
             "button_2_link": ""
           }
         }
       },
       "block_order": [
-        "slide-0",
-        "slide-1"
+        "1631192323b7fc90f2-0"
       ],
       "settings": {
         "show_fullscreen": true,
@@ -343,11 +343,11 @@
     }
   },
   "order": [
-    "1631192323b7fc90f2",
+    "slideshow",
     "1631211867e9e31b66",
     "163119180946bed970",
     "1637784881d5cb0a82",
-    "slideshow",
+    "1631192323b7fc90f2",
     "16311956878ccd64ec",
     "163793759318a5d725",
     "1631195707147fa6af",

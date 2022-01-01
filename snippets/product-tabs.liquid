@@ -27,22 +27,27 @@
         {%- endif -%}
 
       {%- when 'reviews' -%}
-        <div class="Collapsible Collapsible--large" {{ block.shopify_attributes }}>
-          {%- comment -%}We parse from metafields the number of reviews. First we try to use the old way, and then the updated way{%- endcomment -%}
-          {%- if product.metafields.spr.reviews contains 'itemprop="reviewCount"' -%}
-            {%- assign reviews_count = product.metafields.spr.reviews | split: '<meta itemprop="reviewCount" content="' | last | split: '">' | first | times: 1 -%}
-          {%- else -%}
-            {%- assign reviews_count = product.metafields.spr.reviews | split: '"reviewCount": "' | last | split: '"' | first | plus: 0 -%}
-          {%- endif -%}
-
-          <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
-            <span>{{ 'product.tabs.reviews' | t }} {% if product.metafields.spr.reviews %}<span class="text--light">({{ reviews_count | default: 0 }})</span>{% endif %}</span>
+      <link rel="stylesheet" href="{{ 'stamped-2.css' | asset_url }}">
+        <div class="Collapsible Collapsible--large" {{ block.shopify_attributes }} >
+          <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false" id="reviews-tab">
+            <span>{{ 'product.tabs.reviews' | t }}</span>
             <span class="Collapsible__Plus"></span>
           </button>
-
+          
+          
           <div class="Collapsible__Inner">
             <div class="Collapsible__Content">
-              <div id="shopify-product-reviews" data-id="{{ product.id }}">{{ product.metafields.spr.reviews }}</div>
+              <div id="stamped-main-widget" 
+                  data-widget-style="standard"
+                  data-product-id="{{ product.id }}" 
+                  data-name="{{ product.title | escape }}" 
+                  data-url="{{ shop.url }}{{ product.url }}" 
+                  data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26' }}" 
+                  data-description="{{ product.description | escape }}" 
+                  data-product-sku="{{ product.handle }}"
+                  data-product-type="{{ product.type }}"> 
+                  {{ product.metafields.stamped.reviews }} 
+                </div>
             </div>
           </div>
         </div>

@@ -13,14 +13,14 @@ This snippet auto generate by LayoutHub. Please DO NOT modify it
 		{%- if shop.metafields.layouthub.fonts -%}
 			{{- shop.metafields.layouthub.fonts -}}
 		{%- endif -%}
-		<link rel="stylesheet" type="text/css" href="data:text/css;base64,{{shop.metafields.layouthub.theme}}" media="all">
+		<link rel="stylesheet" type="text/css" href="data:text/css;base64,{{ shop.metafields.layouthub.theme }}" media="all">
 		{%- if shop.metafields.layouthub.anti_copy -%}
 			{{ shop.metafields.layouthub.anti_copy }}
 		{%- endif -%}
     {%- endif -%}
     {%- if shop.metafields.layouthub.scripts -%}
         {% assign jquery_string = '<!--LAYOUTHUB_JQUERY-->' %}
-            {{- shop.metafields.layouthub.scripts | replace: jquery_string, ''  -}}
+            {{- shop.metafields.layouthub.scripts | replace: jquery_string, '' -}}
     {%- endif -%}
 {%- endunless -%}
 <!--/LayoutHub-Embed-->

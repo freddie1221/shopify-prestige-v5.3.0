@@ -1,0 +1,71 @@
+.stamped-summary .stamped-review-options {
+    display: none !important;
+}
+
+.stamped-review-content .stamped-review-options {
+    min-width: 30%; 
+  }
+  
+  
+  
+  
+  .stamped-summary .stamped-summary-text {
+      margin-top: 0px !important;
+    }
+    
+
+.stamped-summary .summary-overview {
+    width: 100% !important;
+    float: none !important;
+    display: flex;
+    justify-content: center;
+}
+
+.stamped-summary .summary-overview > span {
+    margin-left: 10px;
+    margin-right: 20px;
+    
+    display: flex;
+    align-items: center;
+}
+
+.stamped-summary .summary-overview  span span{
+    
+}
+
+.stamped-summary-starrating {
+    display: flex;
+    align-items: center;
+}
+
+.stamped-review-options ul li {
+    display: flex;
+    flex-wrap: nowrap; 
+    min-width: 320px;
+}
+
+.stamped-review-option-scale span {
+    width: 70px !important; 
+    line-height: 35px;
+}
+
+.stamped-review-option-scale span:first-of-type {
+    text-align: left;
+}
+
+.stamped-review-option-scale span:last-of-type {
+    text-align: right !important;
+}
+
+.stamped-content .stamped-review .stamped-review-options strong {
+vertical-align: top;
+}
+  
+.stamped-content .stamped-review-options ul li[data-value="sizing"] {
+display: none;
+}
+.stamped-content .stamped-review-options ul li[data-value="quality"] {
+margin-top: 5px;
+}
+  
+  

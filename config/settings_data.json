@@ -63,12 +63,12 @@
       "announcement": {
         "type": "announcement",
         "settings": {
-          "enable_bar": true,
-          "home_page_only": true,
-          "background": "#000000",
+          "enable_bar": false,
+          "home_page_only": false,
+          "background": "#1c1b1b",
           "text_color": "#ffffff",
-          "content": "See here for our 2021 Christmas Shipping dates",
-          "link": "https:\/\/www.corneliajames.com\/pages\/christmas-delivery-2021"
+          "content": "Christmas week shipping times",
+          "link": "shopify:\/\/pages\/christmas-week-shipping-times"
         }
       },
       "header": {

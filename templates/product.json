@@ -49,6 +49,11 @@
           "type": "description",
           "settings": {
           }
+        },
+        "b6ee27be-276f-4e16-a56b-ec6498d9199b": {
+          "type": "reviews",
+          "settings": {
+          }
         }
       },
       "block_order": [
@@ -58,7 +63,8 @@
         "buy_buttons",
         "ee8af388-c6b3-4f3a-9a4a-e044944189ae",
         "share_buttons",
-        "description"
+        "description",
+        "b6ee27be-276f-4e16-a56b-ec6498d9199b"
       ],
       "settings": {
         "image_size": "large",
@@ -75,6 +81,7 @@
     },
     "16311842196785c46c": {
       "type": "stamped-main-widget",
+      "disabled": true,
       "settings": {
       }
     },
