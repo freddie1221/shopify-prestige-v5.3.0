@@ -1,8 +1,9 @@
 
 /* Elements to hide */
-.stamped-review-reply {
+#tab-reviews .stamped-review-reply {
   display: none;
 }
+
 .summary-overview {
   display: none;
 }
@@ -539,12 +540,12 @@
   .stamped-location-flag {
   
 }
-
+/*
 .stamped-file-uploader .stamped-file-uploader-btn-label2,
 .stamped-container .stamped-content .stamped-tab-container,
 #stamped-reviews-filter {
   display: none;
-}
+}*/
 .stamped-container .stamped-messages .stamped-thank-you p {
   font-size: 0.75em;
   font-weight: 400;
@@ -764,4 +765,12 @@
 .ProductMeta__Description .stamped-product-reviews-badge .stamped-fa-star-o:before, 
 .ProductMeta__Description .stamped-product-reviews-badge .stamped-fa-star:before {
   color:#404040 !important; 
+}
+
+/*Unhide based on request with ticket ID #534405*/
+#tab-questions .stamped-container .stamped-content .stamped-review {
+    color: #1c1b1b;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 18px;
 }
