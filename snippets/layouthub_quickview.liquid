@@ -17,5 +17,5 @@
 		{%- if quickview_content-%}{{-quickview_content-}}{%- endif -%}
 		{%- render 'sca-quick-view',  product: product -%}
 	{%- else -%}
-		<div class="lh-quick-view" data-handle="{{ product.handle }}">{%- if quickview_content-%}{{-quickview_content-}}{%- endif -%}</div>
+		<div class="lh-quick-view" data-handle="{{product.handle}}">{%- if quickview_content-%}{{-quickview_content-}}{%- endif -%}</div>
 {%- endcase -%}

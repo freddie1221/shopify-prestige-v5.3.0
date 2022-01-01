@@ -13,12 +13,12 @@
 	{%- when 'swym-relay' -%}
 			{%- if wishlist_content -%}
 				{%- render 'swym-product-view', product: product -%}
-				<a class="wishlist-btn" data-swaction="addToWishlist" data-product-id="{{ product.id | json }}">
-				   {{- wishlist_content -}}
+				<a class="wishlist-btn" data-swaction="addToWishlist" data-product-id="{{product.id | json}}">
+				   {{- wishlist_content-}}
 				</a>
 			{%- else -%}
 				{%- render 'swym-product-view', product: product -%}
-				<button class="swym-button swym-add-to-wishlist-view-product product_{{ product.id }}" data-swaction="addToWishlist" data-product-id="{{ product.id | json }}"></button>
+				<button class="swym-button swym-add-to-wishlist-view-product product_{{product.id}}" data-swaction="addToWishlist" data-product-id="{{product.id | json}}"></button>
 			{%- endif -%}
 	{%- when 'smart-wishlist' -%}
 		{%- if wishlist_type == 'single' -%}
