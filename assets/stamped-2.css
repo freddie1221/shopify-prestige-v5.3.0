@@ -63,3 +63,7 @@ margin-top: 5px;
 .stamped-review-content {
     margin-bottom: 0px !important;
 }
+
+.stamped-review-image {
+    display: none !important;
+}

@@ -30,7 +30,7 @@
       <link rel="stylesheet" href="{{ 'stamped-2.css' | asset_url }}">
         <div class="Collapsible Collapsible--large" {{ block.shopify_attributes }} >
           <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false" id="reviews-tab">
-            <span>{{ 'product.tabs.reviews' | t }}</span>
+            <span>{{ 'product.tabs.reviews' | t }} ({{ product.metafields.stamped.reviews_count }})</span>
             <span class="Collapsible__Plus"></span>
           </button>
           
