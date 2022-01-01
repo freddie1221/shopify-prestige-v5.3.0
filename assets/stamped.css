@@ -773,9 +773,7 @@
     font-weight: 400;
     margin-bottom: 18px;
 }
-span.stamped-summary-actions-clear, .stamped-summary-actions-newquestion, .stamped-summary-actions-newreview, .stamped-summary-actions-mobile-filter {  
-   box-shadow: none !important;
-}
+
      span.stamped-summary-actions-newquestion {
     display: block !important;
     border-radius: 2px;
