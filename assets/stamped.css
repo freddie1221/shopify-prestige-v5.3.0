@@ -789,5 +789,5 @@
     cursor: pointer;
     line-height: 19px;
     margin-left: 25px !important;
-    box-shadow: 0px 0px 0px 0px #8888886b !important;
+    box-shadow: none !important;
 }
