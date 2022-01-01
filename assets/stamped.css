@@ -765,3 +765,33 @@
 .ProductMeta__Description .stamped-product-reviews-badge .stamped-fa-star:before {
   color:#404040 !important; 
 }
+
+/*Unhide elements related to Q&A based on request with ticket ID #534405*/
+#stamped-questions-tab .stamped-review {
+    color: #1c1b1b;
+    font-size: 14px !important;
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+     span.stamped-summary-actions-newquestion
+   {
+    display: block !important;
+    border-radius: 2px;
+    border: 1px solid var(--border-color);
+    font-family: var(--heading-font-family);
+    float: none;
+    font-size: 10px;
+    font-weight: 400;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: .25px;
+    color: #1c1b1b!important;
+    cursor: pointer;
+    line-height: 19px;
+    margin-left: 25px !important;
+    box-shadow: none !important;
+}
+   .stamped-summary-actions-newreview {  
+   box-shadow: none !important;
+}
