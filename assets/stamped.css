@@ -768,9 +768,9 @@
 }
 
 /*Unhide based on request with ticket ID #534405*/
-#tab-questions .stamped-container .stamped-content .stamped-review {
+#stamped-questions-tab .stamped-review {
     color: #1c1b1b;
-    font-size: 14px;
+    font-size: 14px !important;
     font-weight: 400;
     margin-bottom: 18px;
 }
