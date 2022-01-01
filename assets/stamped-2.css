@@ -6,14 +6,10 @@
     min-width: 30%; 
   }
   
-  
-  
-  
-  .stamped-summary .stamped-summary-text {
-      margin-top: 0px !important;
-    }
+.stamped-summary .stamped-summary-text {
+    margin-top: 0px !important;
+}
     
-
 .stamped-summary .summary-overview {
     width: 100% !important;
     float: none !important;
@@ -24,13 +20,8 @@
 .stamped-summary .summary-overview > span {
     margin-left: 10px;
     margin-right: 20px;
-    
     display: flex;
     align-items: center;
-}
-
-.stamped-summary .summary-overview  span span{
-    
 }
 
 .stamped-summary-starrating {
@@ -42,11 +33,12 @@
     display: flex;
     flex-wrap: nowrap; 
     min-width: 320px;
+    margin-bottom: 20px !important;
 }
 
 .stamped-review-option-scale span {
     width: 70px !important; 
-    line-height: 35px;
+    line-height: 35px !important;
 }
 
 .stamped-review-option-scale span:first-of-type {
@@ -68,4 +60,6 @@ display: none;
 margin-top: 5px;
 }
   
-  
+.stamped-review-content {
+    margin-bottom: 0px !important;
+}
