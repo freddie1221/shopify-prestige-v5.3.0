@@ -774,7 +774,7 @@
     margin-bottom: 18px;
 }
 
-     span.stamped-summary-actions-newquestion
+     span.stamped-summary-actions-newquestion, .stamped-summary-actions-newreview
    {
     display: block !important;
     border-radius: 2px;
@@ -792,6 +792,6 @@
     margin-left: 25px !important;
     box-shadow: none !important;
 }
-   .stamped-summary-actions-newreview {  
+.stamped-summary-actions-newreview {  
    box-shadow: none !important;
 }
