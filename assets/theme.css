@@ -11331,9 +11331,11 @@ shopify-payment-terms {
 
 /* zindex updates */
 
-#shopify-chat,
-#ShopifyChat {
-  z-index: 89000 !important;
+#shopify-chat *,
+#ShopifyChat,
+#shopify-chat-dummy,
+#dummy-chat-button {
+  z-index: 400 !important;
 }
 
 .needsclick  .kl-private-reset-css-Xuajs1 {
