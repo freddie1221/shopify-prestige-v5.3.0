@@ -41,6 +41,13 @@
     line-height: 35px !important;
 }
 
+@media (max-width: 640px) {
+    .stamped-review-option-scale span {
+        width: 50px !important; 
+    }
+}
+    
+
 .stamped-review-option-scale span:first-of-type {
     text-align: left;
 }
@@ -53,7 +60,8 @@
 vertical-align: top;
 }
   
-.stamped-content .stamped-review-options ul li[data-value="sizing"] {
+.stamped-content .stamped-review-options ul li[data-value="sizing"],
+.stamped-content .stamped-review-options ul li[data-value="fit"] {
 display: none;
 }
 .stamped-content .stamped-review-options ul li[data-value="quality"] {
