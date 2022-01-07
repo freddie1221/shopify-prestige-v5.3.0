@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_header": false,
+        "show_large": false,
+        "no_styling": false
+      }
+    },
+    "1641136724284c0ac5": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "liquid": "<div id=\"stamped-reviews-widget\" data-widget-type=\"nps-submission-form\" data-email=\"{{customer.email}}\" data-name=\"{{ customer.first_name }} {{ customer.last_name }}\" data-title=\"Thank you for your review!\" data-message=\"How likely are you to recommend us to friend or family?\">\n<\/div>\n{% unless customer.email %}\n<script>\n  setTimeout(function(){\n    jQuery(\".nps-name-wrapper #input-name\").val('Anonymous'); \n    jQuery(\".nps-email-wrapper #input-email\").attr('placeholder', 'email@example.com');\n  },2000);\n<\/script>\n{% endunless %}"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1641136724284c0ac5"
+  ]
+}
