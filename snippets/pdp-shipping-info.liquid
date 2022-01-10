@@ -2,16 +2,17 @@
 {% if product.type contains 'Gloves' %}
   <div class="Collapsible">
     <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">Shipping
-    <span class="Collapsible__Plus"></span>
-  </button>
-  <div class="Collapsible__Inner">
-    <div class="Collapsible__Content">
-      <div class="Rte">
-        {% if product.type ==  'Suede Gloves' or product.type == 'Leather Gloves'%}
-          {{ pages['shipping-generic'].content }}
-          {% elsif product.type contains 'Gloves' %}
-          {{ pages['shipping-makeable'].content }}
-        {% endif %}
+      <span class="Collapsible__Plus"></span>
+    </button>
+    <div class="Collapsible__Inner">
+      <div class="Collapsible__Content">
+        <div class="Rte">
+          {% if product.type ==  'Suede Gloves' or product.type == 'Leather Gloves'%}
+            {{ pages['shipping-generic'].content }}
+            {% elsif product.type contains 'Gloves' %}
+            {{ pages['shipping-makeable'].content }}
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>

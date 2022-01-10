@@ -299,7 +299,7 @@
                         <div class="Rte">
                           {% render 'pdp-made-in-england-and-stamped' %}
                           {{- product.description | replace: 'data-section-type', 'data-section-type-placeholder' -}}                        
-                          {% render 'pdp-shipping-info' %}
+                          
                         </div>
                       </div>
                     {%- endif -%}
@@ -435,13 +435,7 @@
           </div>
         </div>
       </div>
-      {%- comment -%} 
-      This div close tag below seems to fix the problem
-      This is very weird
-      It could be a missing close tag from something being pulled in
-      That would explain why it is fine in the clean theme
-      {%- endcomment -%}    
-    </div>
+     
       
 
     {%- if product_aside != blank -%}

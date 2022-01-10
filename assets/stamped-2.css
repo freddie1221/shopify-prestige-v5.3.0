@@ -43,7 +43,7 @@
 
 @media (max-width: 640px) {
     .stamped-review-option-scale span {
-        width: 50px !important; 
+        width: 57px !important; 
     }
 }
     
@@ -59,14 +59,19 @@
 .stamped-content .stamped-review .stamped-review-options strong {
 vertical-align: top;
 }
-  
+
+
+/*
 .stamped-content .stamped-review-options ul li[data-value="sizing"],
 .stamped-content .stamped-review-options ul li[data-value="fit"] {
 display: none;
 }
+
+
 .stamped-content .stamped-review-options ul li[data-value="quality"] {
 margin-top: 5px;
 }
+*/
   
 .stamped-review-content {
     margin-bottom: 0px !important;
