@@ -1,0 +1,117 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "product_meta": {
+          "type": "product_meta",
+          "settings": {
+            "show_vendor": true,
+            "show_sku": false,
+            "show_product_rating": false,
+            "show_taxes_included": false
+          }
+        },
+        "variant_selector": {
+          "type": "variant_selector",
+          "settings": {
+            "selector_mode": "block",
+            "show_color_swatch": true,
+            "show_color_carousel": false,
+            "size_chart": "size-chart"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+            "show_label": true
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_price_in_button": false,
+            "show_payment_button": false
+          }
+        },
+        "ee8af388-c6b3-4f3a-9a4a-e044944189ae": {
+          "type": "back_in_stock",
+          "settings": {
+          }
+        },
+        "share_buttons": {
+          "type": "share_buttons",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "b6ee27be-276f-4e16-a56b-ec6498d9199b": {
+          "type": "reviews",
+          "settings": {
+          }
+        },
+        "4b910d41-5da9-4f4f-8cc8-665987f2d6d3": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "content": "",
+            "page": "shipping-makeable"
+          }
+        }
+      },
+      "block_order": [
+        "product_meta",
+        "variant_selector",
+        "quantity_selector",
+        "buy_buttons",
+        "ee8af388-c6b3-4f3a-9a4a-e044944189ae",
+        "share_buttons",
+        "description",
+        "b6ee27be-276f-4e16-a56b-ec6498d9199b",
+        "4b910d41-5da9-4f4f-8cc8-665987f2d6d3"
+      ],
+      "settings": {
+        "image_size": "large",
+        "stack_images": false,
+        "show_thumbnails": true,
+        "enable_image_zoom": true,
+        "enable_video_looping": false
+      }
+    },
+    "163118415894f626a8": {
+      "type": "article-features",
+      "settings": {
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false
+      }
+    },
+    "recently-viewed-products": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "title": "Recently viewed",
+        "show_product_info": true,
+        "show_vendor": false,
+        "show_color_swatch": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "163118415894f626a8",
+    "product-recommendations",
+    "recently-viewed-products"
+  ]
+}
