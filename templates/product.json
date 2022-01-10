@@ -54,6 +54,14 @@
           "type": "reviews",
           "settings": {
           }
+        },
+        "4b910d41-5da9-4f4f-8cc8-665987f2d6d3": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "content": "",
+            "page": "shipping-makeable"
+          }
         }
       },
       "block_order": [
@@ -64,7 +72,8 @@
         "ee8af388-c6b3-4f3a-9a4a-e044944189ae",
         "share_buttons",
         "description",
-        "b6ee27be-276f-4e16-a56b-ec6498d9199b"
+        "b6ee27be-276f-4e16-a56b-ec6498d9199b",
+        "4b910d41-5da9-4f4f-8cc8-665987f2d6d3"
       ],
       "settings": {
         "image_size": "large",
@@ -76,12 +85,6 @@
     },
     "163118415894f626a8": {
       "type": "article-features",
-      "settings": {
-      }
-    },
-    "16311842196785c46c": {
-      "type": "stamped-main-widget",
-      "disabled": true,
       "settings": {
       }
     },
@@ -108,7 +111,6 @@
   "order": [
     "main",
     "163118415894f626a8",
-    "16311842196785c46c",
     "product-recommendations",
     "recently-viewed-products"
   ]
