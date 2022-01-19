@@ -26,9 +26,12 @@
                 </li>
 
                 {%- for tag in blog.all_tags -%}
+                 {% unless tag contains '__' %}
+                   
                   <li class="HorizontalList__Item">
                     <a href="/blogs/{{ blog.handle }}/tagged/{{ tag | handle }}" class="Heading Link Link--primary Text--subdued u-h8 {% if current_tags contains tag %}is-active{% endif %}">{{ tag }}</a>
                   </li>
+                {% endunless %}
                 {%- endfor -%}
               </ul>
             {%- endif -%}
