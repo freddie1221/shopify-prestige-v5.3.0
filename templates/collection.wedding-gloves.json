@@ -26,6 +26,12 @@
     "1635962486f6b1c870": {
       "type": "testimonials",
       "blocks": {
+        "d0d6efd3-216e-4eaf-b8f3-cd5c5f20c87b": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "<p>From purchase to when they arrived at my door, it truly was a royal experience ordering these gloves. The customer service was unlike anything else I’ve experienced with real humans reaching out to me to keep me updated along the way. The experience continued to wow when the gloves arrived quickly, in beautiful packaging, and with a handwritten note. They are beautiful, and I can’t wait to wear them to my wedding in April!<br\/><br\/>~ Megan M<\/p>"
+          }
+        },
         "1635962486f6b1c870-0": {
           "type": "testimonial",
           "settings": {
@@ -46,6 +52,7 @@
         }
       },
       "block_order": [
+        "d0d6efd3-216e-4eaf-b8f3-cd5c5f20c87b",
         "1635962486f6b1c870-0",
         "1635962486f6b1c870-1",
         "1635962486f6b1c870-2"

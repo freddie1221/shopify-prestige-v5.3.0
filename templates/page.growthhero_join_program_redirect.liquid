@@ -12,11 +12,11 @@
   {% endcomment %}
   
   {% assign growthhero_secret = shop.metafields['growthhero'].secret %}
-  {% assign growthhero_panel_href = "https://app.growthhero.io/#/c/cornelia-james/registration" %}
+  {% assign growthhero_panel_href = "https://www.corneliajames.com/pages/ambassadors#registration" %}
 
   {% if customer.id %}
     {% assign growthhero_digest = customer.id | hmac_sha256: growthhero_secret %}
-    {% assign growthhero_panel_href = "https://app.growthhero.io/#/c/cornelia-james/customer-login/" 
+    {% assign growthhero_panel_href = "https://www.corneliajames.com/pages/ambassadors#customer-login/" 
       | append: customer.id 
       | append: '-' 
       | append: growthhero_digest 
@@ -25,7 +25,7 @@
 
   <script type="text/javascript">  
     (function() {
-      var location = '{{ growthhero_panel_href }}';
+      var location = '{{growthhero_panel_href}}';
       function getCookie(a){var b=document.cookie.match("(^|[^;]+)\\s*".concat(a,"\\s*=\\s*([^;]+)"));return b?b.pop():null}
       var postPurchaseModal = getCookie('_growthhero_post_purchase_modal');
       if (postPurchaseModal) {
@@ -40,6 +40,6 @@
   </script>
 </head>
 <body>
-  {{ content_for_layout }}
+  {{content_for_layout}}
 </body>
 </html>
