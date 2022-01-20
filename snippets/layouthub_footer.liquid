@@ -9,7 +9,7 @@ This snippet auto generate by LayoutHub. Please DO NOT modify it
 		{%- if shop.metafields.layouthub.scripts -%}
 			{% capture jquery %} {{ "layouthub-jquery.min.js" | asset_url | script_tag }} {% endcapture %}
 			{% assign jquery_string = '<!--LAYOUTHUB_JQUERY-->' %}
-				{{- shop.metafields.layouthub.scripts | replace: jquery_string, jquery -}}
+				{{- shop.metafields.layouthub.scripts | replace: jquery_string, jquery  -}}
 		{%- endif -%}
 		{%- if shop.metafields.layouthub.freeshippingbar-%}
 			{% section 'layouthub_shipping_bar' %}
