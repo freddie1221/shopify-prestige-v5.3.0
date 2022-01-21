@@ -21,6 +21,7 @@
           "type": "collection",
           "settings": {
             "collection": "cashmere-gloves",
+            "image": "shopify:\/\/shop_images\/JH-1993_3.jpg",
             "image_alignment": "center center",
             "content_position": "bottomLeft",
             "subheading": "",
