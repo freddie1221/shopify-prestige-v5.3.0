@@ -63,12 +63,12 @@
       "announcement": {
         "type": "announcement",
         "settings": {
-          "enable_bar": false,
+          "enable_bar": true,
           "home_page_only": false,
           "background": "#1c1b1b",
           "text_color": "#ffffff",
-          "content": "Christmas week shipping times",
-          "link": "shopify:\/\/pages\/christmas-week-shipping-times"
+          "content": "January Blues sale - 15% off all our collections til Midnight on Monday",
+          "link": ""
         }
       },
       "header": {
