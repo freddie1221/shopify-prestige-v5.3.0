@@ -7,9 +7,60 @@
         "show_large": false,
         "no_styling": false
       }
+    },
+    "1642709116822b4aab": {
+      "type": "featured-product-small",
+      "blocks": {
+        "16427091160a4f9d28-0": {
+          "type": "product_meta",
+          "settings": {
+            "show_vendor": false,
+            "show_sku": false,
+            "show_product_rating": false,
+            "show_taxes_included": false
+          }
+        },
+        "16427091160a4f9d28-1": {
+          "type": "share_buttons",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "16427091160a4f9d28-2": {
+          "type": "variant_selector",
+          "disabled": true,
+          "settings": {
+            "selector_mode": "dropdown",
+            "show_color_swatch": false,
+            "show_color_carousel": false,
+            "size_chart": ""
+          }
+        },
+        "16427091160a4f9d28-3": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_price_in_button": false,
+            "show_payment_button": true
+          }
+        }
+      },
+      "block_order": [
+        "16427091160a4f9d28-0",
+        "16427091160a4f9d28-1",
+        "16427091160a4f9d28-2",
+        "16427091160a4f9d28-3"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": "Featured product small",
+        "show_headings_on_mobile": true,
+        "product": "hermione-duchess-satin-glove"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "1642709116822b4aab"
   ]
 }

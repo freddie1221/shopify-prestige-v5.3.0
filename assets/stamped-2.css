@@ -80,3 +80,11 @@ margin-top: 5px;
 .stamped-review-image {
     display: none !important;
 }
+
+#stamped-reviews-widget .nps-submission-modal{
+    overflow-y: scroll;
+}
+
+#stamped-reviews-widget .nps-submission-modal .nps-submission-modal-wrapper{
+    margin: 60px auto;
+}
