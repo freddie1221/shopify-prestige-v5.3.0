@@ -70,6 +70,41 @@
         "show_color_swatch": false
       }
     },
+    "16395557633dda0879": {
+      "type": "apps",
+      "blocks": {
+        "f01bf221-e5a1-4256-bb84-727a4e060f0b": {
+          "type": "shopify:\/\/apps\/section-feed\/blocks\/app-block\/43cd482b-515a-4e82-b170-05d391763cd2",
+          "settings": {
+            "title": "#CorneliaJames",
+            "subheading": "",
+            "button_text": "Follow us on Instagram",
+            "button_link": "https:\/\/www.instagram.com\/cornelia_james\/",
+            "layout": "collage",
+            "image_size": "medium",
+            "add_spacing": true,
+            "rows_count": 2,
+            "show_author": false,
+            "show_caption": true,
+            "show_date": true,
+            "click_action": "open_instagram",
+            "heading_color": "#000000",
+            "subheading_color": "#000000",
+            "button_background": "#000000",
+            "button_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_text_color": "#ffffff",
+            "overlay_opacity": 65
+          }
+        }
+      },
+      "block_order": [
+        "f01bf221-e5a1-4256-bb84-727a4e060f0b"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "163119180946bed970": {
       "type": "text-with-image",
       "settings": {
@@ -305,46 +340,12 @@
         "button_link": "https:\/\/www.corneliajames.com\/blogs\/press-features",
         "button_text": "All features"
       }
-    },
-    "16395557633dda0879": {
-      "type": "apps",
-      "blocks": {
-        "f01bf221-e5a1-4256-bb84-727a4e060f0b": {
-          "type": "shopify:\/\/apps\/section-feed\/blocks\/app-block\/43cd482b-515a-4e82-b170-05d391763cd2",
-          "settings": {
-            "title": "#CorneliaJames",
-            "subheading": "",
-            "button_text": "Follow us",
-            "button_link": "https:\/\/www.instagram.com\/cornelia_james\/",
-            "layout": "collage",
-            "image_size": "medium",
-            "add_spacing": true,
-            "rows_count": 2,
-            "show_author": false,
-            "show_caption": true,
-            "show_date": true,
-            "click_action": "open_instagram",
-            "heading_color": "#000000",
-            "subheading_color": "#000000",
-            "button_background": "#000000",
-            "button_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_text_color": "#ffffff",
-            "overlay_opacity": 65
-          }
-        }
-      },
-      "block_order": [
-        "f01bf221-e5a1-4256-bb84-727a4e060f0b"
-      ],
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
     "slideshow",
     "1631211867e9e31b66",
+    "16395557633dda0879",
     "163119180946bed970",
     "1637784881d5cb0a82",
     "1631192323b7fc90f2",
@@ -352,7 +353,6 @@
     "163793759318a5d725",
     "1631195707147fa6af",
     "16311942737cf1bceb",
-    "163136337950c4e3a4",
-    "16395557633dda0879"
+    "163136337950c4e3a4"
   ]
 }
