@@ -21,14 +21,10 @@
   </h1>
   
 
-<!-- Stamped - Begin badge -->
-<span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" data-product-title="{{ product.title | escape }}" data-product-type="{{ product.type }}" style="display: block;">{{ product.metafields.stamped.badge }}</span>
-<!-- Stamped - End badge -->
-
   {%- if block.settings.show_product_rating -%}
-    <!--<div class="ProductMeta__Rating Heading Text--subdued u-h7">
+    <div class="ProductMeta__Rating Heading Text--subdued u-h7">
       {%- render 'product-rating', product: product -%}
-    </div>-->
+    </div>
   {%- endif -%}
 
   {%- if block.settings.show_sku and product.selected_or_first_available_variant.sku != blank -%}
