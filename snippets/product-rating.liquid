@@ -1,3 +1,8 @@
+<!-- Stamped - Begin badge -->
+<span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" data-product-title="{{ product.title | escape }}" data-product-type="{{ product.type }}" style="display: block;">{{ product.metafields.stamped.badge }}</span>
+<!-- Stamped - End badge -->
+
+{%comment%}
 {%- if product.metafields.reviews.rating.value != blank -%}
   {%- assign rating_decimal = 0 -%}
   {%- assign decimal = product.metafields.reviews.rating.value.rating | modulo: 1 -%}
@@ -42,3 +47,4 @@
     <span class="rating__caption">{{ 'product.general.reviews_count' | t: count: 0 }}</span>
   </div>
 {%- endif -%}
+{%endcomment%}
