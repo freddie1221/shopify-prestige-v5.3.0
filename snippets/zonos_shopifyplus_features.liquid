@@ -1,303 +1,498 @@
 <script>
-  (function () {
-      if (!String.prototype.includes) {
-        String.prototype.includes = function(search, start) {
-          'use strict';
-          if (typeof start !== 'number') {
-            start = 0;
-          }
+    (function () {
+        if (screen.width > 999) {
+            let Shopify;
+// for alternate checkout template.
+            if (typeof Shopify === 'undefined') {
+                Shopify = {
+                    Checkout: {
+                        currency: "USD"
+                    }
+                }
+            }
 
-          if (start + search.length > this.length) {
-            return false;
-          } else {
-            return this.indexOf(search, start) !== -1;
-          }
-        };
-      }
+            let allOptions = null;
+            let newShipping = null;
+            let newTax = null;
+            let priceList = document.querySelectorAll('td.product__price > span')
+            if (priceList.length < 1) {
+                priceList = document.querySelectorAll('aside div > div:nth-child(4) > div:nth-child(1) > div:nth-child(1)');
+            }
+            let storeCurrencySymbol = "";
 
-    var allOptions = null;
-    var newShipping = null;
-    var newTax = null;
-    var config = { attributes: true, childList: true, characterData: true };
-    let priceList = document.querySelectorAll('td.product__price > span');
+            const storeCurrencyISO = Shopify.Checkout.currency;
 
-    let storeCurrencySymbol = "";
-    const storeCurrencyISO = Shopify.Checkout.currency;
+            for (let price of priceList){
+                let priceMatch = price.textContent?.match(/^(\D+)[\d,.]+/);
+                if (priceMatch) {
+                    storeCurrencySymbol = priceMatch[1];
+                    break;
+                }
+            }
 
-    //This is the money formatter we are using in conjunction with Shopify
-    let moneyFormat = priceList[0].textContent.replace(/[\d. ,]+/, 'AMOUNT ');
-    for(i=0; i< priceList.length; i++) {
-      if(!storeCurrencySymbol) {
-        storeCurrencySymbol = priceList[i].innerHTML.replace(/[\d-.,]/g, '').replace(/[A-Za-z]+/, '').replace(" ", "")
-      }
-      if(moneyFormat.indexOf('AMOUNT') == -1) {
-        moneyFormat = priceList[i].textContent.replace(/[\d. ,]+/, 'AMOUNT ');
-      }
-    }
-    let zPrecision = 2;
-    const locales = { AUD: 'en-au', CAD: 'en-ca', DKK: 'da', EUR: 'fr', GBP: 'en-gb', HKD: 'zh', JPY: 'ja', NZD: 'en-nz', SEK: 'sv', SGD: 'zh', USD: 'en' };
-    let numFormat = Intl.NumberFormat(locales[Shopify.Checkout.currency] || 'en', {
-      style: 'currency',
-      currency: Shopify.Checkout.currency,
-      currencyDisplay: 'code'
-    });
-    if (Shopify.Checkout.currency === 'SEK') {
-      numFormat = Intl.NumberFormat('sv', {
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-      style: 'currency',
-      currency: Shopify.Checkout.currency,
-      currencyDisplay: 'code'
-    });
-    zPrecision = 0;
-    }
-    const currencyFormat = amount => {
-      return moneyFormat.replace('AMOUNT', numFormat.formatToParts(Number(amount)).filter(c => c.type !== 'currency').map(c => c.value).join('').trim())
-    };
+            //This is the money formatter we are using in conjunction with Shopify
+            let moneyFormat = '';
+            if(moneyFormat.indexOf('AMOUNT') === -1) {
+                moneyFormat = storeCurrencySymbol+'AMOUNT ';
+            }
 
-    const htmlToElement = html => {
-        var template = document.createElement('template');
-        html = html.trim(); // Never return a text node of whitespace as the result
-        template.innerHTML = html;
-        return template.content.firstChild;
-    }
+            let zPrecision = 2;
+            const locales = { AUD: 'en-au', CAD: 'en-ca', DKK: 'da', EUR: 'fr', GBP: 'en-gb', HKD: 'zh', JPY: 'ja', NZD: 'en-nz', SEK: 'sv', SGD: 'zh', USD: 'en' };
+            let numFormat = Intl.NumberFormat(locales[Shopify.Checkout.currency] || 'en', {
+                style: 'currency',
+                currency: Shopify.Checkout.currency,
+                currencyDisplay: 'code'
+            });
+            if (Shopify.Checkout.currency === 'SEK') {
+                numFormat = Intl.NumberFormat('sv', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0,
+                    style: 'currency',
+                    currency: Shopify.Checkout.currency,
+                    currencyDisplay: 'code'
+                });
+                zPrecision = 0;
+            }
+            const currencyFormat = amount => {
+                return moneyFormat.replace('AMOUNT', numFormat.formatToParts(Number(amount)).filter(c => c.type !== 'currency').map(c => c.value).join('').trim())
+            };
 
-    var waitShippingMethodsInterval = null;
-    if (Shopify.Checkout.step === 'shipping_method') {
-        waitShippingMethodsInterval = setInterval(waitForShippingMethods, 100);
+            const htmlToElement = html => {
+                const template = document.createElement('template');
+                html = html.trim(); // Never return a text node of whitespace as the result
+                template.innerHTML = html;
+                return template.content.firstChild;
+            }
 
-        var zPromoAdded = false;
-        var zPromoRemoved = false;
-        var zPromoInterval = setInterval(zPromoCheck, 100);
-        function zPromoCheck () {
-          const zPromoTag = document.querySelector('.tag');
-          if (zPromoTag && !zPromoAdded) {
-            zPromoAdded = true;
-            zPromoRemoved = false;
-            waitShippingMethodsInterval = setInterval(waitForShippingMethods, 100);
-          }
-          else if (!zPromoTag && zPromoAdded && !zPromoRemoved){
-            zPromoRemoved = true;
-            zPromoAdded = false;
-            waitShippingMethodsInterval = setInterval(waitForShippingMethods, 100);
-          }
-        }
+            let waitShippingMethodsInterval = null;
+            if (Shopify.Checkout.step === 'shipping_method' || window.location.href.indexOf('shipping') > -1 || document.querySelector(".section--shipping-method")) { // alternate checkout does not have a Shopify.Checkout.Step variable.
+                waitShippingMethodsInterval = setInterval(waitForShippingMethods, 100);
 
-        var zErrorInterval = setInterval(zErrorCheck, 100);
-        function zErrorCheck () {
-          const zErrorCode = document.querySelector('.field__message.field__message--error');
-          if (zErrorCode) {
-            clearInterval(zErrorInterval);
-            waitShippingMethodsInterval = setInterval(waitForShippingMethods, 100);
-          }
-        }
-      }
+                let zPromoAdded = false;
+                let zPromoRemoved = false;
 
-      //Here we are running a check to make sure the service levels have loaded in. Then we trigger the loop to adjust service levels.
-      function waitForShippingMethods(){
-        if (document.querySelectorAll('.radio-wrapper').length) {
-            clearInterval(waitShippingMethodsInterval);
-            allOptions = document.querySelectorAll('.radio-wrapper');
-            //This loop is going to run through all available service levels.
-            for ( i = 0; i < allOptions.length; i++) {
-              var dataShippingString = allOptions[i].getAttribute('data-shipping-method');
-              var zTotals = null;
-              var breakdown = null;
-              var shopifyShipForeign = null;
+                setInterval(zPromoCheck, 100);
 
-              //If the service level is a Zonos DDP option, we are going to hide 'Duties & Taxes included', only show the shipping total, and hide the duty/tax breakdown.
-              if (dataShippingString && dataShippingString.includes('DDP') && dataShippingString.includes('Zonos')) {
-                if (allOptions[i].querySelector("span :nth-child(4)") == null) {
-                  allOptions[i].querySelector('span.radio__label__primary > span').classList.add('hidden');
-                  breakdown = allOptions[i].querySelector(' span.radio__label__primary > span');
-                  zTotals = allOptions[i].querySelector('span.radio__label__primary > span');
+                function zPromoCheck () {
+                    const zPromoTag = document.querySelector('.tag');
+                    if (zPromoTag && !zPromoAdded) {
+                        zPromoAdded = true;
+                        zPromoRemoved = false;
+                        waitShippingMethodsInterval = setInterval(waitForShippingMethods, 100);
+                    }
+                    else if (!zPromoTag && zPromoAdded && !zPromoRemoved){
+                        zPromoRemoved = true;
+                        zPromoAdded = false;
+                        waitShippingMethodsInterval = setInterval(waitForShippingMethods, 100);
+                    }
+                }
+
+                const zErrorInterval = setInterval(zErrorCheck, 100);
+                function zErrorCheck () {
+                    const zErrorCode = document.querySelector('.field__message.field__message--error');
+                    if (zErrorCode) {
+                        clearInterval(zErrorInterval);
+                        waitShippingMethodsInterval = setInterval(waitForShippingMethods, 100);
+                    }
+                }
+            }
+
+            //Here we are running a check to make sure the service levels have loaded in. Then we trigger the loop to adjust service levels.
+            function waitForShippingMethods(){
+                if (document.querySelectorAll('.radio-wrapper').length) {
+                    clearInterval(waitShippingMethodsInterval);
+                    allOptions = document.querySelectorAll('.radio-wrapper');
+                    //This loop is going to run through all available service levels.
+                    for (let i = 0; i < allOptions.length; i++) {
+                        const dataShippingString = allOptions[i].getAttribute('data-shipping-method');
+                        let zTotals = null;
+                        let breakdown = null;
+                        let shopifyShipForeign = null;
+
+                        //If the service level is a Zonos DDP option, we are going to hide 'Duties & Taxes included', only show the shipping total, and hide the duty/tax breakdown.
+                        if (dataShippingString && dataShippingString.includes('DDP') && dataShippingString.includes('Zonos')) {
+                            if (allOptions[i].querySelector("span :nth-child(4)") == null) {
+                                allOptions[i].querySelector('span.radio__label__primary > span').classList.add('hidden');
+                                breakdown = allOptions[i].querySelector('span.radio__label__primary > span');
+                                zTotals = allOptions[i].querySelector('span.radio__label__primary > span');
+                            } else {
+                                allOptions[i].querySelector("span :nth-child(4)").classList.add('hidden');
+                                breakdown = allOptions[i].querySelector(' span.radio__label__primary > span:nth-child(4)');
+                                zTotals = allOptions[i].querySelector('span.radio__label__primary > span:nth-child(4)');
+                            }
+
+                            const taxType = getTaxType(true, breakdown);
+
+                            const serviceLevel = allOptions[i].querySelector(".radio__label__primary").childNodes[0];
+                            serviceLevel.nodeValue = serviceLevel.nodeValue.replace(/Duties & \w+\b Included/g, ``);
+                            let breakdownShipping = breakdown.innerText.split(',')[0].match(/\d+.\d+/);
+                            breakdownShipping = breakdownShipping[0].replace(/[^\d-.]/g, '');
+                            let shippingCost = Number(breakdownShipping);
+
+                            //Here we are doing the math to calculate the shipping and tax amount in the foreign currency
+                            const zShopifyTotal = allOptions[i].querySelector('.input-radio').dataset.checkoutTotalShippingCents / 100
+
+                            const zNewElement = document.createElement('span');
+
+                            zNewElement.innerHTML = zShopifyTotal.toString();
+
+                            const zTotalsTax = zTotals.innerText.split(',')?.[1]?.match(/\d+.\d+/);
+                            newTax = zTotalsTax[0].replace(/[^\d-.]/g, '');
+                            newTax = Number(newTax);
+
+                            shopifyShipForeign = zShopifyTotal;
+                            const USDTotal = shippingCost + newTax;
+
+                            let shipPercentage = USDTotal/shippingCost;
+                            shipPercentage = shipPercentage.toFixed(4);
+                            shipPercentage = Number(shipPercentage)
+                            shippingCost = (shopifyShipForeign / shipPercentage).toFixed(zPrecision);
+
+                            allOptions[i].querySelector('.content-box__emphasis').innerHTML = currencyFormat(shippingCost);
+                            allOptions[i].querySelector('.content-box__emphasis').appendChild(zNewElement).classList.add('hidden', 'zElement');
+
+                            //If the customer selects a Zonos DDP option, we are going to set new variables with the shipping and tax amount.
+                            const updatePricingServiceLevels = function (element) {
+                                let zbreakdownTotals;
+                                if (element.querySelector('span.radio__label__primary > span:nth-child(4)') == null) {
+                                    zbreakdownTotals = element.querySelector('span.radio__label__primary > span');
+                                } else {
+                                    zbreakdownTotals = element.querySelector('span.radio__label__primary > span:nth-child(4)');
+                                }
+
+                                const zTotalsShipping = zbreakdownTotals.innerText.split(',')[0].match(/\d+.\d+/);
+                                let newShipping = zTotalsShipping[0].replace(/[^\d-.]/g, '');
+                                newShipping = Number(newShipping);
+
+                                const zTotalsTax = zbreakdownTotals.innerText.split(',')?.[1]?.match(/\d+.\d+/);
+                                let newTax = zTotalsTax[0].replace(/[^\d-.]/g, '');
+                                newTax = Number(newTax);
+
+                                shopifyShipForeign = element.querySelector('.zElement').innerText.replace(/[^0-9.]/g, "");
+                                const USDTotal = newShipping + newTax;
+                                let taxPercentage = USDTotal/newTax;
+                                taxPercentage = taxPercentage.toFixed(4);
+                                taxPercentage = Number(taxPercentage);
+                                const taxForeign = (shopifyShipForeign / taxPercentage).toFixed(zPrecision);
+                                const shippingForeign = (shopifyShipForeign - taxForeign).toFixed(zPrecision);
+
+                                setTimeout(function () {
+                                    document.querySelector('.total-line--shipping > td > span').innerHTML = currencyFormat(shippingForeign);
+                                    if (!document.querySelector('tr.total-line.total-line--taxes')) {
+                                        const taxRow = htmlToElement('<tr class="total-line total-line--taxes"><th></th><td><span class="order-summary__emphasis"></span></td></tr>');
+                                        document.querySelector('.total-line--shipping').parentElement.appendChild(taxRow);
+                                    }
+                                    document.querySelector('tr.total-line.total-line--taxes > td > span').innerHTML = currencyFormat(taxForeign);
+                                    document.querySelector('tr.total-line.total-line--taxes > th').innerHTML = 'Duty and '+taxType;
+                                    document.querySelector('tr.total-line.total-line--taxes').classList.remove('hidden');
+                                }, 150);
+
+                                sessionStorage.setItem('znshipTotal', shippingForeign);
+                                sessionStorage.setItem('currencySymbol', storeCurrencySymbol);
+                                sessionStorage.setItem('currencyISO', storeCurrencyISO);
+                                sessionStorage.setItem('zntaxTotal', taxForeign);
+                            };
+                            allOptions[i].onclick = (e) => updatePricingServiceLevels(e.currentTarget);
+
+                            if(allOptions[i].querySelector('input').checked) {
+                                updatePricingServiceLevels(allOptions[i]);
+                            }
+                        }
+
+                        //In the else, we will hide the duty/tax breakdown under the totals section and ensure we aren't displaying any taxes, since they will not be due on these service levels.
+                        else {
+                            let taxQuery = null;
+                            if(allOptions[i].querySelector('.input-radio') && allOptions[i].querySelector('.input-radio').getAttribute('aria-label')){
+                                taxQuery = allOptions[i].querySelector('.input-radio').getAttribute('aria-label').match( /Estimated (\w+\b) and (\w+\b) \$([\d.]+)/);
+                                sessionStorage.setItem("znTaxType", taxQuery[1].length > 3 ? taxQuery[2] : taxQuery[1]);
+                            }
+                            if (taxQuery) {
+                                const DDUTaxAmount = taxQuery[3];
+                                const DDUShipAmount = allOptions[i].querySelector('.input-radio').value.match( /-([\d.]+)$/) [1];
+                                const DDUForeignShip = allOptions[i].querySelector('.input-radio').dataset.checkoutTotalShippingCents / 100;
+                                const foreignRate = (Number(DDUForeignShip) / Number(DDUShipAmount)).toFixed(4);
+                                const DDUForeignTax = (Number(DDUTaxAmount) * foreignRate).toFixed(zPrecision);
+
+                                let DDUBreakdown;
+                                if (allOptions[i].querySelector('span.radio__label__primary > span:nth-child(4)') == null) {
+                                    DDUBreakdown = allOptions[i].querySelector('span.radio__label__primary > span');
+                                } else {
+                                    DDUBreakdown = allOptions[i].querySelector('span.radio__label__primary > span:nth-child(4)');
+                                }
+                                DDUBreakdown.innerHTML = DDUBreakdown.innerText.replace('$' + DDUTaxAmount, currencyFormat(DDUForeignTax));
+                            }
+
+                            allOptions[i].onclick = (e) => {
+                                if (document.querySelector('tr.total-line.total-line--taxes')) {
+                                    document.querySelector('tr.total-line.total-line--taxes').classList.add('hidden');
+                                }
+                                newShipping = e.currentTarget.querySelector('.input-radio').dataset.checkoutTotalShippingCents / 100;
+                                newTax = null;
+                                sessionStorage.setItem('znshipTotal', newShipping);
+                                sessionStorage.setItem('currencySymbol', storeCurrencySymbol);
+                                sessionStorage.setItem('currencyISO', storeCurrencyISO);
+                                sessionStorage.setItem('zntaxTotal', '');
+                            };
+                        }
+                    }
                 } else {
-                  allOptions[i].querySelector("span :nth-child(4)").classList.add('hidden');
-                  breakdown = allOptions[i].querySelector(' span.radio__label__primary > span:nth-child(4)');
-                  zTotals = allOptions[i].querySelector('span.radio__label__primary > span:nth-child(4)');
-                  }
+                    // alternate checkout page (possibly shopify plus/unlimited specific)
+                    allOptions = document.querySelectorAll('input[type="radio"]');
+                    if (allOptions && allOptions.length) {
+                        clearInterval(waitShippingMethodsInterval);
+                        for (let i = 0; i < allOptions.length; i++) {
+                            const shippingMethod = allOptions[i].parentElement.parentElement;
+                            let zTotals = null;
+                            let breakdown = null;
+                            let shopifyShipForeign = null;
 
-                serviceLevel = allOptions[i].querySelector(".radio__label__primary").childNodes[0].nodeValue.replace('Duties & Taxes Included', '');
-                allOptions[i].querySelector(".radio__label__primary").childNodes[0].nodeValue = serviceLevel;
-                var breakdownShipping = breakdown.innerText.split(',')[0].match(/\d+.\d+/);
-                breakdownShipping = breakdownShipping[0].replace(/[^\d-.]/g, '');
-                var shippingCost = Number(breakdownShipping);
+                            // grab the second div in shipping method
+                            const zShippingMethod = shippingMethod.innerHTML;
 
-                //Here we are doing the math to calculate the shipping and tax amount in the foreign currency
-                var zShopifyTotal = allOptions[i].querySelector('.input-radio').dataset.checkoutTotalShippingCents / 100
+                            if (zShippingMethod && zShippingMethod.toString().includes('Duties')) {
+                                // adding a hidden span with the shipping method name
+                                const zShippingMethodSpan = document.createElement('span');
+                                zShippingMethodSpan.classList.add('zShippingMethod');
+                                zShippingMethodSpan.style.display = 'none';
+                                zShippingMethodSpan.innerHTML = shippingMethod.querySelector('div:nth-child(2) > div:nth-child(1) > p:nth-child(1)').innerHTML;
+                                shippingMethod.appendChild(zShippingMethodSpan);
 
-                var znewElement = document.createElement('span');
+                                // if we find a third child it that means they are displaying transit time so we need to adjust since there are no class specific name to key off of.
+                                if (shippingMethod.querySelector("p:nth-child(3)")) {
+                                    shippingMethod.querySelector("p:nth-child(3)").style.display = "none";
+                                    breakdown = shippingMethod.querySelector("p:nth-child(3)").innerText;
+                                    zTotals = shippingMethod.querySelector("p:nth-child(3)").innerText;
+                                } else{
+                                    shippingMethod.querySelector("p:nth-child(2)").style.display = "none";
+                                    breakdown = shippingMethod.querySelector("p:nth-child(2)").innerText;
+                                    zTotals = shippingMethod.querySelector("p:nth-child(2)").innerText;
+                                }
+                                getTaxType(false, breakdown);
+                                let breakdownShipping = breakdown?.split(',')[0].match(/\d+.\d+/);
+                                breakdownShipping = breakdownShipping?.[0].replace(/[^\d-.]/g, '');
 
-                znewElement.innerHTML = zShopifyTotal;
+                                if(!breakdownShipping || !zTotals) { return; }
 
-                var zTotalsTax = zTotals.innerText.split(',')[1].match(/\d+.\d+/);
-                newTax = zTotalsTax[0].replace(/[^\d-.]/g, '');
-                newTax = Number(newTax);
+                                let shippingCost = Number(breakdownShipping);
+                                const zShopifyTotal = Number(shippingMethod.querySelector('div > div > div > span')?.innerText.replace(/[^\d-.]/g, ''));
+                                const zNewElement = document.createElement('span');
+                                zNewElement.innerHTML = zShopifyTotal.toString();
 
-                shopifyShipForeign = zShopifyTotal;
-                var USDTotal = shippingCost + newTax;
+                                const zTotalsTax = zTotals?.split(',')?.[1]?.match(/\d+.\d+/);
+                                newTax = zTotalsTax?.[0].replace(/[^\d-.]/g, '');
+                                newTax = Number(newTax);
+                                shopifyShipForeign = zShopifyTotal;
 
-                var shipPercentage = USDTotal/shippingCost;
-                shipPercentage = shipPercentage.toFixed(4);
-                shipPercentage = Number(shipPercentage);
+                                if(!newTax || !shopifyShipForeign) { return; }
 
-                shippingForeign = shopifyShipForeign / shipPercentage;
-                shippingForeign = shippingForeign.toFixed(zPrecision);
+                                const USDTotal = shippingCost + newTax;
+                                let shipPercentage = USDTotal/shippingCost;
+                                shipPercentage = shipPercentage.toFixed(4);
+                                shipPercentage = Number(shipPercentage);
+                                shippingCost = (shopifyShipForeign / shipPercentage).toFixed(zPrecision);
+                                shippingMethod.querySelector('div > div > div > span').innerText = currencyFormat(shippingCost);
+                                shippingMethod.querySelector('div > div > div > span').appendChild(zNewElement).classList.add('zElement');
+                                shippingMethod.querySelector('div > div > div > span').appendChild(zNewElement).style.display = "none";
+                                shippingMethod.onclick = (e) => updatePricingServiceLevels(e.currentTarget);
 
-                shippingCost = shippingForeign;
+                                if(shippingMethod.querySelector('input').checked) {
+                                    updatePricingServiceLevels(shippingMethod);
+                                }
 
-                allOptions[i].querySelector('.content-box__emphasis').innerHTML = currencyFormat(shippingCost);
-                allOptions[i].querySelector('.content-box__emphasis').appendChild(znewElement).classList.add('hidden', 'zElement');
+                            } else {
+                                shippingMethod.onclick = (e) => {
+                                    if(!e.currentTarget){return;}
 
-                //If the customer selects a Zonos DDP option, we are going to set new variables with the shipping and tax amount.
-                const updatePricingServiceLevels = function (element) {
-                  var zbreakdownTotals = null;
-                  if (element.querySelector('span.radio__label__primary > span:nth-child(4)') == null) {
-                    zbreakdownTotals = element.querySelector('span.radio__label__primary > span');
-                  } else {
-                    zbreakdownTotals = element.querySelector('span.radio__label__primary > span:nth-child(4)');
-                  }
+                                    if (document.querySelector('.zonos-total-line.total-line--taxes')) {
+                                        document.querySelector('.zonos-total-line.total-line--taxes').classList.add('hidden');
+                                    }
 
-                  var zTotalsShipping = zbreakdownTotals.innerText.split(',')[0].match(/\d+.\d+/);
-                  var newShipping = zTotalsShipping[0].replace(/[^\d-.]/g, '');
-                  newShipping = Number(newShipping);
-
-                  var zTotalsTax = zbreakdownTotals.innerText.split(',')[1].match(/\d+.\d+/);
-                  var newTax = zTotalsTax[0].replace(/[^\d-.]/g, '');
-                  newTax = Number(newTax);
-
-                  shopifyShipForeign = element.querySelector('.zElement').innerText.replace(/[^0-9.]/g, "");
-                  var USDTotal = newShipping + newTax;
-                  var shipPercentage = USDTotal/newShipping;
-                  shipPercentage = shipPercentage.toFixed(4);
-                  shipPercentage = Number(shipPercentage);
-
-                  var taxPercentage = USDTotal/newTax;
-                  taxPercentage = taxPercentage.toFixed(4);
-                  taxPercentage = Number(taxPercentage);
-
-                  var taxForeign = shopifyShipForeign / taxPercentage;
-                  taxForeign = taxForeign.toFixed(zPrecision);
-
-                  var shippingForeign = shopifyShipForeign - taxForeign;
-                  shippingForeign = shippingForeign.toFixed(zPrecision);
-
-                  newShipping = shippingForeign;
-                  newTax = taxForeign;
-
-                  setTimeout(function () {
-                    document.querySelector('.total-line--shipping > td > span').innerHTML = currencyFormat(shippingForeign);
-                    if (!document.querySelector('tr.total-line.total-line--taxes')) {
-                      var taxRow = htmlToElement('<tr class="total-line total-line--taxes"><th></th><td><span class="order-summary__emphasis"></span></td></tr>');
-                      document.querySelector('.total-line--shipping').parentElement.appendChild(taxRow);
+                                    newTax = null;
+                                    sessionStorage.setItem('znshipTotal', shippingMethod.querySelector("span")?.innerText);
+                                    sessionStorage.setItem('currencySymbol', storeCurrencySymbol);
+                                    sessionStorage.setItem('currencyISO', storeCurrencyISO);
+                                    sessionStorage.setItem('zntaxTotal', '');
+                                };
+                            }
+                        }
+                        /*
+                          after all the shipping methods have a span record of the shipping name we can start the removeDoubleValues function.
+                          In this alternate checkout flow Shopify does a weird thing where if you click on a shipping method name it will append the shipping method name and
+                          the total shipping cost to it instead of replacing it causing duplicate values when we modify it.
+                        */
+                        setInterval(removeDoubleValues, 250);
                     }
-                    document.querySelector('tr.total-line.total-line--taxes > td > span').innerHTML = currencyFormat(taxForeign);
-                    document.querySelector('tr.total-line.total-line--taxes > th').innerHTML = 'Duty and Tax';
-                    document.querySelector('tr.total-line.total-line--taxes').classList.remove('hidden');
-                  }, 150);
-
-                  sessionStorage.setItem('znshipTotal', shippingForeign);
-                  sessionStorage.setItem('currencySymbol', storeCurrencySymbol);
-                  sessionStorage.setItem('currencyISO', storeCurrencyISO);
-                  sessionStorage.setItem('zntaxTotal', taxForeign);
-                };
-                allOptions[i].onclick = (e) => updatePricingServiceLevels(e.currentTarget);
-
-                if(allOptions[i].querySelector('input').checked) {
-                  updatePricingServiceLevels(allOptions[i]);
                 }
-              }
+            }
 
-              //In the else, we will hide the duty/tax breakdown under the totals section and ensure we aren't displaying any taxes, since they will not be due on these service levels.
-              else {
-                var taxQuery = null;
-                if(allOptions[i].querySelector('.input-radio') && allOptions[i].querySelector('.input-radio').getAttribute('aria-label')){
-               	 taxQuery = allOptions[i].querySelector('.input-radio').getAttribute('aria-label').match( /Estimated duty and tax \$([\d.]+)/);
+            //If the customer selects a Zonos DDP option, we are going to set new variables with the shipping and tax amount.
+            const updatePricingServiceLevels = async function (element) {
+                const zbreakdownTotals = element.querySelector("p:nth-child(3)")?.innerText || element.querySelector("p:nth-child(2)")?.innerText;
+
+                if(!zbreakdownTotals){ return; }
+
+                const zTotalsShipping = zbreakdownTotals.split(',')[0].match(/\d+.\d+/);
+                let newShipping = Number(zTotalsShipping?.[0].replace(/[^\d-.]/g, ''));
+                const zTotalsTax = zbreakdownTotals.split(',')?.[1]?.match(/\d+.\d+/);
+
+                if(!zTotalsTax || !newShipping){ return; }
+
+                let newTax = Number(zTotalsTax[0].replace(/[^\d-.]/g, ''));
+                const shopifyShipForeign = element.querySelector('.zElement')?.innerText.replace(/[^0-9.]/g, "");
+                const USDTotal = newShipping + newTax;
+                const taxPercentage = Number((USDTotal/newTax).toFixed(4));
+                const taxForeign = (shopifyShipForeign / taxPercentage).toFixed(zPrecision);
+                const shippingForeign = (shopifyShipForeign - taxForeign).toFixed(zPrecision);
+
+                const zElementCopy = element.querySelector('.zElement');
+                const formattedShippingForeign = currencyFormat(shippingForeign);
+
+                // do a while loop for 10 times. Shopify has something running thats updating the text
+                let loopCheck = 0;
+                while (loopCheck < 15) {
+                    document.querySelector('section > div > div:nth-child(2) > div > span').innerHTML = formattedShippingForeign;
+                    element.querySelector('div > div > div > span').innerText = currencyFormat(shippingForeign);
+
+                    if(!element.querySelector('.zElement')){ element.querySelector('div > div > div > span').appendChild(zElementCopy); }
+
+                    if (!document.querySelector('.zonos-total-line--taxes')) {
+                        const taxRow = htmlToElement('<div class="zonos-total-line--taxes" role="row"><span class="zonos-order-summary__emphasis" role="cell"></span><span class="zonos-taxes" style="float: right;"></span></div>');
+                        document.querySelector('aside > div > div > div > div > section > div > div:nth-child(3)').before(taxRow);
+                    }
+
+                    document.querySelector('.zonos-total-line--taxes > .zonos-taxes').innerHTML = currencyFormat(taxForeign);
+                    document.querySelector('.zonos-total-line--taxes > .zonos-order-summary__emphasis').innerHTML = 'Duty and '+ getTaxType(true);
+                    document.querySelector('.zonos-total-line--taxes').classList.remove('hidden');
+
+                    await new Promise(r => setTimeout(r, 150));
+                    loopCheck++;
                 }
-                if (taxQuery) {
-                  var DDUTaxAmount = taxQuery[1];
-                  var DDUShipAmount = allOptions[i].querySelector('.input-radio').value.match( /-([\d.]+)$/) [1];
-                  var DDUForeignShip = allOptions[i].querySelector('.input-radio').dataset.checkoutTotalShippingCents / 100;
-                  var foreignRate = (Number(DDUForeignShip) / Number(DDUShipAmount)).toFixed(4);
-                  var DDUForeignTax = (Number(DDUTaxAmount) * foreignRate).toFixed(zPrecision);
 
-                  var DDUBreakdown;
-                  if (allOptions[i].querySelector('span.radio__label__primary > span:nth-child(4)') == null) {
-                      DDUBreakdown = allOptions[i].querySelector('span.radio__label__primary > span');
+                sessionStorage.setItem('znshipTotal', shippingForeign);
+                sessionStorage.setItem('currencySymbol', storeCurrencySymbol);
+                sessionStorage.setItem('currencyISO', storeCurrencyISO);
+                sessionStorage.setItem('zntaxTotal', taxForeign);
+            }
+
+            function removeDoubleValues() {
+                if(window.location.href.indexOf('shipping') > -1){
+                    const allOptions = document.querySelectorAll('input[type="radio"]');
+
+                    for (let i = 0; i < allOptions.length; i++) {
+                        const shippingQuote = allOptions[i].parentElement.parentElement;
+                        if(shippingQuote.querySelector(".zShippingMethod") && shippingQuote.querySelector("p")){
+                            const methodName = shippingQuote.querySelector("p").innerText;
+                            const methodNameSplit = methodName.split('Duties');
+                            shippingQuote.querySelector("p").innerText = methodNameSplit[0];
+                        }
+
+                        const zElementCopy = shippingQuote.querySelector('.zElement');
+                        const shippingQuoteText = shippingQuote.querySelector("span").innerText;
+                        const splitShippingQuote = shippingQuoteText.split(storeCurrencySymbol);
+
+                        if(splitShippingQuote.length > 2){
+                            shippingQuote.querySelector("span").innerText = `${storeCurrencySymbol}${splitShippingQuote[2]}`;
+                            if(!shippingQuote.querySelector('.zElement')){
+                                shippingQuote.querySelector("span").appendChild(zElementCopy);
+                            }
+                        }
+                    }
+                }
+            }
+
+            //Here we are displaying the broken out duties and taxes in the totals section on the payment and thank you page.
+            function displayPaymentShip () {
+                const shipTotal = sessionStorage.getItem('currencySymbol') + sessionStorage.getItem('znshipTotal');
+                const taxTotal = sessionStorage.getItem('currencySymbol') + sessionStorage.getItem('zntaxTotal');
+                const shippingLine = document.querySelector('.total-line--shipping > td > span') ? document.querySelector('.total-line--shipping > td > span') : document.querySelector('section > div > div:nth-child(2) > div > span');
+                const taxLine = document.querySelector('tr.total-line.total-line--taxes > td > span') ? document.querySelector('tr.total-line.total-line--taxes > td > span') : document.querySelector('.zonos-taxes');
+
+                shippingLine.innerHTML = shipTotal;
+                taxLine.innerHTML = taxTotal;
+            }
+
+            function displayPaymentTax () {
+                const taxType = getTaxType(true);
+                const taxLineHeader = document.querySelector('tr.total-line.total-line--taxes > th') ? document.querySelector('tr.total-line.total-line--taxes > th') : document.querySelector('.zonos-order-summary__emphasis');
+                const taxLine = document.querySelector('tr.total-line.total-line--taxes') ? document.querySelector('tr.total-line.total-line--taxes') : document.querySelector('.zonos-order-summary__emphasis');
+
+                taxLineHeader.innerHTML = 'Duty and ' + taxType;
+                taxLine.classList.remove('hidden');
+            }
+
+            function displayMethodName () {
+                const zMethod = document.querySelectorAll('.review-block__inner')[2] ? document.querySelectorAll('.review-block__inner')[2] : document.querySelector("section > div > div:nth-child(3)");
+                const zMethodText = zMethod.querySelector('.review-block__content') ? zMethod.querySelector('.review-block__content') : zMethod.querySelector("p");
+                const taxType = getTaxType(true);
+                if (zMethodText.innerText.includes('Duties & ')) {
+                    const shipTotal = sessionStorage.getItem('currencySymbol') + sessionStorage.getItem('znshipTotal');
+
+                    zMethodText.innerText = zMethodText.innerText.replace(/Duties & \w+\b Included/, `Duties & ${taxType} Included`);
+
+                    if(zMethodText.querySelector('.emphasis')){
+                        zMethodText.querySelector('.emphasis').innerText = shipTotal;
                     } else {
-                      DDUBreakdown = allOptions[i].querySelector('span.radio__label__primary > span:nth-child(4)');
+                        zMethodText.innerText = zMethodText.innerText.replace(zMethodText.innerText.split('·')[1].replace(" ", ""), shipTotal);
                     }
-                  DDUBreakdown.innerHTML = DDUBreakdown.innerText.replace('$' + DDUTaxAmount, currencyFormat(DDUForeignTax));
+                }
+            }
+
+            if (Shopify.Checkout.step === 'payment_method' || window.location.href.indexOf('payment') > -1) {
+                const waitPaymentMethodsInterval = setInterval(waitPaymentMethods, 100);
+
+                function waitPaymentMethods () {
+                    if (document.querySelectorAll('#main-header').length || document.querySelectorAll('#primary-header').length) {
+                        clearInterval(waitPaymentMethodsInterval);
+                        if (sessionStorage.getItem('znshipTotal') != null) {
+                            displayPaymentShip();
+                        }
+
+                        if (sessionStorage.getItem('zntaxTotal') !== "" && sessionStorage.getItem('zntaxTotal') != null) {
+                            displayPaymentTax();
+                            displayMethodName();
+                        }
+                    }
+                }
+            }
+
+            function getTaxType(needUppercase = false, searchNode = null) {
+                let taxName;
+                if (searchNode == null) {
+                    taxName = sessionStorage.getItem("zntaxType");
+                } else {
+                    if (searchNode instanceof Element) {
+                        searchNode = searchNode.innerText ?? "taxes";
+                    }
+                    let dutyTaxBreakdown = searchNode?.match(/([A-Z]{2,})\b|\b([Tt][a-z]+)/g);
+                    taxName = dutyTaxBreakdown?.shift().toLowerCase() ?? "taxes";
+
+                    setTaxType(taxName);
                 }
 
-                allOptions[i].onclick = (e) => {
-                  if (document.querySelector('tr.total-line.total-line--taxes')) {
-                    document.querySelector('tr.total-line.total-line--taxes').classList.add('hidden');
-                  }
-                  newShipping = e.currentTarget.querySelector('.input-radio').dataset.checkoutTotalShippingCents / 100;
-                  newTax = null;
-                  sessionStorage.setItem('znshipTotal', newShipping);
-                  sessionStorage.setItem('currencySymbol', storeCurrencySymbol);
-                  sessionStorage.setItem('currencyISO', storeCurrencyISO);
-                  sessionStorage.setItem('zntaxTotal', '');
-                };
-              }
-            }
-          }
-      }
-
-      //Here we are displaying the broken out duties and taxes in the totals section on the payment and thank you page.
-      function displayPaymentShip () {
-        document.querySelector('.total-line--shipping > td > span').innerHTML = sessionStorage.getItem('currencySymbol') + sessionStorage.getItem('znshipTotal');
-        document.querySelector('tr.total-line.total-line--taxes > td > span').innerHTML = sessionStorage.getItem('currencySymbol') + sessionStorage.getItem('zntaxTotal');
-      }
-
-      function displayPaymentTax () {
-        document.querySelector('tr.total-line.total-line--taxes > th').innerHTML = 'Duty and Tax';
-        document.querySelector('tr.total-line.total-line--taxes').classList.remove('hidden');
-      }
-
-      function displayMethodName () {
-        var zMethod = document.querySelectorAll('.review-block__inner')[2];
-        var zMethodText = zMethod.querySelector('.review-block__content');
-        if (zMethodText.innerText.includes('Duties & Taxes')) {
-          zMethodText.querySelector('.emphasis').innerText = sessionStorage.getItem('currencySymbol') + sessionStorage.getItem('znshipTotal');
-          zMethodText.innerText = zMethodText.innerText.replace('Duties & Taxes Included', '');
-        }
-      }
-
-      if (Shopify.Checkout.step === 'payment_method') {
-        var waitPaymentMethodsInterval = null;
-        waitPaymentMethodsInterval = setInterval(waitPaymentMethods, 100);
-        function waitPaymentMethods () {
-          if (document.querySelectorAll('#main-header').length) {
-            clearInterval(waitPaymentMethodsInterval);
-            if (sessionStorage.getItem('znshipTotal') != null) {
-              displayPaymentShip();
+                return needUppercase ? taxName.charAt(0).toUpperCase() + taxName.slice(1) : taxName;
             }
 
-            if (sessionStorage.getItem('zntaxTotal') != "" && sessionStorage.getItem('zntaxTotal') != null) {
-              displayPaymentTax();
-              displayMethodName();
+            function setTaxType(taxType) {
+                if (taxType !== sessionStorage.getItem("zntaxType")) {
+                    sessionStorage.setItem("zntaxType", taxType);
+                }
             }
-          }
-        }
-      }
 
-      if (window.location.href.indexOf("thank_you") > -1) {
-        if (sessionStorage.getItem('znshipTotal') != null) {
-          if (Shopify.Checkout.currency === sessionStorage.getItem('currencyISO')) {
-            document.querySelector('.total-line--shipping > td > span').innerHTML = sessionStorage.getItem('currencySymbol') + sessionStorage.getItem('znshipTotal');
-            document.querySelector('tr.total-line.total-line--taxes > td > span').innerHTML = sessionStorage.getItem('currencySymbol') + sessionStorage.getItem('zntaxTotal');
-          }
-        }
+            if (window.location.href.indexOf("thank_you") > -1) {
+                if (sessionStorage.getItem('znshipTotal') != null) {
+                    if (Shopify.Checkout.currency === sessionStorage.getItem('currencyISO')) {
+                        document.querySelector('.total-line--shipping > td > span').innerHTML = sessionStorage.getItem('currencySymbol') + sessionStorage.getItem('znshipTotal');
+                        document.querySelector('tr.total-line.total-line--taxes > td > span').innerHTML = sessionStorage.getItem('currencySymbol') + sessionStorage.getItem('zntaxTotal');
+                    }
+                }
 
-        if (sessionStorage.getItem('zntaxTotal') != "" && sessionStorage.getItem('zntaxTotal') != null) {
-          if (Shopify.Checkout.currency === sessionStorage.getItem('currencyISO')) {
-            document.querySelector('tr.total-line.total-line--taxes > th').innerHTML = 'Duty and Tax';
-            document.querySelector('tr.total-line.total-line--taxes').classList.remove('hidden');
-          }
-        }
-      }
-    })();
-    </script>
+                if (sessionStorage.getItem('zntaxTotal') !== "" && sessionStorage.getItem('zntaxTotal') != null) {
+                    if (Shopify.Checkout.currency === sessionStorage.getItem('currencyISO')) {
+                        const taxType = getTaxType(true);
+                        document.querySelector('tr.total-line.total-line--taxes > th').innerHTML = 'Duty and ' + taxType;
+                        document.querySelector('tr.total-line.total-line--taxes').classList.remove('hidden');
+                    }
+                }
+            }
+        }})();
+</script>
