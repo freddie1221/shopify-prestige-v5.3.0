@@ -12,7 +12,7 @@
             "subheading": "Merino, the King of sheep",
             "title": "Merino Wool Gloves",
             "button_1_text": "Collection",
-            "button_1_link": "shopify:\/\/collections\/merino-wool-gloves",
+            "button_1_link": "shopify:\/\/collections\/merino-gloves",
             "button_2_text": "",
             "button_2_link": ""
           }
@@ -74,7 +74,7 @@
       "type": "apps",
       "blocks": {
         "f01bf221-e5a1-4256-bb84-727a4e060f0b": {
-          "type": "shopify:\/\/apps\/section-feed\/blocks\/app-block\/43cd482b-515a-4e82-b170-05d391763cd2",
+          "type": "shopify:\/\/apps\/maestrooo-section-feed\/blocks\/app-block\/43cd482b-515a-4e82-b170-05d391763cd2",
           "settings": {
             "title": "#CorneliaJames",
             "subheading": "",

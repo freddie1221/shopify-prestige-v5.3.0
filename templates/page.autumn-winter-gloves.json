@@ -6,7 +6,7 @@
         "163360727094bc339a-0": {
           "type": "collection",
           "settings": {
-            "collection": "merino-wool-gloves",
+            "collection": "merino-gloves",
             "image": "shopify:\/\/shop_images\/JH-1759.jpg",
             "image_alignment": "center center",
             "content_position": "bottomLeft",
@@ -168,7 +168,7 @@
         "1640858420818d3fc2-0": {
           "type": "collection",
           "settings": {
-            "collection": "merino-wool-gloves",
+            "collection": "merino-gloves",
             "title": "Merino Wool",
             "grid_items_count": 8,
             "button_text": "Collection"
